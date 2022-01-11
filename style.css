@@ -1,3 +1,8 @@
-h1 {
-    background-color: blue;
+
+header p {
+    font-size: 25px;
+}
+
+footer button {
+    font-size: 30px;
 }
