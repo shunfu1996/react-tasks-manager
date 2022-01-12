@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,50 +12,49 @@
     <title>To Do list</title>
 
 </head>
+
 <body>
 
     <header>
         <!-- To Do List Bars -->
-        <div class="flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <div class="d-flex justify-content-around">  
-                <button type="button" class="btn btn-secondary">SORT</button>  
-                <p>To Do List</P>
-                    <button type="button" class="btn btn-secondary ">BUTTON</button>
+        <div class="place border border-dark">
+            <div class="d-flex align-items-center">
+                <div class="col-2">
+                    <button type="button" class="">SORT</button>
+                </div>
+                <div class="col-8">
+                    <p class="text-center text-uppercase fw-bold fs-1 topic">To Do List</P>
+                </div>
+                <div class="col-2 d-flex justify-content-end">
+                    <button type="button" class="">BUTTON</button>
                 </div>
             </div>
-            
-            <!-- Date Bar -->
             <div class="row">
-                <div class="col-4" style="padding: 0%;" >
-                    <div class="card flex-fill">
-                        <div class="card-body" >
-                            <p style="text-align: center; margin: 0;">Yesterday</p>
-                        </div>
-                    </div>
-                    <div class="col-4"style="padding: 0%;">
-                      <div class="card flex-fill">
-                          <div class="card-body">
-                              <p style="text-align: center; margin: 0;">Today</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-4" style="padding: 0%;">
-                      <div class="card flex-fill">
-                          <div class="card-body">
-                              <p style="text-align: center; margin: 0;">Tomorrow</p>
-                          </div>
-                      </div>
-                  </div>
+                <div class="col-4 d-grid gap-2">
+                    <button type="button" class="btn btn-primary">Yesterday</button>
                 </div>
+                <div class="col-4 d-grid gap-2">
+                    <button type="button" class="btn btn-primary">today</button>
+                </div>
+                <div class="col-4 d-grid gap-2">
+                    <button type="button" class="btn btn-primary">Tomorrow</button>
+                </div>
+            </div>
+        </div>
 
-    
-</header>
+        <!-- Date Bar -->
 
-<footer>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary me-md-2" type="button">+</button>
-      </div>
-</footer>
+
+    </header>
+
+    <footer class="place fixed-bottom">
+        <div class="border border-dark">
+            <div class="d-grid gap-2 d-md-flex justify-content-center">
+                <button class="btn btn-primary me-md-2 circle" type="button">+</button>
+            </div>
+        </div>
+    </footer>
 
 </body>
+
 </html>
