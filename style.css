@@ -1,3 +1,15 @@
-h1 {
-    background-color: blue;
-}
+    .place {
+        margin: 0px 70px;
+    }
+    
+    .topic {
+        letter-spacing: 10px
+    }
+    
+    .inline {
+        align-items: baseline;
+    }
+    
+    .circle {
+        border-radius: 50px;
+    }
