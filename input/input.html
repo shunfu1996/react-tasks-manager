@@ -16,13 +16,35 @@
         <div class="row">
             <div class="col">
                 <h2>New Task</h2>
+                <form id="newTaskForm">
                 <p>Name</p>
-                <label for="name" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+
+                <p>Description</p>
+                <div class="input-group mb-3">
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                </div>
+
+                <div class="row">
+                    
+                    <div class="form-group col mb-3">
+                        <label for="newTaskDueDate">Assigned To</label>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <div class="form-group col mb-3">
+                        <label for="newTaskDueDate">Due Date</label>
+                        <input type="date" class="form-control" id="newTaskDueDate">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block d-grid gap-2 col-6 mx-auto mb-3">Add Task</button>
+            </form>
             </div>
         </div>
+        <h2 class="my-3">Tasks</h2>
     </div>
+
 
 
     
