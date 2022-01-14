@@ -64,11 +64,31 @@
             </div>
             <div class="col-7">
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="list-task1" role="tabpanel" aria-labelledby="list-home-list">task1 details</div>
-                    <div class="tab-pane fade" id="list-task2" role="tabpanel" aria-labelledby="list-profile-list">task2 details</div>
-                    <div class="tab-pane fade" id="list-task3" role="tabpanel" aria-labelledby="list-messages-list">task3 details</div>
-                    <div class="tab-pane fade" id="list-task4" role="tabpanel" aria-labelledby="list-settings-list">task4 details</div>
-                    <div class="tab-pane fade" id="list-task5" role="tabpanel" aria-labelledby="list-profile-list">task5 details</div>
+                    <div class="tab-pane fade " id="list-task1" role="tabpanel" aria-labelledby="list-home-list">
+                        <p value="">Assigned To</p>
+                        <p value="">task1 details</p>
+                        <p value="">Due Date</p>
+                    </div>
+                    <div class="tab-pane fade" id="list-task2" role="tabpanel" aria-labelledby="list-profile-list">
+                        <p value="">Assigned To</p>
+                        <p value="">task2 details</p>
+                        <p value="">Due Date</p>
+                    </div>
+                    <div class="tab-pane fade" id="list-task3" role="tabpanel" aria-labelledby="list-messages-list">
+                        <p value="">Assigned To</p>
+                        <p value="">task3 details</p>
+                        <p value="">Due Date</p>
+                    </div>
+                    <div class="tab-pane fade" id="list-task4" role="tabpanel" aria-labelledby="list-settings-list">
+                        <p value="">Assigned To</p>
+                        <p value="">task4 details</p>
+                        <p value="">Due Date</p>
+                    </div>
+                    <div class="tab-pane fade" id="list-task5" role="tabpanel" aria-labelledby="list-profile-list">
+                        <p value="">Assigned To</p>
+                        <p value="">task5 details</p>
+                        <p value="">Due Date</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,19 +100,19 @@
                     <form id="newTaskForm">
                     <p>Name</p>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"  id="newTaskName">
                       </div>
     
                     <p>Description</p>
                     <div class="input-group mb-3">
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                        <textarea class="form-control" aria-label="With textarea" id="newTaskDescription"></textarea>
                     </div>
     
                     <div class="row">
                         
                         <div class="form-group col mb-3">
                             <label for="newTaskDueDate">Assigned To</label>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo">
                         </div>
                         <div class="form-group col mb-3">
                             <label for="newTaskDueDate">Due Date</label>
