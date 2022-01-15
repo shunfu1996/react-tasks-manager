@@ -44,34 +44,92 @@
 
         <!-- Date Bar -->
         <div class="row place border border-dark">
-            <div class="col-1" style="padding: 0%;">
-                <div class="d-flex flex-column bd-highlight mb-3" id="checkbox">
-                    <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
-                    <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
-                    <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
-                    <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
-                    <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
+            <div class="row">
+                <div class="col-1" style="padding: 0%;">
+                    <div class="d-flex flex-column bd-highlight mb-3" id="checkbox">
+                        <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
+                        <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
+                        <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
+                        <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
+                        <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-task1" role="tab" aria-controls="list-home">task1</a>
+                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-task2" role="tab" aria-controls="list-profile">task2</a>
+                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-task3" role="tab" aria-controls="list-messages">task3</a>
+                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-task4" role="tab" aria-controls="list-settings">task4</a>
+                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-task5" role="tab" aria-controls="list-settings">task5</a>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-task1" role="tabpanel" aria-labelledby="list-home-list">task1 details</div>
+                        <div class="tab-pane fade" id="list-task2" role="tabpanel" aria-labelledby="list-profile-list">task2 details</div>
+                        <div class="tab-pane fade" id="list-task3" role="tabpanel" aria-labelledby="list-messages-list">task3 details</div>
+                        <div class="tab-pane fade" id="list-task4" role="tabpanel" aria-labelledby="list-settings-list">task4 details</div>
+                        <div class="tab-pane fade" id="list-task5" role="tabpanel" aria-labelledby="list-profile-list">task5 details</div>
+                        <div class="tab-pane fade " id="list-task1" role="tabpanel" aria-labelledby="list-home-list">
+                            <p value="">Assigned To</p>
+                            <p value="">task1 details</p>
+                            <p value="">Due Date</p>
+                        </div>
+                        <div class="tab-pane fade" id="list-task2" role="tabpanel" aria-labelledby="list-profile-list">
+                            <p value="">Assigned To</p>
+                            <p value="">task2 details</p>
+                            <p value="">Due Date</p>
+                        </div>
+                        <div class="tab-pane fade" id="list-task3" role="tabpanel" aria-labelledby="list-messages-list">
+                            <p value="">Assigned To</p>
+                            <p value="">task3 details</p>
+                            <p value="">Due Date</p>
+                        </div>
+                        <div class="tab-pane fade" id="list-task4" role="tabpanel" aria-labelledby="list-settings-list">
+                            <p value="">Assigned To</p>
+                            <p value="">task4 details</p>
+                            <p value="">Due Date</p>
+                        </div>
+                        <div class="tab-pane fade" id="list-task5" role="tabpanel" aria-labelledby="list-profile-list">
+                            <p value="">Assigned To</p>
+                            <p value="">task5 details</p>
+                            <p value="">Due Date</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="list-group" id="list-tab" role="tablist">
-                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-task1" role="tab" aria-controls="list-home">task1</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-task2" role="tab" aria-controls="list-profile">task2</a>
-                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-task3" role="tab" aria-controls="list-messages">task3</a>
-                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-task4" role="tab" aria-controls="list-settings">task4</a>
-                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-task5" role="tab" aria-controls="list-settings">task5</a>
+            <!-- card -->
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2>New Task</h2>
+                        <form id="newTaskForm">
+                            <p>Name</p>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="newTaskName">
+                            </div>
+
+                            <p>Description</p>
+                            <div class="input-group mb-3">
+                                <textarea class="form-control" aria-label="With textarea" id="newTaskDescription"></textarea>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="form-group col mb-3">
+                                    <label for="newTaskDueDate">Assigned To</label>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo">
+                                </div>
+                                <div class="form-group col mb-3">
+                                    <label for="newTaskDueDate">Due Date</label>
+                                    <input type="date" class="form-control" id="newTaskDueDate">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block d-grid gap-2 col-6 mx-auto mb-3">Add Task</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="col-7">
-                <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="list-task1" role="tabpanel" aria-labelledby="list-home-list">task1 details</div>
-                    <div class="tab-pane fade" id="list-task2" role="tabpanel" aria-labelledby="list-profile-list">task2 details</div>
-                    <div class="tab-pane fade" id="list-task3" role="tabpanel" aria-labelledby="list-messages-list">task3 details</div>
-                    <div class="tab-pane fade" id="list-task4" role="tabpanel" aria-labelledby="list-settings-list">task4 details</div>
-                    <div class="tab-pane fade" id="list-task5" role="tabpanel" aria-labelledby="list-profile-list">task5 details</div>
-                </div>
-            </div>
-        </div>
 
 
     </header>
