@@ -2,9 +2,13 @@ import React from 'react';
 import './Card.css';
 
 export default class Card extends React.Component {
+    constructor(){
+        
+    }
+
     render() {
         return(
-            <div className="container">
+            <div className="container" id="card">
             <div className="row">
                 <div className="col">
                     <h2>New Task</h2>
