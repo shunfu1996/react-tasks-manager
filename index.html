@@ -13,36 +13,107 @@
 
 </head>
 
-<body>
+<body style="background-color:#4080f6; ">
 
+    <section class="w-100 p-5 gradient-custom-2">
     <header>
         <!-- To Do List Bars -->
-        <div class="place border border-dark">
-            <div class="d-flex align-items-center">
-                <div class="col-2">
-                    <button type="button" class="">SORT</button>
+        <div class="place card mask-custom"  style="border-radius: 15% 5%; background-color: #ffffffd2 " >
+            <!-- <div class="d-flex align-items-center"> -->
+
+                <!-- Header -->
+                
+                <div class="card-body p-3 text-black row">
+                    
+                    <div class="text-center col-3 pt-5">
+                        <button type="button" class="btn btn-primary" style="border-radius:30% 10%" >SORT</button>
+                    </div>
+
+                    <div class="text-center col-6">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" alt="Check" width="60">
+                        <h2 class="my-4">To Do List</h2>
+                    </div>
+
+                    <div class="text-center col-3 pt-5">
+                        <button type="button" class="btn btn-primary" style="border-radius: 30% 10%" >ALL</button>
+                    </div>
+
+                 </div>
+
+                 <br>
+
+            <div class="row m-3">
+                <div class="col-4 d-grid gap-2">
+                    <button type="button" class="btn btn-primary" >Yesterday</button>
                 </div>
-                <div class="col-8">
-                    <p class="text-center text-uppercase fw-bold fs-1 topic">To Do List</P>
+                <div class="col-4 d-grid gap-2">
+                    <button type="button" class="btn btn-primary" >today</button>
                 </div>
-                <div class="col-2 d-flex justify-content-end">
-                    <button type="button" class="">BUTTON</button>
+                <div class="col-4 d-grid gap-2">
+                    <button type="button" class="btn btn-primary" >Tomorrow</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-4 d-grid gap-2">
-                    <button type="button" class="btn btn-primary">Yesterday</button>
+        
+
+        <!-- Date Bar -->
+
+        <div class="row">
+            <div class="col-1" >
+                <div class="d-flex flex-column bd-highlight mb-3" id="checkbox">
+                    <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
+                    <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
+                    <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
+                    <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
+                    <input class="form-check-input me-1" type="checkbox" value="" style="margin-inline-start: auto !important; margin: 12px;">
                 </div>
-                <div class="col-4 d-grid gap-2">
-                    <button type="button" class="btn btn-primary">today</button>
+            </div>
+            <div class="col-4">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-task1" role="tab" aria-controls="list-home">task1</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-task2" role="tab" aria-controls="list-profile">task2</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-task3" role="tab" aria-controls="list-messages">task3</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-task4" role="tab" aria-controls="list-settings">task4</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-task5" role="tab" aria-controls="list-settings">task5</a>
                 </div>
-                <div class="col-4 d-grid gap-2">
-                    <button type="button" class="btn btn-primary">Tomorrow</button>
+            </div>
+            <!-- change -->
+            <div class="col-6 rounded px-3 py-3 mb-1" style="background-color: rgba(223, 223, 223, 0.822);">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-task1" role="tabpanel" aria-labelledby="list-home-list">task1 details</div>
+                    <div class="tab-pane fade" id="list-task2" role="tabpanel" aria-labelledby="list-profile-list">task2 details</div>
+                    <div class="tab-pane fade" id="list-task3" role="tabpanel" aria-labelledby="list-messages-list">task3 details</div>
+                    <div class="tab-pane fade" id="list-task4" role="tabpanel" aria-labelledby="list-settings-list">task4 details</div>
+                    <div class="tab-pane fade" id="list-task5" role="tabpanel" aria-labelledby="list-profile-list">task5 details</div>
                 </div>
             </div>
         </div>
 
-        <!-- Date Bar -->
+        <!-- card -->
+        <!-- change -->
+        <div class="container">
+            <div class="row m-3">
+                <div class="col">
+                    <h2>New Task</h2>
+                    <form id="newTaskForm">
+                    <p>Name</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="items" aria-label="item" aria-describedby="basic-addon1" id="validationCustom01 itemName" name="itemName" value=" " required>
+                      </div>
+                      <div class="valid-feedback invalid-feedback">
+                        Looks good!
+                      </div>
+    
+                    <p>Description</p>
+                    <div class="input-group mb-3">
+                        <textarea class="form-control" aria-label="With textarea" id="validationCustom01" required></textarea>
+                    </div>
+    
+                    <div class="row">
+                        
+                        <div class="form-group col mb-3">
+                            <label for="newTaskDueDate">Assigned To</label>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="validationCustom02" required>
+
         <div class="row place border border-dark">
             <div class="row">
                 <div class="col-1" style="padding: 0%;">
@@ -74,6 +145,7 @@
                             <p value="">Assigned To</p>
                             <p value="">task1 details</p>
                             <p value="">Due Date</p>
+
                         </div>
                         <div class="tab-pane fade" id="list-task2" role="tabpanel" aria-labelledby="list-profile-list">
                             <p value="">Assigned To</p>
@@ -96,6 +168,14 @@
                             <p value="">Due Date</p>
                         </div>
                     </div>
+
+                    <button type="submit" class="btn btn-primary btn-block d-grid gap-2 col-6 mx-auto mb-3" onclick="alertName()" >Add Task</button>
+                </form>
+                </div>
+            </div>
+        <!-- </div> -->
+</div>
+
                 </div>
             </div>
             <!-- card -->
@@ -132,15 +212,22 @@
             </div>
 
 
-    </header>
 
-    <footer class="place fixed-bottom">
-        <div class="border border-dark">
-            <div class="d-grid gap-2 d-md-flex justify-content-center">
-                <button class="btn btn-primary me-md-2 circle" type="button">+</button>
-            </div>
+
+<div class="place">
+    <!-- Befor class border border-dark -->
+    <div class="addBox py-2">
+        <div class="d-grid gap-2 justify-content-center">
+            <button class="btn btn-primary me-md-2 circle" type="submit">+</button>
         </div>
-    </footer>
+    </div>
+</div>
+</header>
+</section>
+
+
+    <script src="gabriel_js/gabriel_taskManager.js"></script>
+    <script src="gabriel_js/gabriel_index.js"></script>
 
 </body>
 
