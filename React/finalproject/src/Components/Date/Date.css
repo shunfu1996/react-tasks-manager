@@ -1,8 +1,19 @@
 .nopadding {
     padding: 0%;
 }
+.place {
+    margin: 0px 70px;
+}
 
 .test {
     margin-inline-start: auto !important;
     margin: 12px;
+}
+
+.backgroundColor{
+    background-color: rgba(223, 223, 223, 0.822);
+
+}
+.midShape {
+    background-color: #ffffffd2;
 }

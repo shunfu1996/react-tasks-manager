@@ -1,23 +1,23 @@
 import React from 'react';
+import { useState } from 'react';
+
 import Header from '../Header/Header';
-import Date from '../Date/Date';
 import Card from '../Card/Card';
 import Footer from '../Footer/Footer';
-/* import './App.css'; */
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
-  render(){
+import Task from '../Task/Task';
+import './App.css';
+
+  const App = () =>{
+    const [date, setDate] = useState([])
+
     return (
       <div className="App">
         <Header /> 
-        <Date />
-        <Card />
+        <Task taskDate={date} deleteTask={setDate}/>
+        <Card add={setDate} /* newTaskName={this.newTaskName} name={this.state.name} */ />
         <Footer />
       </div>
     );
   };
-}
 
+  export default App;

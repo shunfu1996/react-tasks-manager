@@ -1,60 +1,34 @@
 import React from "react";
 import './Date.css';
 
-export default class Date extends React.Component {
-    render() {
-        return(
-            <div className="row">
-                <div className="col-1 nopadding">
-                    <div className="d-flex flex-column bd-highlight mb-3" id="checkbox">
-                        <input className="form-check-input me-1 test" type="checkbox" value="" />
-                        <input className="form-check-input me-1 test" type="checkbox" value="" />
-                        <input className="form-check-input me-1 test" type="checkbox" value="" />
-                        <input className="form-check-input me-1 test" type="checkbox" value="" />
-                        <input className="form-check-input me-1 test" type="checkbox" value="" />
-                    </div>
-                </div>
-                <div className="col-4">
-                    <div className="list-group" id="list-tab" role="tablist">
-                        <a className="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-task1" role="tab" aria-controls="list-home">task1</a>
-                        <a className="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-task2" role="tab" aria-controls="list-profile">task2</a>
-                        <a className="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-task3" role="tab" aria-controls="list-messages">task3</a>
-                        <a className="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-task4" role="tab" aria-controls="list-settings">task4</a>
-                        <a className="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-task5" role="tab" aria-controls="list-settings">task5</a>
-                    </div>
-                </div>
-                <div className="col-7">
-                    <div className="tab-content" id="nav-tabContent">
-                        <div className="tab-pane fade " id="list-task1" role="tabpanel" aria-labelledby="list-home-list">
-                            <p value="">Assigned To</p>
-                            <p value="">task1 details</p>
-                            <p value="">Due Date</p>
-                        </div>
-                        <div className="tab-pane fade" id="list-task2" role="tabpanel" aria-labelledby="list-profile-list">
-                            <p value="">Assigned To</p>
-                            <p value="">task2 details</p>
-                            <p value="">Due Date</p>
-                        </div>
-                        <div className="tab-pane fade" id="list-task3" role="tabpanel" aria-labelledby="list-messages-list">
-                            <p value="">Assigned To</p>
-                            <p value="">task3 details</p>
-                            <p value="">Due Date</p>
-                        </div>
-                        <div className="tab-pane fade" id="list-task4" role="tabpanel" aria-labelledby="list-settings-list">
-                            <p value="">Assigned To</p>
-                            <p value="">task4 details</p>
-                            <p value="">Due Date</p>
-                        </div>
-                        <div className="tab-pane fade" id="list-task5" role="tabpanel" aria-labelledby="list-profile-list">
-                            <p value="">Assigned To</p>
-                            <p value="">task5 details</p>
-                            <p value="">Due Date</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        )
-    }
+        const Date = ({ id, name, description, assignedTo, dueDate, deleteTask}) =>{
 
-}
+ 
+
+            return(
+                <div className="row midShape nopadding place">
+                    <div className="col-1">
+                        <div className="d-flex flex-column bd-highlight mb-3" id="checkbox">
+                            <input className="form-check-input me-1 test" type="checkbox" />
+                        </div>
+                    </div>
+                    <div className="col-4">
+                        <div className="list-group" id="list-tab" role="tablist">
+                            <a className="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#list-task1" role="tab" aria-controls="list-home">{name}</a>
+                        </div>
+                    </div>
+                    <div className="col-6 rounded px-3 py-3 mb-1 backgroundColor">
+                        <div className="tab-content" id="nav-tabContent">
+                            <div className="tab-pane fade " id="list-task1" role="tabpanel" aria-labelledby="list-home-list">
+                                <p value="">{assignedTo}</p>
+                                <p value="">{description}</p>
+                                <p value="">{dueDate}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )   
+        }
+
+export default Date

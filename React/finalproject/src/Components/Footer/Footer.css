@@ -1,4 +1,4 @@
-.place {
+.placeButtom {
     margin: 0px 70px;
 }
 
@@ -12,4 +12,6 @@
 
 .circle {
     border-radius: 50px;
+    background-color: gray !important;
 }
+
