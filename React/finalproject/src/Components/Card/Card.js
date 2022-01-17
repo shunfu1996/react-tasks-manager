@@ -1,11 +1,12 @@
 import React from 'react';
 import './Card.css';
 import { useState } from 'react';
+import { v4 } from 'uuid';
 
-
+//create a new card
 const Card = ({add}) => {
-
-    const [name, setName] = useState("")
+    // change the input value
+    const [name, setName] = useState("")  
     function nameChange(e) {
         setName(e.target.value)
     }
@@ -21,26 +22,55 @@ const Card = ({add}) => {
     function dueDateChange(e) {
         setDueDate(e.target.value)
     }
+    
+    
+    function addItem() {
+        const errorMessage = document.querySelector('#error');
+        // e.preventDefault(); 
+        if(!validInput(name)){
+            errorMessage.innerHTML = "please enter the name "; //check the input is correct
+            errorMessage.style.display = "block";
+        } else if(!validInput(description)){
+            errorMessage.innerHTML = "please enter the description";
+            errorMessage.style.display = "block";
+        }  else if(!validInput(assignedTo)){
+            errorMessage.innerHTML = "please assigned to the correct messenge";
+            errorMessage.style.display = "block";
+        }  else if(!validInput(dueDate)){
+            errorMessage.innerHTML = "please choose a date";
+            errorMessage.style.display = "block";
+        }  else{
+            errorMessage.style.display = "none";
+            add(function(prevDate){
+                return [
+                    ...prevDate,
+                    {   
+                        id: v4(),
+                        status: 'TODO',
+                        name,
+                        description,
+                        assignedTo,
+                        dueDate,
+                    }]
+                })    
+                setDueDate("");
+                setAssignedTo("");
+                setDescription("");
+                setName("");
+        }    
 
-    function addItem(e) {
-        e.preventDefault();
-        add(function(prevDate){
-            return [
-                ...prevDate,
-                {   
-                    name,
-                    description,
-                    assignedTo,
-                    dueDate
-                }]
-        })    
+         
+    }
+
+    function validInput (date) {
+        return date !== null && date !== ''; // the input cannot empty 
     }
 
     return(
         <div className="cardShape" id="card">
             <div className="row">
                 <div className="col form">
-                    <h2>New Task</h2>
+                    <h2>Edit New Task</h2>
                     <form id="newTaskForm">
                         <label htmlFor="newTaskName">Name</label>
                         <div className="input-group mb-3">
@@ -62,8 +92,8 @@ const Card = ({add}) => {
                                 <input type="date" className="form-control" id="newTaskDueDate" value={dueDate} onChange={dueDateChange} />
                             </div>
                         </div>
-                        <div id="alertMessage" className="alert alert-danger display" role="alert">
-                            Error message    
+                        <div id="error" className="alert alert-warning warning" role="alert">
+                        A simple warning alert—check it out!
                         </div>
                         <button type="submit" className="btn btn-primary btn-block d-grid gap-2 col-6 mx-auto mb-3 " onClick={addItem}>Add Task</button>
                     </form>

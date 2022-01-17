@@ -2,7 +2,7 @@ import React from "react";
 import './Footer.css';
 
 export default class Footer extends React.Component {
-    isDisplay() {
+    isDisplay() { //handle the edit form is display by the "+" button
         let display = document.getElementById('card').style.display;
         if(display !== 'block') {
             document.getElementById('card').style.display = 'block';

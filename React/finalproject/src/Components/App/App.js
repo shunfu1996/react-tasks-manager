@@ -13,7 +13,7 @@ import './App.css';
     return (
       <div className="App">
         <Header /> 
-        <Task taskDate={date} deleteTask={setDate}/>
+        <Task taskDate={date} deleteTask={setDate}/> {/* passing the input value of the new task to the child */}
         <Card add={setDate} /* newTaskName={this.newTaskName} name={this.state.name} */ />
         <Footer />
       </div>
