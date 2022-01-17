@@ -24,9 +24,9 @@ const Card = ({add}) => {
     }
     
     
-    function addItem() {
+    function addItem(e) {
         const errorMessage = document.querySelector('#error');
-        // e.preventDefault(); 
+        e.preventDefault(); // to prevent the web F5
         if(!validInput(name)){
             errorMessage.innerHTML = "please enter the name "; //check the input is correct
             errorMessage.style.display = "block";
