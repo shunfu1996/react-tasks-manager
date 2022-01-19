@@ -10,8 +10,20 @@ const Date = ({status, id, name, description, assignedTo, dueDate, deleteTask}) 
         })
     }
     function handleStatus() {  // change the task status function
+        console.log(id);
+        console.log(Date);
+        console.log(name);
         const taskStatus = document.getElementById("status");
-        if(taskStatus.innerHTML === 'TODO'){
+        if(status === 'TODO'){
+            status = 'DONE';
+            taskStatus.style.backgroundColor = 'green';
+        } else if(status === 'DONE'){
+            status = 'TODO';
+            taskStatus.style.backgroundColor = 'red';
+        } else {
+            console.log('TODO button is error')
+        }
+       /*  if(taskStatus.innerHTML === 'TODO'){
             taskStatus.innerHTML = 'DONE';
             taskStatus.style.backgroundColor = 'green';
         } else if (taskStatus.innerHTML === 'DONE'){
@@ -19,7 +31,7 @@ const Date = ({status, id, name, description, assignedTo, dueDate, deleteTask}) 
             taskStatus.style.backgroundColor = 'red';
         } else {
             console.log('TODO button is error')
-        }
+        } */
 
     }
     //the date format

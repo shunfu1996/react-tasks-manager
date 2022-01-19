@@ -22,6 +22,7 @@ const Card = ({add}) => {
     function dueDateChange(e) {
         setDueDate(e.target.value)
     }
+   
     
     
     function addItem(e) {
