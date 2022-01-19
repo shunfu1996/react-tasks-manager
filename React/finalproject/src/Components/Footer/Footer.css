@@ -1,0 +1,17 @@
+.placeButtom {
+    margin: 0px 70px;
+}
+
+.topic {
+    letter-spacing: 10px
+}
+
+.inline {
+    align-items: baseline;
+}
+
+.circle {
+    border-radius: 50px;
+    background-color: gray !important;
+}
+
