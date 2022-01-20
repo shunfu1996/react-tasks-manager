@@ -1,0 +1,25 @@
+.placeTop {
+    margin: 70px 70px 0px 70px !important;
+}
+
+.topic {
+    letter-spacing: 10px
+}
+
+.inline {
+    align-items: baseline;
+}
+
+.circle {
+    border-radius: 50px;
+}
+
+.outerShape {
+    border-radius: 15% 5% 0 0;
+    background-color: #ffffffd2;
+}
+
+.buttonShape {
+    border-radius:30% 10%;
+
+}

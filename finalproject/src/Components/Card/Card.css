@@ -1,0 +1,21 @@
+.display {
+    display: none;
+}
+#card{
+    display: none;
+}
+
+.cardShape {
+    border-radius: 0 0 15% 5%;
+    background-color: #ffffffd2;
+    margin: 0px 70px 70px 70px;
+}
+
+.form {
+    padding: 50px;
+    margin-bottom: 20px;
+}
+
+.warning {
+    display: none;
+}
