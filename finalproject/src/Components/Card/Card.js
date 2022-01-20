@@ -22,6 +22,8 @@ const Card = ({add}) => {
     function dueDateChange(e) {
         setDueDate(e.target.value)
     }
+  
+
    
     
     
@@ -47,7 +49,6 @@ const Card = ({add}) => {
                     ...prevDate,
                     {   
                         id: v4(),
-                        status: 'TODO',
                         name,
                         description,
                         assignedTo,

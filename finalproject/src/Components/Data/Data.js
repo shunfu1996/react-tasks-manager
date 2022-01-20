@@ -1,45 +1,36 @@
-import React from "react";
-import './Date.css';
+import React, {useState} from "react";
+import './Data.css';
 
 
-const Date = ({status, id, name, description, assignedTo, dueDate, deleteTask}) =>{
+const Data = ({id, name, description, assignedTo, dueDate, deleteTask}) =>{
+    const [status, setStatus] = useState("TODO");
+    const [color, setColor] = useState("green");
+    // change the task status function
+    function handleStatus(){
+        if(status === "TODO"){
+        setStatus("DONE");
+        setColor("red");
+        //id.style.display = 'none'
+        } else if(status === "DONE"){
+        setStatus("TODO");
+        setColor("green");
+        }
+    }
+    
 
     function deleteItem() {  //the button of delete task  function 
         deleteTask(function(prev) {
             return prev.filter(item => item.id !== id)
         })
     }
-    function handleStatus() {  // change the task status function
-        console.log(id);
-        console.log(Date);
-        console.log(name);
-        const taskStatus = document.getElementById("status");
-        if(status === 'TODO'){
-            status = 'DONE';
-            taskStatus.style.backgroundColor = 'green';
-        } else if(status === 'DONE'){
-            status = 'TODO';
-            taskStatus.style.backgroundColor = 'red';
-        } else {
-            console.log('TODO button is error')
-        }
-       /*  if(taskStatus.innerHTML === 'TODO'){
-            taskStatus.innerHTML = 'DONE';
-            taskStatus.style.backgroundColor = 'green';
-        } else if (taskStatus.innerHTML === 'DONE'){
-            taskStatus.innerHTML = 'TODO';
-            taskStatus.style.backgroundColor = 'red';
-        } else {
-            console.log('TODO button is error')
-        } */
-
-    }
+    
+    
     //the date format
     return(
         <div className="row midShape nopadding place dateShape">
                 <div className="list-group" id="myList" role="tablist">
                     <div className="d-flex justify-content-around">
-                        <button id="status" className="toDo" onClick={handleStatus} >{status}</button>
+                        <button className="toDo" onClick={handleStatus} style={{backgroundColor: color}}>{status}</button>
                         <a className="list-group-item list-group-item-action active  d-flex justify-content-center" data-toggle="list" href="#home" role="tab">Task Name: {name}</a>  
                         <button onClick={deleteItem}>delete</button>
                     </div>
@@ -55,4 +46,4 @@ const Date = ({status, id, name, description, assignedTo, dueDate, deleteTask}) 
     )   
 }
 
-export default Date
+export default Data

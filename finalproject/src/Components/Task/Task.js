@@ -1,16 +1,15 @@
 /* import  */
-import Date from "../Date/Date"
+import Data from "../Data/Data"
 
 const Task = ({ taskDate, deleteTask }) => { //create the new task by using the input value
     return(
         <div>
             { 
                 taskDate.map((task) => {
-                    const { name, description, assignedTo, dueDate, id, status} = task;
-                    return <Date 
+                    const { name, description, assignedTo, dueDate, id} = task;
+                    return <Data 
                                key={id}
                                id={id}
-                               status={status}
                                name={name}
                                description={description}
                                assignedTo={assignedTo}
