@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { v4 } from 'uuid';
 
 //create a new card
-const Card = ({add}) => {
+const Card = ({ add, submittingStatue }) => {
     // change the input value
     const [name, setName] = useState("")  
     function nameChange(e) {
@@ -22,10 +22,6 @@ const Card = ({add}) => {
     function dueDateChange(e) {
         setDueDate(e.target.value)
     }
-  
-
-   
-    
     
     function addItem(e) {
         const errorMessage = document.querySelector('#error');
@@ -44,17 +40,19 @@ const Card = ({add}) => {
             errorMessage.style.display = "block";
         }  else{
             errorMessage.style.display = "none";
-            add(function(prevDate){
+            submittingStatue.current = true ;
+            add(function(prevData){
                 return [
-                    ...prevDate,
                     {   
                         id: v4(),
                         name,
                         description,
                         assignedTo,
                         dueDate,
-                    }]
-                })    
+                    },
+                    ...prevData,
+                ];
+            })    
                 setDueDate("");
                 setAssignedTo("");
                 setDescription("");
@@ -64,8 +62,8 @@ const Card = ({add}) => {
          
     }
 
-    function validInput (date) {
-        return date !== null && date !== ''; // the input cannot empty 
+    function validInput (data) {
+        return data !== null && data !== ''; // the input cannot empty 
     }
 
     return(

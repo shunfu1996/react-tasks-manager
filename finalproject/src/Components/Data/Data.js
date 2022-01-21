@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import './Data.css';
 
 
-const Data = ({id, name, description, assignedTo, dueDate, deleteTask}) =>{
+const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue}) =>{
     const [status, setStatus] = useState("TODO");
     const [color, setColor] = useState("green");
     // change the task status function
@@ -19,6 +19,7 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask}) =>{
     
 
     function deleteItem() {  //the button of delete task  function 
+        submittingStatue.current = true;
         deleteTask(function(prev) {
             return prev.filter(item => item.id !== id)
         })
