@@ -1,26 +1,26 @@
 /* import  */
-import Date from "../Date/Date"
+import Data from "../Data/Data"
 
-const Task = ({ taskDate, deleteTask }) => { //create the new task by using the input value
+const Task = ({ CardData, deleteTask, submittingStatue }) => { //create the new task by using the input value
     return(
         <div>
-            { 
-                taskDate.map((task) => {
-                    const { name, description, assignedTo, dueDate, id, status} = task;
-                    return <Date 
-                               key={id}
-                               id={id}
-                               status={status}
-                               name={name}
-                               description={description}
-                               assignedTo={assignedTo}
-                               dueDate={dueDate}
-                               deleteTask={deleteTask}
-                            />
-                })
-            }
+            {CardData.map((task) => {
+                const { name, description, assignedTo, dueDate, id} = task;
+                return(
+                    <Data 
+                        key={id}
+                        id={id}
+                        name={name}
+                        description={description}
+                        assignedTo={assignedTo}
+                        dueDate={dueDate}
+                        deleteTask={deleteTask}
+                        submittingStatue={submittingStatue}
+                    />
+                );
+            })}
         </div>
-    )
+    );
 }
 
 export default Task

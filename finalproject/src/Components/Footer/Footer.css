@@ -1,5 +1,5 @@
 .placeButtom {
-    margin: 0px 70px;
+    margin: 0px 650px;
 }
 
 .topic {
@@ -12,6 +12,8 @@
 
 .circle {
     border-radius: 50px;
-    background-color: gray !important;
+    /* background-color: gray !important; */
 }
+
+
 

@@ -1,3 +1,7 @@
+/* *{
+    font-family: 'Be Vietnam Pro', sans-serif;
+} */
+
 .display {
     display: none;
 }
@@ -6,9 +10,9 @@
 }
 
 .cardShape {
-    border-radius: 0 0 15% 5%;
+    border-radius: 25px;
     background-color: #ffffffd2;
-    margin: 0px 70px 70px 70px;
+    margin: 0px 200px 100px 200px;
 }
 
 .form {
@@ -19,3 +23,10 @@
 .warning {
     display: none;
 }
+
+.button{
+    background: #6cc6cd;
+    background: -webkit-linear-gradient(to right, #6cc6cd, #eae5c9);
+    background: linear-gradient(to right, #6cc6cd, #eae5c9);
+}
+
