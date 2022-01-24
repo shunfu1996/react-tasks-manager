@@ -2,6 +2,7 @@ import React from 'react';
 import './Card.css';
 import { useState } from 'react';
 import { v4 } from 'uuid';
+// import './test';
 
 //create a new card
 const Card = ({ add, submittingStatue }) => {
@@ -95,7 +96,7 @@ const Card = ({ add, submittingStatue }) => {
                         <div id="error" className="alert alert-warning warning" role="alert">
                         A simple warning alert—check it out!
                         </div>
-                        <button type="submit" className="btn btn-primary btn-block d-grid gap-2 col-6 mx-auto mb-3 " onClick={addItem}>Add Task</button>
+                        <button type="submit" className="button btn btn-block d-grid gap-2 col-6 mx-auto mb-3" onClick={addItem}>Add Task</button>
                     </form>
                 </div>
             </div>

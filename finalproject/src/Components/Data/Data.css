@@ -1,6 +1,6 @@
 .nopadding {
     padding: 0%;
-    margin: 0px 70px;
+    margin: 0px 200px;
 }
 
 .test {
@@ -17,6 +17,45 @@
 
 }
 
+.card-header {
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom-width: thin;
+}
+
+.card {
+    border-radius: 25px;
+    margin-top: 5px ;
+    margin-bottom: 5px;
+    /* background: rgba(24, 24, 16, .1); */
+}
+
+p{
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.tab-content {
+    padding: 0px 25px;
+}
+
+#myList {
+    padding: 15px;
+    color: rgb(83, 83, 83);
+}
+
+.Button {
+    text-align: right;
+    /* padding: 0px 2px 0 0 ; */
+}
+
+button {
+    margin: 0 10px 0 0 ;
+}
+
 /* .toDo {
     background-color: red;
 } */
+

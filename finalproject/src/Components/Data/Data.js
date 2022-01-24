@@ -4,16 +4,16 @@ import './Data.css';
 
 const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue}) =>{
     const [status, setStatus] = useState("TODO");
-    const [color, setColor] = useState("green");
+    const [color, setColor] = useState("#eae5c9");
     // change the task status function
     function handleStatus(){
         if(status === "TODO"){
         setStatus("DONE");
-        setColor("red");
+        setColor("#6cc6cd");
         //id.style.display = 'none'
         } else if(status === "DONE"){
         setStatus("TODO");
-        setColor("green");
+        setColor("#eae5c9");
         }
     }
     
@@ -28,22 +28,26 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
     
     //the date format
     return(
-        <div className="row midShape nopadding place dateShape">
-                <div className="list-group" id="myList" role="tablist">
-                    <div className="d-flex justify-content-around">
-                        <button className="toDo" onClick={handleStatus} style={{backgroundColor: color}}>{status}</button>
-                        <a className="list-group-item list-group-item-action active  d-flex justify-content-center" data-toggle="list" href="#home" role="tab">Task Name: {name}</a>  
-                        <button onClick={deleteItem}>delete</button>
+        <div className="card row midShape nopadding place dateShape">
+            <div className="card-header text-center" id="myList" role="tablist" >Task Name: {name} </div>
+                <div className="d-flex justify-content-around">
+                {/* <p className="list-group-item list-group-item-action d-flex justify-content-center" data-toggle="list" href="#home" role="tab">Task Name: {name}</p>   */}
+                {/* <p className="list-group d-flex justify-content-center" role="tab">Task Name: {name}</p>   */}
+                {/* <button onClick={deleteItem}>delete</button> */}
+                {/* <div className="tab-content"> */}
+                <div className="card-body">
+                    <div className="tab-pane active" id="home" role="tabpanel">
+                        <p className=" d-flex text-left">Due Date: {dueDate}</p>
+                        <p className=" d-flex text-left">Assgined To: {assignedTo}</p>
+                        <p className=" d-flex text-left">Description: {description}</p>
+                    </div>
+                    <div className="Button">
+                    <button className="toDo btn text-white" onClick={handleStatus} style={{backgroundColor: color}}>{status}</button>
+                    <button className="btn" type="button" class="btn btn-outline-secondary" onClick={deleteItem}>Delete</button>
                     </div>
                 </div>                    
-                <div className="tab-content">
-                    <div className="tab-pane active" id="home" role="tabpanel">
-                        <p className=" d-flex justify-content-center">Assgined To: {assignedTo}</p>
-                        <p className=" d-flex justify-content-center">Description: {description}</p>
-                        <p className=" d-flex justify-content-center">Due Date: {dueDate}</p>
-                    </div>
-                </div>
-            </div>
+                </div>                    
+        </div>
     )   
 }
 

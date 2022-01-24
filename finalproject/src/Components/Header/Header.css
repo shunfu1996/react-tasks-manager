@@ -1,5 +1,5 @@
 .placeTop {
-    margin: 70px 70px 0px 70px !important;
+    margin: 100px 200px 0px 200px !important;
 }
 
 .topic {
@@ -15,11 +15,32 @@
 }
 
 .outerShape {
-    border-radius: 15% 5% 0 0;
+    border-radius: 10px 10px 0 0;
     background-color: #ffffffd2;
 }
 
 .buttonShape {
-    border-radius:30% 10%;
+    border-radius:10% 10%;
 
 }
+
+.title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 50px;
+    color: rgb(83, 83, 83);
+}
+
+.button1{
+    background-color: #6cc6cd;
+}
+
+.button2{
+    background: #6cc6cd;
+    background: -webkit-linear-gradient(to right, #6cc6cd, #eae5c9);
+    background: linear-gradient(to right, #6cc6cd, #eae5c9);
+}
+
+.button3{
+    background-color: #eae5c9;
+}
+

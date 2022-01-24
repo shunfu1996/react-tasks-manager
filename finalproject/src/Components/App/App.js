@@ -1,7 +1,6 @@
-import React from 'react';
+
 import { useState, useEffect, useRef } from 'react';
 import { API_GET_DATA } from '../Server/API';
-
 import Header from '../Header/Header';
 import Card from '../Card/Card';
 import Footer from '../Footer/Footer';
