@@ -93,8 +93,8 @@ const Card = ({ add, submittingStatue }) => {
                                 <input type="date" className="form-control" id="newTaskDueDate" value={dueDate} onChange={dueDateChange} />
                             </div>
                         </div>
-                        <div id="error" className="alert alert-danger" role="alert">
-                        {/* A simple warning alert—check it out! */}
+                        <div id="error" className="alert alert-danger warning" role="alert">
+                        A simple warning alert—check it out!
                         </div>
                         <button type="submit" className="button btn btn-block d-grid gap-2 col-6 mx-auto mb-3" onClick={addItem}>Add Task</button>
                     </form>
