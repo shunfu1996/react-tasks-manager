@@ -28,16 +28,16 @@ const Card = ({ add, submittingStatue }) => {
         const errorMessage = document.querySelector('#error');
         e.preventDefault(); // to prevent the web F5
         if(!validInput(name)){
-            errorMessage.innerHTML = "please enter the name "; //check the input is correct
+            errorMessage.innerHTML = "Please enter the name!"; //check the input is correct
             errorMessage.style.display = "block";
         } else if(!validInput(description)){
-            errorMessage.innerHTML = "please enter the description";
+            errorMessage.innerHTML = "Please enter the description!";
             errorMessage.style.display = "block";
         }  else if(!validInput(assignedTo)){
-            errorMessage.innerHTML = "please assigned to the correct messenge";
+            errorMessage.innerHTML = "Please assigned to the correct messenge!";
             errorMessage.style.display = "block";
         }  else if(!validInput(dueDate)){
-            errorMessage.innerHTML = "please choose a date";
+            errorMessage.innerHTML = "Please choose a date!";
             errorMessage.style.display = "block";
         }  else{
             errorMessage.style.display = "none";
@@ -93,8 +93,8 @@ const Card = ({ add, submittingStatue }) => {
                                 <input type="date" className="form-control" id="newTaskDueDate" value={dueDate} onChange={dueDateChange} />
                             </div>
                         </div>
-                        <div id="error" className="alert alert-warning warning" role="alert">
-                        A simple warning alert—check it out!
+                        <div id="error" className="alert alert-danger" role="alert">
+                        {/* A simple warning alert—check it out! */}
                         </div>
                         <button type="submit" className="button btn btn-block d-grid gap-2 col-6 mx-auto mb-3" onClick={addItem}>Add Task</button>
                     </form>
