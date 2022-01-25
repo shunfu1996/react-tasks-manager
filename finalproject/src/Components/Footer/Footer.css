@@ -15,5 +15,10 @@
     /* background-color: gray !important; */
 }
 
+@media screen and (max-width: 400px) {
+    #add {
+        right: 10px;
+    }
+}
 
 

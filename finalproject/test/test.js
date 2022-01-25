@@ -7,6 +7,10 @@ describe('Array', function() {
   });
 });
 
+expect(
+  Array.isArray(allTasks),
+  'The `allTasks` prop passed to `<TasksList />` should be an array after adding a new event',
+).to.be.true;
 // const Todos = require('../src/Components/Data/Data');
 // const assert = require('assert').strict;
 
@@ -73,4 +77,3 @@ describe('Array', function() {
 //     newDate.deleteItem(prev.filter(item => item.id !== id))
 //   })
 // });
-

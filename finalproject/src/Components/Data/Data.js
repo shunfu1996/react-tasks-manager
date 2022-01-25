@@ -40,7 +40,7 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
                 <div className="card-body">
                     <div className="tab-pane active" id="home" role="tabpanel">
                         <p className=" d-flex text-left">Due Date: {dueDate}</p>
-                        <p className=" d-flex text-left">Assgined To: {assignedTo}</p>
+                        <p className=" d-flex text-left">Type: {assignedTo}</p>
                         <p className=" d-flex text-left">Description: {description}</p>
                     </div>
                     <div className="Button">

@@ -31,3 +31,9 @@ describe('The app', function() {
 // describe("Test suit", function () {
     
 // }
+
+
+expect(
+    Array.isArray(allTasks),
+    'The `allTasks` prop passed to `<TasksList />` should be an array after adding a new event',
+  ).to.be.true;
