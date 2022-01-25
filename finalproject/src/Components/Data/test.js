@@ -1,12 +1,3 @@
-
-// var expect = require('chai').expect;
-// const add = require('../Data/Data');
-// describe('test', () => {
-//     it('should respond 200',function(){
-//         assert.throw(deleteItem(), Error, "Error thrown");
-//     });
-// });
-
 var assert = chai.assert,
     expect = require('../Data/Data');
 describe('The app', function() {
@@ -17,6 +8,15 @@ describe('The app', function() {
     });
 });
 
+// var expect = require('chai').expect;
+// const add = require('../Data/Data');
+// describe('test', () => {
+//     it('should respond 200',function(){
+//         assert.throw(deleteItem(), Error, "Error thrown");
+//     });
+// });
+
+
 
 // var expect = require('chai').expect;
 // import ('../Data/Data');
@@ -25,3 +25,9 @@ describe('The app', function() {
 //     expect(handleStatus).to.be.equal(setColor("red"));
 //   });
 // });
+
+// import test from '../Data/Data';
+
+// describe("Test suit", function () {
+    
+// }

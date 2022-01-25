@@ -1,12 +1,11 @@
-
-
-
-
-
-
-
-
-
+var assert = require('assert');
+describe('Array', function() {
+  describe('#indexOf()', function() {
+    it('should return -1 when the value is not present', function() {
+      assert.equal([1, 2, 3].indexOf(4), -1);
+    });
+  });
+});
 
 // const Todos = require('../src/Components/Data/Data');
 // const assert = require('assert').strict;
@@ -18,11 +17,6 @@
 //         assert.notStrictEqual(todos.list().length, 1);
 //     });
 // });
-
-
-
-
-
 
 // const assert = require("assert");
 // const {
@@ -80,12 +74,3 @@
 //   })
 // });
 
-
-var assert = require('assert');
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal([1, 2, 3].indexOf(4), -1);
-    });
-  });
-});

@@ -16,7 +16,7 @@
 
 .outerShape {
     border-radius: 10px 10px 0 0;
-    background-color: #ffffffd2;
+    background-color: #ffffff;
 }
 
 .buttonShape {
@@ -30,17 +30,31 @@
     color: rgb(83, 83, 83);
 }
 
-.button1{
+.button1 {
     background-color: #6cc6cd;
 }
 
-.button2{
-    background: #6cc6cd;
-    background: -webkit-linear-gradient(to right, #6cc6cd, #eae5c9);
-    background: linear-gradient(to right, #6cc6cd, #eae5c9);
+.button1:hover {
+    border-color: rgb(83, 83, 83);
+    background-color: #ffffff;
 }
 
-.button3{
+.button2 { 
+    background: -webkit-linear-gradient(to right, #6cc6cd, #eae5c9);
+    background: linear-gradient(to right, #6cc6cd, #eae5c9); 
+}
+
+.button2:hover{
+    border-color: rgb(83, 83, 83);
+    background-color: #ffffff;
+}
+
+.button3 {
     background-color: #eae5c9;
+}
+
+.button3:hover{
+    background-color: #ffffff;
+    border-color: rgb(83, 83, 83);
 }
 
