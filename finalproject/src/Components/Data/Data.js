@@ -20,9 +20,11 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
 
     function deleteItem() {  //the button of delete task  function 
         submittingStatue.current = true;
-        deleteTask(function(prev) {
-            return prev.filter(item => item.id !== id)
-        })
+        if(status === "DONE"){
+            deleteTask(function(prev) {
+                return prev.filter(item => item.id !== id)
+            })
+        }
     }
     
     

@@ -3,34 +3,6 @@
     {
       "data": [
         {
-          "id": "354b4f99-0a41-428a-96e7-64d3cc19aaf2",
-          "name": "d",
-          "description": "d",
-          "assignedTo": "d",
-          "dueDate": "2022-02-04"
-        },
-        {
-          "id": "ab24a322-d9eb-42c8-9dd3-a42aff4c9ddf",
-          "name": "huhsdf",
-          "description": "fff",
-          "assignedTo": "ffff",
-          "dueDate": "2022-02-03"
-        },
-        {
-          "id": "346fddb4-f834-46d0-b471-2ded1abebbcb",
-          "name": "s",
-          "description": "s",
-          "assignedTo": "s",
-          "dueDate": "2022-01-28"
-        },
-        {
-          "id": "19583226-f5ce-41b4-8a66-0df158c33d6d",
-          "name": "x",
-          "description": "x",
-          "assignedTo": "x",
-          "dueDate": "2022-01-22"
-        },
-        {
           "id": "d1b6c4ac-0c16-487f-a039-bc56412a84f3",
           "name": "Gabriel",
           "description": "A number of countries have supplied weapons to Ukraine, including the US and UK. But Germany has refused Ukraine's request for ammunition.",
