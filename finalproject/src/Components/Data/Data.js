@@ -3,7 +3,7 @@ import { confirm } from "react-confirm-box";
 import './Data.css';
 
 
-const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue}) =>{
+const Data = ({id, name, description, assignedTo, dueDate, isDisplay, deleteTask, submittingStatue}) =>{
     const [status, setStatus] = useState("TODO");
     const [color, setColor] = useState("#eae5c9");
     // const [res, setRes] = useState(null);
@@ -50,7 +50,7 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
     
     //the date format
     return(
-        <div className="card row midShape nopadding place dateShape">
+        <div className="card row midShape nopadding place dateShape" style={{display: isDisplay}}>
             <div className="card-header text-center" id="myList" role="tablist" >Task Name: {name} </div>
                 <div className="d-flex justify-content-around">
                 {/* <p className="list-group-item list-group-item-action d-flex justify-content-center" data-toggle="list" href="#home" role="tab">Task Name: {name}</p>   */}

@@ -5,7 +5,7 @@ const Task = ({ CardData, deleteTask, submittingStatue }) => { //create the new 
     return(
         <div>
             {CardData.map((task) => {
-                const { name, description, assignedTo, dueDate, id} = task;
+                const { name, description, assignedTo, dueDate, id, isDisplay} = task;
                 return(
                     <Data 
                         key={id}
@@ -14,6 +14,7 @@ const Task = ({ CardData, deleteTask, submittingStatue }) => { //create the new 
                         description={description}
                         assignedTo={assignedTo}
                         dueDate={dueDate}
+                        isDisplay={isDisplay}
                         deleteTask={deleteTask}
                         submittingStatue={submittingStatue}
                     />
