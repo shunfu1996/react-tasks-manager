@@ -26,6 +26,7 @@ async function fetchSetData(data) {
 
 const App = () =>{
   const [data, setData] = useState([]);
+  const [isDisplay, setIsDisplay] = useState("none");
   const submittingStatue = useRef(false);
 
   useEffect(()=>{
@@ -42,9 +43,9 @@ const App = () =>{
 
   return (
     <div className="App">
-      <Header /> 
+      <Header CardData={data} display={setIsDisplay} /> 
       <Task CardData={data} deleteTask={setData} submittingStatue={submittingStatue} /> {/* passing the input value of the new task to the child */}
-      <Card add={setData} submittingStatue={submittingStatue}  /* newTaskName={this.newTaskName} name={this.state.name} */ />
+      <Card add={setData} isDisplay={isDisplay} submittingStatue={submittingStatue}  /* newTaskName={this.newTaskName} name={this.state.name} */ />
       <Footer />
     </div>
   );
