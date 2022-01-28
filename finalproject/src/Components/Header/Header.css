@@ -19,10 +19,11 @@
     background-color: #ffffff;
 }
 
-.buttonShape {
+/* button of the SORT and ALL */
+/* .buttonShape {
     border-radius:10% 10%;
 
-}
+} */
 
 .title {
     font-family: 'Bebas Neue', cursive;
@@ -58,3 +59,28 @@
     border-color: rgb(83, 83, 83);
 }
 
+@media only screen and (max-width: 600px) {
+    .placeTop {
+        margin: 100px 70px 0px 70px !important;
+    }
+
+    /* .card-body {
+        padding: 0;
+    } */
+    
+    .title {
+        padding: 0;
+        font-size: xx-large;
+        font-family:  'Bebas Neue', cursive;
+    }
+
+    /* image on card-body */
+    #Check {
+        width: 90px;
+    }
+
+    .button1, .button2, .button3 {
+        padding: 0 5px;
+        margin: 0 2px;
+    }
+}

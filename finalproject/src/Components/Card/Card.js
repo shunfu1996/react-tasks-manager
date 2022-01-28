@@ -24,6 +24,7 @@ const Card = ({ add, submittingStatue }) => {
         setDueDate(e.target.value)
     }
     
+    
     function addItem(e) {
         const errorMessage = document.querySelector('#error');
         e.preventDefault(); // to prevent the web F5
