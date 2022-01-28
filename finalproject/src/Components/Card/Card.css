@@ -30,3 +30,8 @@
     background: linear-gradient(to right, #6cc6cd, #eae5c9);
 }
 
+@media only screen and (max-width: 600px) {
+    .cardShape{
+        margin: 0px 70px 70px 70px;
+    }
+}

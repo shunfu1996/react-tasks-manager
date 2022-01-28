@@ -15,9 +15,9 @@
     /* background-color: gray !important; */
 }
 
-@media screen and (max-width: 400px) {
-    #add {
-        right: 10px;
+@media screen and (max-width: 600px) {
+    .placeButtom {
+        display: contents;
     }
 }
 
