@@ -5,7 +5,7 @@ import { v4 } from 'uuid';
 // import './test';
 
 //create a new card
-const Card = ({ add, submittingStatue, isDisplay }) => {
+const Card = ({ add, submittingStatue }) => {
     // change the input value
     const [name, setName] = useState("")  
     function nameChange(e) {
@@ -51,7 +51,6 @@ const Card = ({ add, submittingStatue, isDisplay }) => {
                         description,
                         assignedTo,
                         dueDate,
-                        isDisplay,
                     },
                     ...prevData,
                 ];
