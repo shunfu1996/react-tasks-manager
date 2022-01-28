@@ -1,30 +1,54 @@
-import React from 'react';
+/* import { useEffect } from 'react';
+import { API_GET_DATA } from '../Server/API'; */
+// import { useState } from 'react';
 import './Header.css';
+import { useState } from 'react';
 
 
 
-const Header = ({CardData, display}) => {
-
+const Header = ({filterTask, CardData}) => {
+    // const [isDisplay, setIsDisplay] = useState("block");
     var today = new Date();
 
-    var date = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+today.getDate();
+    var nowDate = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+today.getDate();
 
-    const test = () =>{
-        // console.log(CardData)
-        
-        CardData.map((task) => {
-            let { dueDate, isDisplay} = task;
-        // console.log(task)
-        // console.log(`now:${date}`)
-        // console.log(`task:${dueDate}`)
-        // console.log(dueDate === date)
-        if(date === dueDate){
-            display("none")
-            isDisplay = "none"
-            console.log(isDisplay)
-            console.log(CardData)
+  /*   async function fetchData(filterTask) {/// get data from the db server
+        const result = await fetch(API_GET_DATA); 
+        const {data} = await result.json();
+        filterTask(data);
+    }
+    useEffect(()=>{
+        fetchData(filterTask); /// using data of the db server--(fetchData) set to the data--(setData)
+    },[]) */
+    const [Task, setFilterTask] = useState()
+
+    function filterYesterday(task){
+        if(nowDate > task.dueDate){
+          return true
         }
-        });
+    }
+    function filterToday(task){
+        if(nowDate === task.dueDate){
+          return true
+        }
+    }
+    function filterTomorrow(task){
+        if(nowDate < task.dueDate){
+          return true
+        }
+    }
+
+    const handleYesterday = () =>{
+        alert(CardData)
+        filterTask(CardData.filter(filterYesterday))
+    }
+    const handleToday = () =>{
+        alert(CardData)
+        filterTask(CardData.filter(filterToday))
+    }
+    const handleTomorrow = () =>{
+        alert(CardData)
+        filterTask(CardData.filter(filterTomorrow))
     }
 
     return (
@@ -44,13 +68,13 @@ const Header = ({CardData, display}) => {
             </div>
             <div className="row m-3">
                 <div className="col-4 d-grid gap-2; ">
-                    <button type="button" className="button1 btn" onClick={test} >Yesterday</button>
+                    <button type="button" className="button1 btn" onClick={handleYesterday}>Yesterday</button>
                 </div>
                 <div className="col-4 d-grid gap-2">
-                    <button type="button" className="button2 btn">Today</button>
+                    <button type="button" className="button2 btn"  onClick={handleToday} >Today</button>
                 </div>
                 <div className="col-4 d-grid gap-2">
-                    <button type="button" className="button3 btn">Tomorrow</button>
+                    <button type="button" className="button3 btn" onClick={handleTomorrow}>Tomorrow</button>
                 </div>
             </div>
         </div>

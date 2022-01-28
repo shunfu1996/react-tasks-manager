@@ -7,26 +7,30 @@ import Footer from '../Footer/Footer';
 import Task from '../Task/Task';
 import './App.css';
 
-async function fetchData(setData) {
-  const result = await fetch(API_GET_DATA);
-  const {data} = await result.json();
-  setData(data);
-}
-
-async function fetchSetData(data) {
-  console.log(data);
-   await fetch(API_GET_DATA, {
-    method: "PUT",
-    headers: {
-      'Content-type': 'application/json'
-    },
-    body: JSON.stringify({ data })
-  });
-}
 
 const App = () =>{
+
+  async function fetchData(setData) {/// get data from the db server
+    const result = await fetch(API_GET_DATA); 
+    const {data} = await result.json();
+    setData(data);
+  }
+  
+  async function fetchSetData(data) {//// save data to the db server
+    console.log(data);
+     await fetch(API_GET_DATA, {
+      method: "PUT",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ data })
+    });
+  }
+
+  ///
+
   const [data, setData] = useState([]);
-  const [isDisplay, setIsDisplay] = useState("none");
+  /* const [isDisplay, setIsDisplay] = useState("block"); */
   const submittingStatue = useRef(false);
 
   useEffect(()=>{
@@ -38,14 +42,14 @@ const App = () =>{
   }, [data])
 
   useEffect(()=>{
-    fetchData(setData);
+    fetchData(setData); /// using data of the db server--(fetchData) set to the data--(setData)
   },[])
 
   return (
     <div className="App">
-      <Header CardData={data} display={setIsDisplay} /> 
+      <Header CardData={data} filterTask={setData}/> 
       <Task CardData={data} deleteTask={setData} submittingStatue={submittingStatue} /> {/* passing the input value of the new task to the child */}
-      <Card add={setData} isDisplay={isDisplay} submittingStatue={submittingStatue}  /* newTaskName={this.newTaskName} name={this.state.name} */ />
+      <Card add={setData} submittingStatue={submittingStatue}  /* newTaskName={this.newTaskName} name={this.state.name} */ />
       <Footer />
     </div>
   );
