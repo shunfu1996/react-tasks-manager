@@ -2,11 +2,11 @@
 import { API_GET_DATA } from '../Server/API'; */
 // import { useState } from 'react';
 import './Header.css';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
 
-const Header = ({filterTask, CardData}) => {
+const Header = ({ CardData, setTest, test}) => {
     // const [isDisplay, setIsDisplay] = useState("block");
     var today = new Date();
 
@@ -20,7 +20,7 @@ const Header = ({filterTask, CardData}) => {
     useEffect(()=>{
         fetchData(filterTask); /// using data of the db server--(fetchData) set to the data--(setData)
     },[]) */
-    const [Task, setFilterTask] = useState()
+    
 
     function filterYesterday(task){
         if(nowDate > task.dueDate){
@@ -39,16 +39,21 @@ const Header = ({filterTask, CardData}) => {
     }
 
     const handleYesterday = () =>{
-        alert(CardData)
-        filterTask(CardData.filter(filterYesterday))
+        console.log(CardData)
+        console.log(test)
+        setTest(CardData.filter(filterYesterday))
     }
     const handleToday = () =>{
-        alert(CardData)
-        filterTask(CardData.filter(filterToday))
+        console.log(CardData)
+        setTest(CardData.filter(filterToday))
     }
     const handleTomorrow = () =>{
-        alert(CardData)
-        filterTask(CardData.filter(filterTomorrow))
+        console.log(CardData)
+        setTest(CardData.filter(filterTomorrow))
+    }
+    const handleAll = () =>{
+        setTest(CardData)
+        console.log(CardData)
     }
 
     return (
@@ -67,14 +72,17 @@ const Header = ({filterTask, CardData}) => {
                 </div> */}
             </div>
             <div className="row m-3">
-                <div className="col-4 d-grid gap-2; ">
+                <div className="col-3 d-grid gap-2; ">
                     <button type="button" className="button1 btn" onClick={handleYesterday}>Yesterday</button>
                 </div>
-                <div className="col-4 d-grid gap-2">
+                <div className="col-3 d-grid gap-2">
                     <button type="button" className="button2 btn"  onClick={handleToday} >Today</button>
                 </div>
-                <div className="col-4 d-grid gap-2">
+                <div className="col-3 d-grid gap-2">
                     <button type="button" className="button3 btn" onClick={handleTomorrow}>Tomorrow</button>
+                </div>
+                <div className="col-3 d-grid gap-2">
+                    <button type="button" className="button3 btn" onClick={handleAll}>ALL</button>
                 </div>
             </div>
         </div>
