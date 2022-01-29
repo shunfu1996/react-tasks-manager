@@ -30,7 +30,7 @@ const App = () =>{
   ///
 
   const [data, setData] = useState([]);
-  const [test, setTest] = useState(data);
+  const [filterTask, setFilterTask] = useState(data);
 
   /* const [isDisplay, setIsDisplay] = useState("block"); */
   const submittingStatue = useRef(false);
@@ -49,8 +49,8 @@ const App = () =>{
 
   return (
     <div className="App">
-      <Header CardData={data} test={test} setTest={setTest} /> 
-      <Task CardData={test} deleteTask={setData} submittingStatue={submittingStatue} /> {/* passing the input value of the new task to the child */}
+      <Header CardData={data} filterTask={filterTask} setFilterTask={setFilterTask} /> 
+      <Task CardData={filterTask} deleteTask={setData} submittingStatue={submittingStatue} /> {/* passing the input value of the new task to the child */}
       <Card add={setData} submittingStatue={submittingStatue}  /* newTaskName={this.newTaskName} name={this.state.name} */ />
       <Footer />
     </div>
