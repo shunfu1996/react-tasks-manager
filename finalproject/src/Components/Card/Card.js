@@ -68,6 +68,12 @@ const Card = ({ add, submittingStatue }) => {
         return data !== null && data !== ''; // the input cannot empty 
     }
 
+    // function changeColor(id) {
+    //     let cardRed = document.getElementById("red");
+        
+
+    // }
+
     return(
         <div className="cardShape" id="card">
             <div className="row">
@@ -86,13 +92,19 @@ const Card = ({ add, submittingStatue }) => {
                         <div className="row">
                             
                             <div className="form-group col mb-3">
-                                <label htmlFor="newTaskAssigned">Assigned To</label>
+                                <label htmlFor="newTaskAssigned">Type Of</label>
                                 <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={assignedTo} onChange={assignedToChange} />
                             </div>
                             <div className="form-group col mb-3">
                                 <label htmlFor="newTaskDueDate">Due Date</label>
                                 <input type="date" className="form-control" id="newTaskDueDate" value={dueDate} onChange={dueDateChange} />
                             </div>
+                            <ul class="changeColor">
+                                <a id="red"></a>
+                                <a id="blur"></a>
+                                <a id="green"></a>
+                                <a id="yellow"></a>
+                            </ul>
                         </div>
                         <div id="error" className="alert alert-danger warning" role="alert">
                         A simple warning alert—check it out!

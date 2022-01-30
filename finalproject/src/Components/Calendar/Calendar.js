@@ -28,15 +28,18 @@ const ACalendar = ({dateState, setDateState, CardData, filterTask, setFilterTask
     }
   
     return (
-      <>
       <div style={isScheduler?{display: "block"}:{display: "none"}}>
         <Calendar 
         value={dateState}
         onChange={changeDate}
+        // Change the language tag
+        locale={"en-EN"} 
+        // returnValue={"end"}
+        // formatMonth={"date, MMM"}
+        // isMultiSelection={true}
         />
         <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
       </div>
-      </>
     )
 }
 
