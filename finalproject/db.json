@@ -3,27 +3,25 @@
     {
       "data": [
         {
-          "id": "b6da6fbc-00c4-41e8-bc71-292fb7b7f2de",
-          "name": "today",
-          "description": "today",
-          "assignedTo": "today",
-          "dueDate": "2022-01-28"
+          "id": "a72806f5-d452-42be-86aa-068ba2f76360",
+          "name": "Henry",
+          "description": "Presentation of our \"To Do List\"",
+          "assignedTo": "School",
+          "dueDate": "2022-01-31"
         },
         {
-          "id": "6c914a11-8aa0-49ba-8893-bf958dd68c96",
-          "name": "d",
-          "description": "d",
-          "assignedTo": "d",
-          "dueDate": "2022-02-04",
-          "isDisplay": "none"
+          "id": "8684b091-6c48-408a-ae43-c0cec2e3613c",
+          "name": "Brian",
+          "description": "Presentation",
+          "assignedTo": "School",
+          "dueDate": "2022-01-31"
         },
         {
-          "id": "32524ab6-edf0-4a15-ad5c-98e81c10880e",
-          "name": "Tho",
-          "description": "dd",
-          "assignedTo": "ddd",
-          "dueDate": "2022-01-29",
-          "isDisplay": "none"
+          "id": "499e335b-7f9f-4ab6-bde8-41f24a79ba62",
+          "name": "Brian",
+          "description": "Meeting with classmate",
+          "assignedTo": "School",
+          "dueDate": "2022-02-01"
         },
         {
           "id": "6b0e09f0-d8d0-46f4-9882-e5d1316cdea7",
@@ -31,14 +29,6 @@
           "description": "Project Deadline is Feb 10",
           "assignedTo": "School",
           "dueDate": "2022-02-10",
-          "isDisplay": "none"
-        },
-        {
-          "id": "fa9bd3df-cadc-4689-80d1-0b4b2a40f5e7",
-          "name": "Gabriel",
-          "description": "I have a interview at 15:00",
-          "assignedTo": "School",
-          "dueDate": "2022-01-27",
           "isDisplay": "none"
         },
         {

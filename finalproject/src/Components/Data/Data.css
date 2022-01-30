@@ -56,6 +56,11 @@ button {
     margin: 0 10px 0 0 ;
 }
 
+.edit {
+    background-color: #6cc6cd;
+    color: #ffffff;
+}
+
 .confirm-box__content {
     display: flex;
     font-size: medium;
