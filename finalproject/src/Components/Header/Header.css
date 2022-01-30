@@ -1,11 +1,12 @@
 
 .placeTop {
-    margin: 100px 200px 0px 200px !important;
+    margin: 100px 200px 10px 200px !important;
 }
 
-.topic {
-    letter-spacing: 10px
-}
+/* .topic {
+    letter-spacing: 10px;
+    padding: 0;
+} */
 
 .inline {
     align-items: baseline;
@@ -23,7 +24,6 @@
 /* button of the SORT and ALL */
 /* .buttonShape {
     border-radius:10% 10%;
-
 } */
 
 .title {
@@ -59,6 +59,23 @@
     background-color: #ffffff;
     border-color: rgb(83, 83, 83);
 }
+
+.list {
+    /* margin-right: 100px;
+    display:contents; */
+    float: left; 
+    padding: 6px 50px;
+    margin-left: 15px;
+    margin-top: 20px;
+    background-color: #6cc6cd;
+    color: rgb(83, 83, 83);
+    /* border: none; */
+}
+
+
+
+
+
 
 @media only screen and (max-width: 600px) {
     .placeTop {
