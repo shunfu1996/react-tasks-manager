@@ -26,7 +26,7 @@ const ACalendar = ({dateState, setDateState, CardData, filterTask, setFilterTask
           return true
         }
     }
-
+  
     return (
       <>
       <div style={isScheduler?{display: "block"}:{display: "none"}}>
