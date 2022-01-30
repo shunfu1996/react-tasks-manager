@@ -37,7 +37,6 @@ const Header = ({ CardData, setFilterTask, filterTask}) => {
 
     const handleYesterday = () =>{
         console.log(CardData)
-        console.log(test)
         setFilterTask(CardData.filter(filterYesterday))
     }
     const handleToday = () =>{

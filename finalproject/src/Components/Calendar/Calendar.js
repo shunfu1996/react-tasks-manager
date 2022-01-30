@@ -1,28 +1,25 @@
-import React, {useState} from 'react'
+// import React, {useState} from 'react'
 import Calendar from 'react-calendar'
 import './Calendar.css';
 import moment from 'moment'
 
 
-const ACalendar = ({dateState, setDateState, CardData, filterTask, setFilterTask, isScheduler}) => {
+const ACalendar = ({dateState, setDateState, CardData, setFilterTask, isScheduler}) => {
     const changeDate = (e) => {
         handleToday()
       setDateState(e)
     }
     const handleToday = () =>{
         console.log(`YY ${dateState}`)
-        let selectDay = dateState
-        let isSelectDay = selectDay.getFullYear()+'-'+("0" + (selectDay.getMonth() + 1)).slice(-2)+'-'+selectDay.getDate();
-        setFilterTask(CardData.filter((task) => {
-            if(isSelectDay == task.dueDate){
-                return true
-              }
-        }))
-    }
-    
+        setFilterTask(CardData.filter(filterToday)
+        )
+      }
+      
     function filterToday(task){
+      let selectDay = dateState
+      let isSelectDay = selectDay.getFullYear()+'-'+("0" + (selectDay.getMonth() + 1)).slice(-2)+'-'+selectDay.getDate();
         console.log(task.dueDate)
-        if(dateState == task.dueDate){
+        if(isSelectDay === task.dueDate){
           return true
         }
     }

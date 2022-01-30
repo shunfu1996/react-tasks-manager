@@ -3,7 +3,7 @@ import { confirm } from "react-confirm-box";
 import './Data.css';
 
 // const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue, edit, updateTodo}) =>{
-const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue}) => {
+const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue, setFilterTask, CardData}) => {
     const [status, setStatus] = useState("TODO");
     const [color, setColor] = useState("#eae5c9");
     // const [res, setRes] = useState(null);
@@ -52,12 +52,18 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
             deleteTask(function(prev) {
                 return prev.filter(item => item.id !== id)
             })
+            setFilterTask(function(prev) {
+                return prev.filter(item => item.id !== id)
+            });
         } else {
             const result = await confirm("Are you sure to delete?");
             if (result) {
             deleteTask(function(prev) {
-                return prev.filter(item => item.id !== id)
+                return prev.filter(item => item.id !== id)      
             })
+            setFilterTask(function(prev) {
+                return prev.filter(item => item.id !== id)
+            });
             }
             console.log("You click No!");
         }

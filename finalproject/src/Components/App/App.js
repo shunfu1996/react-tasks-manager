@@ -49,7 +49,7 @@ const App = () =>{
   return (
     <div className="App" > 
       <Header CardData={data} filterTask={filterTask} setFilterTask={setFilterTask} /> 
-      <Task CardData={filterTask} deleteTask={setData} submittingStatue={submittingStatue} /> {/* passing the input value of the new task to the child */}
+      <Task CardData={filterTask} deleteTask={setData} submittingStatue={submittingStatue} setFilterTask={setFilterTask} /> {/* passing the input value of the new task to the child */}
       <Card add={setData} submittingStatue={submittingStatue}  /* newTaskName={this.newTaskName} name={this.state.name} */ />
       <Footer />
     </div>

@@ -99,7 +99,7 @@ const Card = ({ add, submittingStatue }) => {
                                 <label htmlFor="newTaskDueDate">Due Date</label>
                                 <input type="date" className="form-control" id="newTaskDueDate" value={dueDate} onChange={dueDateChange} />
                             </div>
-                            <ul class="changeColor">
+                            <ul className="changeColor">
                                 <a id="red"></a>
                                 <a id="blur"></a>
                                 <a id="green"></a>

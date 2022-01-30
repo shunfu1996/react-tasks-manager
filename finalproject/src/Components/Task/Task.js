@@ -1,7 +1,7 @@
 /* import  */
 import Data from "../Data/Data"
 
-const Task = ({ CardData, deleteTask, submittingStatue }) => { //create the new task by using the input value
+const Task = ({ CardData, deleteTask, submittingStatue, setFilterTask }) => { //create the new task by using the input value
     return(
         <div>
             {CardData.map((task) => {
@@ -9,6 +9,7 @@ const Task = ({ CardData, deleteTask, submittingStatue }) => { //create the new 
                 const { name, description, assignedTo, dueDate, id} = task;
                 return(
                     <Data 
+                        CardData={CardData}
                         key={id}
                         id={id}
                         name={name}
@@ -18,6 +19,7 @@ const Task = ({ CardData, deleteTask, submittingStatue }) => { //create the new 
                         // edit={edit}
                         deleteTask={deleteTask}
                         submittingStatue={submittingStatue}
+                        setFilterTask={setFilterTask}
                     />
                 );
             })}
