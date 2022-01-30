@@ -2,25 +2,21 @@
 import { API_GET_DATA } from '../Server/API'; */
 // import { useState } from 'react';
 import './Header.css';
-// import { useState } from 'react';
+import Calendar from  '../Calendar/Calendar'
+import React, {useState} from 'react'
 
 
-
-const Header = ({ CardData, setTest, test}) => {
-    // const [isDisplay, setIsDisplay] = useState("block");
+const Header = ({ CardData, setFilterTask, filterTask}) => {
+    const [dateState, setDateState] = useState(new Date());
+    const [isScheduler, setTest] = useState(false)
     var today = new Date();
 
     var nowDate = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+today.getDate();
-
-  /*   async function fetchData(filterTask) {/// get data from the db server
-        const result = await fetch(API_GET_DATA); 
-        const {data} = await result.json();
-        filterTask(data);
+ 
+    const handleIsScheduler = () =>{
+        setTest(!isScheduler)
+        setFilterTask([])
     }
-    useEffect(()=>{
-        fetchData(filterTask); /// using data of the db server--(fetchData) set to the data--(setData)
-    },[]) */
-    
 
     function filterYesterday(task){
         if(nowDate > task.dueDate){
@@ -41,18 +37,18 @@ const Header = ({ CardData, setTest, test}) => {
     const handleYesterday = () =>{
         console.log(CardData)
         console.log(test)
-        setTest(CardData.filter(filterYesterday))
+        setFilterTask(CardData.filter(filterYesterday))
     }
     const handleToday = () =>{
         console.log(CardData)
-        setTest(CardData.filter(filterToday))
+        setFilterTask(CardData.filter(filterToday))
     }
     const handleTomorrow = () =>{
         console.log(CardData)
-        setTest(CardData.filter(filterTomorrow))
+        setFilterTask(CardData.filter(filterTomorrow))
     }
     const handleAll = () =>{
-        setTest(CardData)
+        setFilterTask(CardData)
         console.log(CardData)
     }
 
@@ -63,6 +59,7 @@ const Header = ({ CardData, setTest, test}) => {
                     <button type="button" className="btn btn-primary buttonShape">SORT</button>
                 </div> */}
                 <div className="text-center">
+                    <button onClick={handleIsScheduler}>{isScheduler?"list":"Scheduler"}</button>
                     <img src="https://img.icons8.com/clouds/100/000000/todo-list.png" id="Check" alt="Check" width="120"/>
                     {/* <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" alt="Check" width="60" /> */}
                     <p className="title text-center text-uppercase fw-bold topic">To Do List</p>
@@ -71,10 +68,22 @@ const Header = ({ CardData, setTest, test}) => {
                     <button  type="button" className="btn btn-primary buttonShape">ALL</button>
                 </div> */}
             </div>
-            <div className="row m-3">
-                <div className="col-3 d-grid gap-2; ">
-                    <button type="button" className="button1 btn" onClick={handleYesterday}>Yesterday</button>
+            <div style={isScheduler?{display: "none"}:{display: "block"}}>
+                <div className="row m-3" >
+                    <div className="col-3 d-grid gap-2; ">
+                        <button type="button" className="button1 btn" onClick={handleYesterday}>Yesterday</button>
+                    </div>
+                    <div className="col-3 d-grid gap-2">
+                        <button type="button" className="button2 btn"  onClick={handleToday} >Today</button>
+                    </div>
+                    <div className="col-3 d-grid gap-2">
+                        <button type="button" className="button3 btn" onClick={handleTomorrow}>Tomorrow</button>
+                    </div>
+                    <div className="col-3 d-grid gap-2">
+                        <button type="button" className="button3 btn" onClick={handleAll}>ALL</button>
+                    </div>
                 </div>
+<<<<<<< HEAD
                 <div className="col-3 d-grid gap-2">
                     <button type="button" className="button2 btn"  onClick={handleToday}>Today</button>
                 </div>
@@ -85,6 +94,10 @@ const Header = ({ CardData, setTest, test}) => {
                     <button type="button" className="button3 btn" onClick={handleAll}>ALL</button>
                 </div>
             </div>
+=======
+            </div>    
+            <Calendar isScheduler={isScheduler} dateState={dateState} setDateState={setDateState} CardData={CardData} filterTask={filterTask} setFilterTask={setFilterTask}/>
+>>>>>>> 4a318d9b02cd01c82657b8ba35e84b38260ce528
         </div>
     )
 }
