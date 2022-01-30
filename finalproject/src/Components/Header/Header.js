@@ -76,7 +76,7 @@ const Header = ({ CardData, setTest, test}) => {
                     <button type="button" className="button1 btn" onClick={handleYesterday}>Yesterday</button>
                 </div>
                 <div className="col-3 d-grid gap-2">
-                    <button type="button" className="button2 btn"  onClick={handleToday} >Today</button>
+                    <button type="button" className="button2 btn"  onClick={handleToday}>Today</button>
                 </div>
                 <div className="col-3 d-grid gap-2">
                     <button type="button" className="button3 btn" onClick={handleTomorrow}>Tomorrow</button>

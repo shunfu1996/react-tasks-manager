@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import { confirm } from "react-confirm-box";
 import './Data.css';
 
-
-const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue}) =>{
+// const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue, edit, updateTodo}) =>{
+const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue}) => {
     const [status, setStatus] = useState("TODO");
     const [color, setColor] = useState("#eae5c9");
     // const [res, setRes] = useState(null);
@@ -17,7 +17,27 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
         setStatus("TODO");
         setColor("#eae5c9");
         }
+    // function editing(){
+
+    //     const [edit, setEdit] = useState ({
+    //         id: null,
+    //         value: ''
+    //     });
     }
+
+    // const submitUpdate = value => {
+    //     updateTodo(id, name, description, assignedTo, dueDate, value);
+    //     setEdit({
+    //         prevData
+    //     });
+    //   };
+    
+    //   if (edit.id) {
+    //     return <Task edit={edit} onSubmit={submitUpdate} />;
+    //   }
+    
+
+    // }
     
 
     async function deleteItem() {  //the button of delete task  function 
@@ -27,7 +47,7 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
                 return prev.filter(item => item.id !== id)
             })
         } else {
-            const result = await confirm("Are you sure?");
+            const result = await r("Are you sure to delete?");
             if (result) {
             deleteTask(function(prev) {
                 return prev.filter(item => item.id !== id)
@@ -64,11 +84,12 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
                         <p className=" d-flex text-left">Description: {description}</p>
                     </div>
                     <div className="Button">
+                    {/* <button className="btn" onClick={edit}>Edit</button> */}
                     <button className="toDo btn text-white" onClick={handleStatus} style={{backgroundColor: color}}>{status}</button>
-                    <button className="btn btn btn-outline-secondary" type="button" onClick={deleteItem}>Delete</button>
+                    <button className="btn btn btn-outline-secondary" type="button" onClick={() => deleteItem()}>Delete</button>
                     </div>
                 </div>                    
-                </div>                    
+            </div>                    
         </div>
     )   
 }
