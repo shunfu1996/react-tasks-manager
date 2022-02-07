@@ -31,7 +31,7 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
     // editing 係名, setEditing 係function, 起初值係false
     const [editing, setEditing] = useState(false); 
 
-      function submitEdits(id) { 
+      function submitEdits(id) {  // edit function map 左之前的 array
         submittingStatue.current = true;
         const updatedTodos = [...filterTask].map((todo) => {
           if (todo.id === id) {
@@ -48,8 +48,8 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
         console.log(editing);
       }
 
-      function clickEdit() {
-        setEditing(!editing)
+      function clickEdit() { 
+        setEditing(!editing) // click edit 時反轉
 
       }
     // const handleEdit = () =>{
