@@ -60,15 +60,15 @@ const Header = ({ CardData, setFilterTask, filterTask}) => {
                 </div> */}
                 <div className="text-center">
                 {/* <i class="bi bi-calendar-check"></i> */}
-                        <button className="button1 btn list" onClick={handleIsScheduler}>{isScheduler?"List":"Scheduler"}</button>
-                    </div>
+                    <button className="button1 btn list" onClick={handleIsScheduler}>{isScheduler?"List":"Scheduler"}</button>
+                </div>
                     <div className="text-center">
                         <img src="https://img.icons8.com/clouds/100/000000/todo-list.png" id="Check" alt="Check" width="120"/>
                     </div>
                     {/* <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" alt="Check" width="60" /> */}
                     <div>
                     <p className="title text-center text-uppercase fw-bold topic">To Do List</p>
-                </div>
+                    </div>
                     {/* <div className="text-center col-3 pt-5">
                     <button  type="button" className="btn btn-primary buttonShape">ALL</button>
                 </div> */}

@@ -1,12 +1,12 @@
-var assert = chai.assert,
-    expect = require('../Data/Data');
-describe('The app', function() {
-    describe('this feature', function() {
-        it("is a function", function(){
-            assert.throw(iThrowError(), Error, "Error thrown");
-        });
-    });
-});
+// var assert = chai.assert,
+//     expect = require('../Data/Data');
+// describe('The app', function() {
+//     describe('this feature', function() {
+//         it("is a function", function(){
+//             assert.throw(iThrowError(), Error, "Error thrown");
+//         });
+//     });
+// });
 
 // var expect = require('chai').expect;
 // const add = require('../Data/Data');

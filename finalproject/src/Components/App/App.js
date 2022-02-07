@@ -17,7 +17,7 @@ const App = () =>{
   }
   
   async function fetchSetData(data) {//// save data to the db server
-    console.log(data);
+    // console.log(data);
      await fetch(API_GET_DATA, {
       method: "PUT",
       headers: {
@@ -26,6 +26,8 @@ const App = () =>{
       body: JSON.stringify({ data })
     });
   }
+
+
 
   ///
   const [data, setData] = useState([]);
@@ -46,10 +48,53 @@ const App = () =>{
     fetchData(setData); /// using data of the db server--(fetchData) set to the data--(setData)
   },[])
 
+  // card edit
+  const submitEdit = (id, name, dueDate, assignedTo, description) => {
+    const taskToEdit = filterTask.findIndex(task => task.id === id);
+    // const taskToEdit2 = data.findIndex(task => task.id === id);
+
+    // filterTask[taskToEdit] = {
+    //   ...filterTask[taskToEdit],
+    //   name: name,
+    //   description: description,
+    //   assignedTo: assignedTo,
+    //   dueDate: dueDate
+
+    // }
+
+    let editedTask = filterTask[taskToEdit];
+
+    editedTask = {
+      ...editedTask, 
+      name: name,
+      dueDate: dueDate,
+      assignedTo: assignedTo,
+      description: description,
+
+    };
+
+    console.log(submitEdit);
+
+    let newTaskArray = filterTask.filter(task => task.id !== id)
+    // const newTaskArray = filterTask;
+
+    // console.log(newTaskArray)
+
+    // newTaskArray[taskToEdit] = editedTask; 
+
+    // console.log(newTaskArray)
+
+    newTaskArray = [editedTask, ...newTaskArray]
+
+    setFilterTask(newTaskArray)
+    // console.log(newTaskArray)
+
+  }
+
   return (
     <div className="App" > 
       <Header CardData={data} filterTask={filterTask} setFilterTask={setFilterTask} /> 
-      <Task CardData={filterTask} deleteTask={setData} submittingStatue={submittingStatue} setFilterTask={setFilterTask} /> {/* passing the input value of the new task to the child */}
+      <Task CardData={data} submitEdit={submitEdit} filterTask={filterTask} deleteTask={setData} submittingStatue={submittingStatue} setFilterTask={setFilterTask} /> {/* passing the input value of the new task to the child */}
       <Card add={setData} submittingStatue={submittingStatue}  /* newTaskName={this.newTaskName} name={this.state.name} */ />
       <Footer />
     </div>

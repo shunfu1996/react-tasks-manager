@@ -1,6 +1,6 @@
 
 .placeTop {
-    margin: 100px 200px 10px 200px !important;
+    margin: 100px 200px 5px 200px !important;
 }
 
 /* .topic {
@@ -34,6 +34,7 @@
 
 .button1 {
     background-color: #6cc6cd;
+    /* box-shadow: #eae5c9; */
 }
 
 .button1:hover {
