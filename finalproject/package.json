@@ -2,7 +2,7 @@
   "name": "finalproject",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gabriel888chow.github.io/react-tasks-manager/",
+  "homepage": "https://shunfu1996.github.io/react-tasks-manager/",
   "dependencies": {
     "@progress/kendo-date-math": "^1.5.4",
     "@progress/kendo-drawing": "^1.16.2",
