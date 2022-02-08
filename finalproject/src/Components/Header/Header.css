@@ -1,6 +1,6 @@
 
 .placeTop {
-    margin: 100px 200px 10px 200px !important;
+    margin: 100px 200px 5px 200px !important;
 }
 
 /* .topic {
@@ -34,31 +34,43 @@
 
 .button1 {
     background-color: #6cc6cd;
+    box-shadow: inset 0 0 0 0 #eae5c9;
+    transition: ease-out 0.7s;
+    outline: none;
+    /* box-shadow: #eae5c9; */
 }
 
 .button1:hover {
+    box-shadow: inset 300px 0 0 0 #eae5c9;
+    cursor: pointer;
     border-color: rgb(83, 83, 83);
     background-color: #ffffff;
 }
 
 .button2 { 
-    background: -webkit-linear-gradient(to right, #6cc6cd, #eae5c9);
-    background: linear-gradient(to right, #6cc6cd, #eae5c9); 
+    background-color: #eae5c9;
+    box-shadow: inset 0 0 0 0 #6cc6cd;
+    transition: ease-out 0.7s;
+    outline: none;
+    /* background: -webkit-linear-gradient(to right, #6cc6cd, #eae5c9);
+    background: linear-gradient(to right, #6cc6cd, #eae5c9);  */
 }
 
 .button2:hover{
+    box-shadow: inset 300px 0 0 0 #6cc6cd;
+    cursor: pointer;
     border-color: rgb(83, 83, 83);
     background-color: #ffffff;
 }
 
-.button3 {
+/* .button3 {
     background-color: #eae5c9;
 }
 
 .button3:hover{
     background-color: #ffffff;
     border-color: rgb(83, 83, 83);
-}
+} */
 
 .list {
     /* margin-right: 100px;
@@ -70,7 +82,16 @@
     background-color: #6cc6cd;
     color: rgb(83, 83, 83);
     /* border: none; */
+    /* width: 500px; */
 }
+
+.fa-customize {
+    font-size: 20px;
+}
+
+
+
+
 
 
 

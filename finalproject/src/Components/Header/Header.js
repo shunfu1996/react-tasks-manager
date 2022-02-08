@@ -60,15 +60,16 @@ const Header = ({ CardData, setFilterTask, filterTask}) => {
                 </div> */}
                 <div className="text-center">
                 {/* <i class="bi bi-calendar-check"></i> */}
-                        <button className="button1 btn list" onClick={handleIsScheduler}>{isScheduler?"List":"Scheduler"}</button>
-                    </div>
+                    {/* <button className="button1 btn list bi bi-calendar3" onClick={handleIsScheduler}>{isScheduler?(<button class="bi bi-card-checklist"></button>):(<button className="bi bi-calendar3"></button>)}</button> */}
+                    {isScheduler?(<button  onClick={handleIsScheduler} class="bi bi-list-check button1 btn list fa-customize"></button>):(<button  onClick={handleIsScheduler} className="bi bi-calendar3 button1 btn list fa-customize"></button>)}
+                </div>
                     <div className="text-center">
                         <img src="https://img.icons8.com/clouds/100/000000/todo-list.png" id="Check" alt="Check" width="120"/>
                     </div>
                     {/* <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" alt="Check" width="60" /> */}
                     <div>
                     <p className="title text-center text-uppercase fw-bold topic">To Do List</p>
-                </div>
+                    </div>
                     {/* <div className="text-center col-3 pt-5">
                     <button  type="button" className="btn btn-primary buttonShape">ALL</button>
                 </div> */}
@@ -79,13 +80,13 @@ const Header = ({ CardData, setFilterTask, filterTask}) => {
                         <button type="button" className="button1 btn" onClick={handleYesterday}>Past</button>
                     </div>
                     <div className="col-3 d-grid gap-2">
-                        <button type="button" className="button2 btn" onClick={handleToday}>Today</button>
+                        <button type="button" className="button1 btn" onClick={handleToday}>Today</button>
                     </div>
                     <div className="col-3 d-grid gap-2">
-                        <button type="button" className="button3 btn" onClick={handleTomorrow}>Future</button>
+                        <button type="button" className="button2 btn" onClick={handleTomorrow}>Future</button>
                     </div>
                     <div className="col-3 d-grid gap-2">
-                        <button type="button" className="button3 btn" onClick={handleAll}>All</button>
+                        <button type="button" className="button2 btn" onClick={handleAll}>All</button>
                     </div>
                 </div>
             </div>  

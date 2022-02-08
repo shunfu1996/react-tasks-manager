@@ -1,25 +1,26 @@
 /* import  */
 import Data from "../Data/Data"
 
-const Task = ({ CardData, deleteTask, submittingStatue, setFilterTask }) => { //create the new task by using the input value
+const Task = ({ filterTask, deleteTask, submittingStatue, setFilterTask, submitEdit}) => { //create the new task by using the input value
     return(
         <div>
-            {CardData.map((task) => {
+            { filterTask.map((task) => {
                 // const { name, description, assignedTo, dueDate, edit, id} = task;
-                const { name, description, assignedTo, dueDate, id} = task;
+                const { name, dueDate, assignedTo, description, id} = task;
                 return(
                     <Data 
-                        CardData={CardData}
                         key={id}
                         id={id}
                         name={name}
                         description={description}
                         assignedTo={assignedTo}
                         dueDate={dueDate}
-                        // edit={edit}
+                        // editTask={editTask}
                         deleteTask={deleteTask}
                         submittingStatue={submittingStatue}
                         setFilterTask={setFilterTask}
+                        filterTask={filterTask}
+                        submitEdit={submitEdit}
                     />
                 );
             })}

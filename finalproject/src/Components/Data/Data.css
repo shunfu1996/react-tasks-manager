@@ -21,8 +21,15 @@
 .card-header {
     font-weight: bold;
     font-size: 20px;
-    border-bottom-width: thin;
+    /* border-bottom-width: thin; */
+    border: none;
 }
+
+.card-header-edit {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 
 .card {
     border-radius: 25px;
@@ -45,11 +52,12 @@ p{
 #myList {
     padding: 15px;
     color: rgb(83, 83, 83);
+    justify-content: center;
 }
 
 .Button {
     text-align: right;
-    /* padding: 0px 2px 0 0 ; */
+    margin: 10px 0;
 }
 
 button {

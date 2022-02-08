@@ -15,7 +15,7 @@ const ACalendar = ({dateState, setDateState, CardData, setFilterTask, isSchedule
         )
       }
       
-    function filterToday(task){
+    function filterToday(task) {
       let selectDay = dateState
       let isSelectDay = selectDay.getFullYear()+'-'+("0" + (selectDay.getMonth() + 1)).slice(-2)+'-'+selectDay.getDate();
         console.log(task.dueDate)
