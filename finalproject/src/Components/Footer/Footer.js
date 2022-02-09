@@ -16,10 +16,11 @@ export default class Footer extends React.Component {
     }
     render() {
         return(
-            <footer className="placeButtom fixed-bottom ">
+            <footer className="placeButtom ">
+                {/* <footer className="placeButtom fixed-bottom "> */}
                 <div className="addBox py-2">
                     <div className="d-grid gap-2 d-md-flex justify-content-center">
-                        <button className="btn btn-outline-secondary me-md-2 circle material-icons" type="button" id="add" onClick={this.isDisplay}>+</button>
+                        <button className="btn btn-outline-secondary me-md-2 circle material-icons" id="add" type="button" onClick={this.isDisplay}>+</button>
                     </div>
                 </div>
             </footer>

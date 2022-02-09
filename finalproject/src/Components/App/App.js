@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, /* useEffect, */ useRef } from 'react';
 import useLocalStorage from "use-local-storage";
 import Header from '../Header/Header';
 import Card from '../Card/Card';
@@ -12,38 +12,37 @@ const App = () =>{
 
   const [data, setData] = useLocalStorage("data", []);
   const [filterTask, setFilterTask] = useState(data);
+  const [isFilter, setIsFilter] = useState(false);
 
   const submittingStatue = useRef(false);
 
   // card edit
   const submitEdit = (id, name, dueDate, type, description) => {
-    const taskToEdit = filterTask.findIndex(task => task.id === id);
+    // const taskToEdit = filterTask.findIndex(task => task.id === id);
 
-    let editedTask = filterTask[taskToEdit];
+    // let editedTask = filterTask[taskToEdit];
 
-    editedTask = {
+    /* editedTask = {
       ...editedTask, 
       name: name,
       dueDate: dueDate,
       type: type,
       description: description,
 
-    };
+    }; */
 
-    console.log(submitEdit);
-
-    let newTaskArray = filterTask.filter(task => task.id !== id)
+    /* let newTaskArray = filterTask.filter(task => task.id !== id)
     
     newTaskArray = [editedTask, ...newTaskArray]
 
-    setFilterTask(newTaskArray)
+    setFilterTask(newTaskArray) */
 
   }
 
   return (
     <div className="App" > 
-      <Header CardData={data} filterTask={filterTask} setFilterTask={setFilterTask} /> 
-      <Task CardData={data} submitEdit={submitEdit} filterTask={filterTask} deleteTask={setData} submittingStatue={submittingStatue} setFilterTask={setFilterTask} /> {/* passing the input value of the new task to the child */}
+      <Header CardData={data} filterTask={filterTask} setFilterTask={setFilterTask} setIsFilter={setIsFilter} /> 
+      <Task isFilter={isFilter} CardData={data} submitEdit={submitEdit} filterTask={filterTask} deleteTask={setData} submittingStatue={submittingStatue} setFilterTask={setFilterTask} /> {/* passing the input value of the new task to the child */}
       <Card add={setData} submittingStatue={submittingStatue}  /* newTaskName={this.newTaskName} name={this.state.name} */ />
       <Footer />
     </div>

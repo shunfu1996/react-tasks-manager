@@ -3,6 +3,7 @@ import { confirm } from "react-confirm-box";
 import './Data.css';
 import check from "./check.png";
 
+
 // const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue, edit, updateTodo}) =>{
 const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatue, setFilterTask, CardData, submitEdit, filterTask}) => {
     const [status, setStatus] = useState("TODO");
@@ -115,8 +116,7 @@ const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatu
                         {/* <span>Type:</span><input className=" d-flex text-left form-control" type="text" value={editType} onChange={handleTypeChange}/> */}
                         <label>Type Of</label>
                         <div>
-                        <select class="form-select" aria-label="Default select example" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={editType} onChange={handleTypeChange} >
-                            
+                        <select class="form-select" aria-label="Default select example" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={editType} onChange={handleTypeChange} 
                             <option>Home</option>
                             <option>School</option>
                             <option>Work</option>
