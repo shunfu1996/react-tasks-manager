@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { confirm } from "react-confirm-box";
 import './Data.css';
-import Check from "./check.jpg";
+import check from "./check.png";
 
 // const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue, edit, updateTodo}) =>{
 const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatue, setFilterTask, CardData, submitEdit, filterTask}) => {
@@ -21,12 +21,12 @@ const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatu
         if(status === "TODO"){
         setStatus("DONE");
         setColor("#6cc6cd");
-        document.getElementById('check').style.display="inline";
+        document.getElementById('background').style.display="inline";
         //id.style.display = 'none'
     } else if(status === "DONE"){
         setStatus("TODO");
         setColor("#eae5c9");
-        document.getElementById('check').style.display="none";
+        document.getElementById('background').style.display="none";
         }
     }
 
@@ -55,19 +55,19 @@ const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatu
 
       }
 
-    const handleTextChange = (e) => {
-        seteditDate(e.target.value)
-    }
-    const handleNameChange = (e) => {
-        seteditName(e.target.value)
-    }
-    const handleTypeChange = (e) => {
-        seteditType(e.target.value)
-    }
-    const handleDescriptionChange = (e) => {
-        seteditDescription(e.target.value)
-        console.log(handleDescriptionChange)
-    }
+        const handleTextChange = (e) => {
+            seteditDate(e.target.value)
+        }
+        const handleNameChange = (e) => {
+            seteditName(e.target.value)
+        }
+        const handleTypeChange = (e) => {
+            seteditType(e.target.value)
+        }
+        const handleDescriptionChange = (e) => {
+            seteditDescription(e.target.value)
+            console.log(handleDescriptionChange)
+        }
 
 
    
@@ -96,6 +96,9 @@ const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatu
     
     return(
         <div className="card row midShape nopadding place dateShape" >
+            <div>
+            <img className="check" id="background" src={check} />
+            </div>
             {!editing &&<div className="card-header text-center" id="myList" role="tablist" >Task Name: {name} </div>}
             {editing && <div className="row">
             <label className="col-6 text-end card-header-edit" >Task Name: </label><input className="card-header text-left col-6 " id="myList" role="tablist" type="text" value={editName} onChange={handleNameChange}/>
@@ -103,9 +106,9 @@ const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatu
                 <div className="d-flex justify-content-around">
                 <div className="card-body" >
                     {!editing && <div className="tab-pane active" id="home" role="tabpanel" >
-                        <p className=" d-flex text-left ">Due Date: {dueDate}</p>
-                        <p className=" d-flex text-left">Type: {type}</p>
-                        <p className=" d-flex text-left">Description: {description}</p>
+                        <p className="d-flex text-left">Due Date: {dueDate}</p>
+                        <p className="d-flex text-left">Type: {type}</p>
+                        <p className="d-flex text-left">Description: {description}</p>
                     </div> }
                     {editing && <div className="tab-pane active" id="home" role="tabpanel" >
                         <span>Due Date:</span><input className=" d-flex text-left form-control" type="date" value={editDate} onChange={handleTextChange}/>
@@ -119,11 +122,13 @@ const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatu
                         </select>
                         <span>Description:</span><textarea className=" d-flex text-left form-control" type="text" value={editDescription} onChange={handleDescriptionChange}></textarea>
                     </div>}
+                    {/* <img className="check" id="background" src={check} /> */}
                     <div className="Button ">
                         {editing ? ( <button className="btn edit" onClick={() => submitEdits(id)}>Save</button> ) : ( 
                             <div>
                                 <button className="btn edit" onClick={clickEdit}>Edit</button>
                                 <button className=" btn text-white" onClick={handleStatus} style={{backgroundColor: color}}>{status}</button>
+                                {/* <img className="check" id="background" src={check} /> */}
                                 <button className="btn btn btn-outline-secondary isDisplay" type="button" onClick={() => deleteItem()}>Delete</button>
                             </div>)}
                     </div>
