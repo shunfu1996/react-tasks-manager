@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { confirm } from "react-confirm-box";
 import './Data.css';
+import Check from "./check.jpg";
 
 // const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue, edit, updateTodo}) =>{
 const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue, setFilterTask, CardData, submitEdit, filterTask}) => {
@@ -20,12 +21,13 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
         if(status === "TODO"){
         setStatus("DONE");
         setColor("#6cc6cd");
+        document.getElementById('check').style.display="inline";
         //id.style.display = 'none'
-        } else if(status === "DONE"){
+    } else if(status === "DONE"){
         setStatus("TODO");
         setColor("#eae5c9");
+        document.getElementById('check').style.display="none";
         }
-    
     }
 
     // editing 係名, setEditing 係function, 起初值係false
@@ -131,7 +133,7 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
     
     //the date format
     return(
-        <div className="card row midShape nopadding place dateShape" /* style={{display: isDisplay}} */>
+        <div className="card row midShape nopadding place dateShape " /* style={{display: isDisplay}} */>
             <div className="card-header text-center" id="myList" role="tablist" style={editing?{display: "none"}:{display: "block"}} >Task Name: {name} </div>
             <div style={editing?{display: "block"}:{display: "none"}} class="row">
             <label className="col-6 text-end card-header-edit" >Task Name: </label><input className="card-header text-left col-6 " id="myList" role="tablist" type="text" value={editName} onChange={handleNameChange}/>
@@ -149,8 +151,16 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
                     </div>
                     <div className="tab-pane active" id="home" role="tabpanel" style={editing?{display: "block"}:{display: "none"}}>
                         <span>Due Date:</span><input className=" d-flex text-left form-control" type="date" value={editDate} onChange={handleTextChange}/>
-                        <span>Type:</span><input className=" d-flex text-left form-control" type="text" value={editType} onChange={handleTypeChange}/>
+                        {/* <span>Type:</span><input className=" d-flex text-left form-control" type="text" value={editType} onChange={handleTypeChange}/> */}
+                        <label>Type Of</label>
+                        <select class="form-select" aria-label="Default select example" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={editType} onChange={handleTypeChange} >
+                            <option selected>Choose</option>
+                            <option>Home</option>
+                            <option>School</option>
+                            <option>Work</option>
+                        </select>
                         <span>Description:</span><textarea className=" d-flex text-left form-control" type="text" value={editDescription} onChange={handleDescriptionChange}></textarea>
+                        {/* <image id="check" src={Check} alt="Check" /> */}
                         {/* <input className=" d-flex text-left" value="edting" />
                         <input className=" d-flex text-left" value="edting" /> */}
                     </div>

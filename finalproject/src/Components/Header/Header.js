@@ -61,7 +61,7 @@ const Header = ({ CardData, setFilterTask, filterTask}) => {
                 <div className="text-center">
                 {/* <i class="bi bi-calendar-check"></i> */}
                     {/* <button className="button1 btn list bi bi-calendar3" onClick={handleIsScheduler}>{isScheduler?(<button class="bi bi-card-checklist"></button>):(<button className="bi bi-calendar3"></button>)}</button> */}
-                    {isScheduler?(<button  onClick={handleIsScheduler} class="bi bi-list-check button1 btn list fa-customize"></button>):(<button  onClick={handleIsScheduler} className="bi bi-calendar3 button1 btn list fa-customize"></button>)}
+                    {isScheduler?(<button  onClick={handleIsScheduler} class="bi bi-list-check button1 btn list fa-customize "></button>):(<button  onClick={handleIsScheduler} className="bi bi-calendar3 button1 btn list fa-customize"></button>)}
                 </div>
                     <div className="text-center">
                         <img src="https://img.icons8.com/clouds/100/000000/todo-list.png" id="Check" alt="Check" width="120"/>
@@ -75,6 +75,7 @@ const Header = ({ CardData, setFilterTask, filterTask}) => {
                 </div> */}
             </div>
             <div style={isScheduler?{display: "none"}:{display: "block"}}>
+                {/* <div className="row container button-bar" > */}
                 <div className="row m-3" >
                     <div className="col-3 d-grid gap-2; ">
                         <button type="button" className="button1 btn" onClick={handleYesterday}>Past</button>

@@ -25,8 +25,8 @@ const ACalendar = ({dateState, setDateState, CardData, setFilterTask, isSchedule
     }
   
     return (
-      <div style={isScheduler?{display: "block"}:{display: "none"}}>
-        <Calendar 
+      <div style={isScheduler?{display: "block"}:{display: "none"}} >
+        <Calendar
         value={dateState}
         onChange={changeDate}
         // Change the language tag

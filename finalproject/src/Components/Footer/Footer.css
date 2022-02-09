@@ -48,4 +48,14 @@
     }
 }
 
+@media only screen and (max-width: 890px) {
+    .placeButtom {
+        display: contents;
+    }
+}
 
+@media only screen and (max-width: 1240px) {
+    .placeButtom {
+        display: contents;
+    }
+}

@@ -3,6 +3,12 @@
     margin: 100px 200px 5px 200px !important;
 }
 
+/* .button-bar {
+    margin-bottom: 10px;
+    margin-left: 5px;
+} */
+
+
 /* .topic {
     letter-spacing: 10px;
     padding: 0;
@@ -76,27 +82,18 @@
     /* margin-right: 100px;
     display:contents; */
     float: left; 
-    padding: 6px 50px;
     margin-left: 15px;
     margin-top: 20px;
     background-color: #6cc6cd;
     color: rgb(83, 83, 83);
+    width: 50px;
     /* border: none; */
-    /* width: 500px; */
+    /* padding: 6px 50px; */
 }
 
 .fa-customize {
     font-size: 20px;
 }
-
-
-
-
-
-
-
-
-
 
 @media only screen and (max-width: 600px) {
     .placeTop {
@@ -123,3 +120,10 @@
         margin: 0 2px;
     }
 }
+
+@media only screen and (max-width: 890px) {
+    .placeTop {
+        margin: 100px 20px 0px 20px !important;
+    }
+}
+

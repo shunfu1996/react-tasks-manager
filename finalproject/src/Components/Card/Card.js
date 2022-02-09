@@ -80,31 +80,30 @@ const Card = ({ add, submittingStatue }) => {
                 <div className="col form">
                     <h2>Edit New Task</h2>
                     <form id="newTaskForm">
-                        <label htmlFor="newTaskName">Name</label>
+                        <label htmlFor="newTaskName">Task Name</label>
                         <div className="input-group mb-3">
-                            <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"  id="newTaskName"  value={name} onChange={nameChange} />
+                            <input type="text" className="form-control" placeholder="Your task" aria-label="Username" aria-describedby="basic-addon1"  id="newTaskName"  value={name} onChange={nameChange} />
                         </div>
                         <label htmlFor="newTaskDescription">Description</label>
                         <div className="input-group mb-3">
-                            <textarea className="form-control" aria-label="With textarea" id="newTaskDescription" value={description} onChange={descriptionChange} ></textarea>
+                            <textarea className="form-control" aria-label="With textarea" id="newTaskDescription" placeholder="How to do the task" value={description} onChange={descriptionChange} ></textarea>
                         </div>
                         
                         <div className="row">
-                            
                             <div className="form-group col mb-3">
                                 <label htmlFor="newTaskAssigned">Type Of</label>
-                                <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={assignedTo} onChange={assignedToChange} />
+                                    <select class="form-select" aria-label="Default select example" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={assignedTo} onChange={assignedToChange} >
+                                        {/* <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={assignedTo} onChange={assignedToChange} /> */}
+                                        <option selected>Choose</option>
+                                        <option>Home</option>
+                                        <option>School</option>
+                                        <option>Work</option>
+                                    </select>
                             </div>
                             <div className="form-group col mb-3">
                                 <label htmlFor="newTaskDueDate">Due Date</label>
                                 <input type="date" className="form-control" id="newTaskDueDate" value={dueDate} onChange={dueDateChange} />
                             </div>
-                            <ul className="changeColor">
-                                <a id="red"></a>
-                                <a id="blur"></a>
-                                <a id="green"></a>
-                                <a id="yellow"></a>
-                            </ul>
                         </div>
                         <div id="error" className="alert alert-danger warning" role="alert">
                         A simple warning alert—check it out!
