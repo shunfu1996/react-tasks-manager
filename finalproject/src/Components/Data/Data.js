@@ -4,12 +4,12 @@ import './Data.css';
 import Check from "./check.jpg";
 
 // const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue, edit, updateTodo}) =>{
-const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue, setFilterTask, CardData, submitEdit, filterTask}) => {
+const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatue, setFilterTask, CardData, submitEdit, filterTask}) => {
     const [status, setStatus] = useState("TODO");
     const [color, setColor] = useState("#eae5c9");
     const [editDate, seteditDate] = useState(dueDate);
     const [editName, seteditName] = useState(name);
-    const [editType, seteditType] = useState(assignedTo);
+    const [editType, seteditType] = useState(type);
     const [editDescription, seteditDescription] = useState(description);
     // const [text, setText] = useState('');
     // const [res, setRes] = useState(null);
@@ -39,7 +39,7 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
           if (todo.id === id) {
             todo.name = editName;
             todo.description = editDescription;
-            todo.assignedTo = editType;
+            todo.type = editType;
             todo.dueDate = editDate;
           }
           return todo;
@@ -69,9 +69,6 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
         console.log(handleDescriptionChange)
     }
 
-    const isDisplayTask = () => editing?{display: "none"}:{display: "block"};
-    const isDisplayEditing = () => editing?{display: "block"}:{display: "none"};
-       
 
    
     async function deleteItem() {  //the button of delete task  function 
@@ -107,7 +104,7 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
                 <div className="card-body" >
                     {!editing && <div className="tab-pane active" id="home" role="tabpanel" >
                         <p className=" d-flex text-left ">Due Date: {dueDate}</p>
-                        <p className=" d-flex text-left">Type: {assignedTo}</p>
+                        <p className=" d-flex text-left">Type: {type}</p>
                         <p className=" d-flex text-left">Description: {description}</p>
                     </div> }
                     {editing && <div className="tab-pane active" id="home" role="tabpanel" >

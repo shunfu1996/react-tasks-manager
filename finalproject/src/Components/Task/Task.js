@@ -6,14 +6,14 @@ const Task = ({ filterTask, deleteTask, submittingStatue, setFilterTask, submitE
         <div>
             { filterTask.map((task) => {
                 // const { name, description, assignedTo, dueDate, edit, id} = task;
-                const { name, dueDate, assignedTo, description, id} = task;
+                const { name, dueDate, type, description, id} = task;
                 return(
                     <Data 
                         key={id}
                         id={id}
                         name={name}
                         description={description}
-                        assignedTo={assignedTo}
+                        type={type}
                         dueDate={dueDate}
                         // editTask={editTask}
                         deleteTask={deleteTask}
