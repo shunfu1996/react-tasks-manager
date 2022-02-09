@@ -1,5 +1,6 @@
 
 import { useState, useEffect, useRef } from 'react';
+import useLocalStorage from "use-local-storage";
 import { API_GET_DATA } from '../Server/API';
 import Header from '../Header/Header';
 import Card from '../Card/Card';
@@ -10,7 +11,7 @@ import './App.css';
 
 const App = () =>{
 
-  async function fetchData(setData) {/// get data from the db server
+ /*  async function fetchData(setData) {/// get data from the db server
     const result = await fetch(API_GET_DATA); 
     const {data} = await result.json();
     setData(data);
@@ -25,18 +26,19 @@ const App = () =>{
       },
       body: JSON.stringify({ data })
     });
-  }
+  } */
 
 
 
   ///
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
+  const [data, setData] = useLocalStorage("data", []);
   const [filterTask, setFilterTask] = useState(data);
 
   /* const [isDisplay, setIsDisplay] = useState("block"); */
   const submittingStatue = useRef(false);
 
-  useEffect(()=>{
+  /* useEffect(()=>{
     if (!submittingStatue.current){
       return
     }
@@ -47,7 +49,7 @@ const App = () =>{
   useEffect(()=>{
     fetchData(setData); /// using data of the db server--(fetchData) set to the data--(setData)
   },[])
-
+ */
   // card edit
   const submitEdit = (id, name, dueDate, assignedTo, description) => {
     const taskToEdit = filterTask.findIndex(task => task.id === id);

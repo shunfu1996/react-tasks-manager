@@ -15,9 +15,9 @@ const Card = ({ add, submittingStatue }) => {
     function descriptionChange(e) {
         setDescription(e.target.value)
     }
-    const [assignedTo, setAssignedTo] = useState("")
-    function assignedToChange(e) {
-        setAssignedTo(e.target.value)
+    const [type, setType] = useState("")
+    function typeChange(e) {
+        setType(e.target.value)
     }
     const [dueDate, setDueDate] = useState("")
     function dueDateChange(e) {
@@ -34,9 +34,9 @@ const Card = ({ add, submittingStatue }) => {
         } else if(!validInput(description)){
             errorMessage.innerHTML = "Please enter the description!";
             errorMessage.style.display = "block";
-        }  else if(!validInput(assignedTo)){
-            errorMessage.innerHTML = "Please assigned to the correct messenge!";
-            errorMessage.style.display = "block";
+/*         }  else if(!validInput(type)){
+            errorMessage.innerHTML = "Please choose a type!";
+            errorMessage.style.display = "block"; */
         }  else if(!validInput(dueDate)){
             errorMessage.innerHTML = "Please choose a date!";
             errorMessage.style.display = "block";
@@ -49,14 +49,14 @@ const Card = ({ add, submittingStatue }) => {
                         id: v4(),
                         name,
                         description,
-                        assignedTo,
+                        type,
                         dueDate,
                     },
                     ...prevData,
                 ];
             })    
                 setDueDate("");
-                setAssignedTo("");
+                setType("");
                 setDescription("");
                 setName("");
         }    
@@ -93,7 +93,13 @@ const Card = ({ add, submittingStatue }) => {
                             
                             <div className="form-group col mb-3">
                                 <label htmlFor="newTaskAssigned">Type Of</label>
-                                <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={assignedTo} onChange={assignedToChange} />
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choose your task's type</option>
+                                    <option onSelect={typeChange} value="School">School</option>
+                                    <option onSelect={typeChange} value="Work">Work</option>
+                                    <option onSelect={typeChange} value="Home">Home</option>
+                                </select>
+                                {/* <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={assignedTo} onChange={assignedToChange} /> */}
                             </div>
                             <div className="form-group col mb-3">
                                 <label htmlFor="newTaskDueDate">Due Date</label>
