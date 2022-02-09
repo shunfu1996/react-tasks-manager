@@ -69,6 +69,18 @@
     background-color: #ffffff;
 }
 
+.test{
+    margin: 0 !important;
+}
+
+.test .sort {
+    display: none;
+}
+
+.test:hover .sort {
+    display: inline-block;
+}
+
 /* .button3 {
     background-color: #eae5c9;
 }
@@ -77,6 +89,12 @@
     background-color: #ffffff;
     border-color: rgb(83, 83, 83);
 } */
+
+.sort {
+    float: right; 
+    margin-right: 15px;
+    margin-top: 20px;
+}
 
 .list {
     /* margin-right: 100px;

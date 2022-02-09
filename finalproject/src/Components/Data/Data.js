@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { confirm } from "react-confirm-box";
 import './Data.css';
-import Check from "./check.jpg";
+// import Check from "./check.jpg";
 
 // const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittingStatue, edit, updateTodo}) =>{
 const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatue, setFilterTask, CardData, submitEdit, filterTask}) => {
@@ -111,8 +111,7 @@ const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatu
                         <span>Due Date:</span><input className=" d-flex text-left form-control" type="date" value={editDate} onChange={handleTextChange}/>
                         {/* <span>Type:</span><input className=" d-flex text-left form-control" type="text" value={editType} onChange={handleTypeChange}/> */}
                         <label>Type Of</label>
-                        <select class="form-select" aria-label="Default select example" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={editType} onChange={handleTypeChange} >
-                            <option selected>Choose</option>
+                        <select className="form-select" /* aria-label="Default select example" */ aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={editType} onChange={handleTypeChange} >
                             <option>Home</option>
                             <option>School</option>
                             <option>Work</option>

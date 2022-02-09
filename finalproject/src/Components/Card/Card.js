@@ -37,6 +37,7 @@ const Card = ({ add, submittingStatue }) => {
         }  else if(!validInput(type)){
             errorMessage.innerHTML = "Please choose a type!";
             errorMessage.style.display = "block";
+            console.log(type)
         }  else if(!validInput(dueDate)){
             errorMessage.innerHTML = "Please choose a date!";
             errorMessage.style.display = "block";
@@ -93,9 +94,9 @@ const Card = ({ add, submittingStatue }) => {
                             <div className="form-group col mb-3">
                                 <label htmlFor="newTaskAssigned">Type Of</label>
 
-                                    <select class="form-select" aria-label="Default select example" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={type} onChange={typeChange} >
+                                    <select className="form-select" /* aria-label="Default select example" */ aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={type} onChange={typeChange} >
                                         {/* <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={assignedTo} onChange={assignedToChange} /> */}
-                                        <option selected>Choose</option>
+                                        <option>Choose a type of task</option>
                                         <option>Home</option>
                                         <option>School</option>
                                         <option>Work</option>
