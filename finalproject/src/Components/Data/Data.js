@@ -114,16 +114,18 @@ const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatu
                         <span>Due Date:</span><input className=" d-flex text-left form-control" type="date" value={editDate} onChange={handleTextChange}/>
                         {/* <span>Type:</span><input className=" d-flex text-left form-control" type="text" value={editType} onChange={handleTypeChange}/> */}
                         <label>Type Of</label>
+                        <div>
                         <select class="form-select" aria-label="Default select example" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={editType} onChange={handleTypeChange} >
-                            <option selected>Choose</option>
+                            
                             <option>Home</option>
                             <option>School</option>
                             <option>Work</option>
                         </select>
+                        </div>
                         <span>Description:</span><textarea className=" d-flex text-left form-control" type="text" value={editDescription} onChange={handleDescriptionChange}></textarea>
                     </div>}
                     {/* <img className="check" id="background" src={check} /> */}
-                    <div className="Button ">
+                    <div className="Button">
                         {editing ? ( <button className="btn edit" onClick={() => submitEdits(id)}>Save</button> ) : ( 
                             <div>
                                 <button className="btn edit" onClick={clickEdit}>Edit</button>

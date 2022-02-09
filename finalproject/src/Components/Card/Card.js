@@ -95,7 +95,7 @@ const Card = ({ add, submittingStatue }) => {
 
                                     <select class="form-select" aria-label="Default select example" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={type} onChange={typeChange} >
                                         {/* <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={assignedTo} onChange={assignedToChange} /> */}
-                                        <option selected>Choose</option>
+                                        {/* <option selected>Choose</option> */}
                                         <option>Home</option>
                                         <option>School</option>
                                         <option>Work</option>
