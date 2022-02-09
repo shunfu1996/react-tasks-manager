@@ -54,19 +54,6 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
         setEditing(!editing) // click edit 時反轉
 
       }
-    // const handleEdit = () =>{
-        // e.preventDefault();
-        // submittingStatue.current = false;
-        // if(status === "Edit"){
-        //     editTask(function(prev) {
-        //         return prev.filter(item => item.id !== id)
-        //     })
-        // }
-
-
-        // setEditing(!editing)
-        // console.log(editing)
-    // }
 
     const handleTextChange = (e) => {
         seteditDate(e.target.value)
@@ -82,21 +69,11 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
         console.log(handleDescriptionChange)
     }
 
-    // const handleEditFormSubmit = (event) => {
-    //     event.preventDefault();
+    const isDisplayTask = () => editing?{display: "none"}:{display: "block"};
+    const isDisplayEditing = () => editing?{display: "block"}:{display: "none"};
+       
 
-    //     const editedContact = {
-    //         setText: editedContact.setText,
-    //     };
-
-    //     const newText = text;
-
-    //     const index = text.findIndex
-
-        
-    // }
-    
-
+   
     async function deleteItem() {  //the button of delete task  function 
         submittingStatue.current = true;
         if(status === "DONE"){
@@ -120,36 +97,20 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
         }
     }
     
-
-  /*   async function deleteItem() {  //the button of delete task  function 
-        const result = await confirm("Are you sure?");
-        if (result) {
-          console.log("You click yes!");
-          return;
-        }
-        console.log("You click No!");
-    } */
-    
-    
-    //the date format
     return(
-        <div className="card row midShape nopadding place dateShape " /* style={{display: isDisplay}} */>
-            <div className="card-header text-center" id="myList" role="tablist" style={editing?{display: "none"}:{display: "block"}} >Task Name: {name} </div>
-            <div style={editing?{display: "block"}:{display: "none"}} class="row">
+        <div className="card row midShape nopadding place dateShape" >
+            {!editing &&<div className="card-header text-center" id="myList" role="tablist" >Task Name: {name} </div>}
+            {editing && <div className="row">
             <label className="col-6 text-end card-header-edit" >Task Name: </label><input className="card-header text-left col-6 " id="myList" role="tablist" type="text" value={editName} onChange={handleNameChange}/>
-            </div>
+            </div>}
                 <div className="d-flex justify-content-around">
-                {/* <p className="list-group-item list-group-item-action d-flex justify-content-center" data-toggle="list" href="#home" role="tab">Task Name: {name}</p>   */}
-                {/* <p className="list-group d-flex justify-content-center" role="tab">Task Name: {name}</p>   */}
-                {/* <button onClick={deleteItem}>delete</button> */}
-                {/* <div className="tab-content"> */}
                 <div className="card-body" >
-                    <div className="tab-pane active" id="home" role="tabpanel" style={editing?{display: "none"}:{display: "block"}}>
+                    {!editing && <div className="tab-pane active" id="home" role="tabpanel" >
                         <p className=" d-flex text-left ">Due Date: {dueDate}</p>
                         <p className=" d-flex text-left">Type: {assignedTo}</p>
                         <p className=" d-flex text-left">Description: {description}</p>
-                    </div>
-                    <div className="tab-pane active" id="home" role="tabpanel" style={editing?{display: "block"}:{display: "none"}}>
+                    </div> }
+                    {editing && <div className="tab-pane active" id="home" role="tabpanel" >
                         <span>Due Date:</span><input className=" d-flex text-left form-control" type="date" value={editDate} onChange={handleTextChange}/>
                         {/* <span>Type:</span><input className=" d-flex text-left form-control" type="text" value={editType} onChange={handleTypeChange}/> */}
                         <label>Type Of</label>
@@ -160,15 +121,14 @@ const Data = ({id, name, description, assignedTo, dueDate, deleteTask, submittin
                             <option>Work</option>
                         </select>
                         <span>Description:</span><textarea className=" d-flex text-left form-control" type="text" value={editDescription} onChange={handleDescriptionChange}></textarea>
-                        {/* <image id="check" src={Check} alt="Check" /> */}
-                        {/* <input className=" d-flex text-left" value="edting" />
-                        <input className=" d-flex text-left" value="edting" /> */}
-                    </div>
-                    <div className="Button">
-                        {/* <button className="btn edit" onClick={submitEdits}>{editing?"Save":"Edit"}</button> */}
-                        {editing ? ( <button className="btn edit" onClick={() => submitEdits(id)}>Save</button> ) : ( <button className="btn edit" onClick={clickEdit}>Edit</button> )}
-                        <button className="toDo btn text-white" onClick={handleStatus} style={{backgroundColor: color}}>{status}</button>
-                        <button className="btn btn btn-outline-secondary" type="button" onClick={() => deleteItem()}>Delete</button>
+                    </div>}
+                    <div className="Button ">
+                        {editing ? ( <button className="btn edit" onClick={() => submitEdits(id)}>Save</button> ) : ( 
+                            <div>
+                                <button className="btn edit" onClick={clickEdit}>Edit</button>
+                                <button className=" btn text-white" onClick={handleStatus} style={{backgroundColor: color}}>{status}</button>
+                                <button className="btn btn btn-outline-secondary isDisplay" type="button" onClick={() => deleteItem()}>Delete</button>
+                            </div>)}
                     </div>
                 </div>                    
             </div>                    
