@@ -5,6 +5,7 @@
 .display {
     display: none;
 }
+
 #card{
     display: none;
 }
@@ -33,5 +34,11 @@
 @media only screen and (max-width: 600px) {
     .cardShape{
         margin: 0px 70px 70px 70px;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    .cardShape {
+        margin: 10px 20px 0px 20px ;
     }
 }

@@ -111,10 +111,16 @@ button {
 
 @media only screen and (max-width: 600px) {
     .nopadding {
-        margin: 0px 70px 0px 70px !important;
+        margin: 0px 70px 0px 70px ;
     }
 
     .card {
         display:flex;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    .nopadding {
+        margin: 10px 20px 0px 20px ;
     }
 }
