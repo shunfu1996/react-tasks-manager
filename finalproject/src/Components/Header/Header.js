@@ -2,12 +2,13 @@ import './Header.css';
 import Calendar from  '../Calendar/Calendar'
 import React, {useState} from 'react'
 
-const Header = ({ CardData, setFilterTask, filterTask, setIsFilter}) => {
-    const [dateState, setDateState] = useState(new Date());
+const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfSchool, numberOfHome, numberOfWork}) => {
+    const [dateState, setDateState] = useState(new Date())
     const [isScheduler, setIsScheduler] = useState(false)
     const [taskStatus, setTaskStatus] = useState(true)
 
-    var nowDate = new Date().toJSON().slice(0,10).replace(/-/g,'-');
+
+    var nowDate = new Date().toJSON().slice(0,10).replace(/-/g,'-')
  
     const handleIsScheduler = () =>{
         setIsScheduler(!isScheduler)
@@ -115,11 +116,18 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter}) => {
                     <div>
                     {isScheduler?(<button  onClick={handleIsScheduler} className="bi bi-list-check button1 btn list fa-customize "></button>):(<button  onClick={handleIsScheduler} className="bi bi-calendar3 button1 btn list fa-customize"></button>)}
                         <button type="button" className="btn btn-primary buttonShape sort" onClick={() => handleTaskstatus()} >{taskStatus?"DONE":"TODO"}</button>
-                        {/* <button type="button" className="btn btn-primary buttonShape sort" onClick={() => handleTaskstatus("TODO")} >TODO</button> */}
-                        <button type="button" className="btn btn-primary buttonShape sort" onClick={() => handleTime("all")} >All</button>
-                        <button type="button" className="btn btn-primary buttonShape sort" onClick={() => handleType("School")} >School</button>
-                        <button type="button" className="btn btn-primary buttonShape sort" onClick={() => handleType("Work")} >Work</button>
-                        <button type="button" className="btn btn-primary buttonShape sort" onClick={() => handleType("Home")} >Home</button>
+                        <button type="button" className="btn btn-primary position-relative buttonShape sort" onClick={() => handleTime("all")} >
+                        ALL <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{CardData.length}</span>
+                        </button>
+                        <button type="button" className="btn btn-primary position-relative buttonShape sort" onClick={() => handleType("School")} >
+                        School <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{numberOfSchool}</span>
+                        </button>
+                        <button type="button" className="btn btn-primary position-relative buttonShape sort" onClick={() => handleType("Work")} >
+                        Work<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{numberOfWork}</span>
+                        </button>
+                        <button type="button" className="btn btn-primary position-relative buttonShape sort" onClick={() => handleType("Home")} >
+                        Home<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{numberOfHome}</span>
+                        </button>
                     </div>
                 </div>
                     <div className="text-center">

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Card.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { v4 } from 'uuid';
 // import './test';
 
@@ -77,7 +77,6 @@ const Card = ({ add, submittingStatue, status}) => {
 
          
     }
-
     function validInput (data) {
         return data !== null && data !== ''; // the input cannot empty 
     }

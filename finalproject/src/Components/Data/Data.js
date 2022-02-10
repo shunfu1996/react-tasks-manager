@@ -100,8 +100,8 @@ const Data = ({status, BackGroundColor, id, name, description, type, dueDate, de
             deleteTask(function(prev) {
                 return prev.filter(item => item.id !== id)
             })
-            setFilterTask(function(prev) {
-                return prev.filter(item => item.id !== id)
+            setFilterTask(function(prev) {   // keep the screen is show correct data
+                return prev.filter(item => item.id !== id) 
             });
         } else {
             const result = await confirm("Are you sure to delete?");
