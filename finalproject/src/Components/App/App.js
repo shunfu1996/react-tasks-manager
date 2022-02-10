@@ -23,10 +23,42 @@ const App = () =>{
   const [numberOfHome, setNumberOfHome] = useState((data.filter((task) => task.type === "Home")).length)
   const [numberOfDone, setNumberOfDone] = useState((data.filter((task) => task.status === "DONE")).length)
   const [numberOfTodo, setNumberOfTodo] = useState((data.filter((task) => task.status === "TODO")).length)
+  const [numberOfPast, setNumberOfPast] = useState((data.filter((task) => nowDate > task.dueDate).length))
+  const [numberOfToday, setNumberOfToday] = useState((data.filter((task) => nowDate === task.dueDate).length))
+  const [numberOfFuture, setNumberOfFuture] = useState((data.filter((task) => nowDate < task.dueDate).length))
 
   const submittingStatue = useRef(false);
 
+  var nowDate = new Date().toJSON().slice(0,10).replace(/-/g,'-')
+ 
 
+  useEffect(() => {
+    if(filtingState === "all"){
+      setNumberOfPast((data.filter((task) => nowDate > task.dueDate).length))
+    } else if(filtingState === "done"){
+      setNumberOfPast(((data.filter((task) => task.status === "DONE")).filter((task) => nowDate > task.dueDate).length))
+    } else if(filtingState === "todo"){
+      setNumberOfPast(((data.filter((task) => task.status === "TODO")).filter((task) => nowDate > task.dueDate).length))
+    } 
+  },[filtingState, data])
+  useEffect(() => {
+    if(filtingState === "all"){
+      setNumberOfToday((data.filter((task) => nowDate === task.dueDate).length))
+    } else if(filtingState === "done"){
+      setNumberOfToday(((data.filter((task) => task.status === "DONE")).filter((task) => nowDate === task.dueDate).length))
+    } else if(filtingState === "todo"){
+      setNumberOfToday(((data.filter((task) => task.status === "TODO")).filter((task) => nowDate === task.dueDate).length))
+    }
+  },[filtingState, data])
+  useEffect(() => {
+    if(filtingState === "all"){
+      setNumberOfFuture((data.filter((task) => nowDate < task.dueDate).length))
+    } else if(filtingState === "done"){
+      setNumberOfFuture(((data.filter((task) => task.status === "DONE")).filter((task) => nowDate < task.dueDate).length))
+    } else if(filtingState === "todo"){
+      setNumberOfFuture(((data.filter((task) => task.status === "TODO")).filter((task) => nowDate < task.dueDate).length))
+    }
+  },[filtingState, data])
   useEffect(() => {
     setNumberOfDone((data.filter((task) => task.status === "DONE")).length)
   },[data])
@@ -62,14 +94,19 @@ const App = () =>{
   },[filtingState, data])
 
   // card edit
-  function test(){
-    console.log(numberOfSchool)
-  }
+ /*  function test(){
+    
+  } */
 
   return (
     <div className="App background-img" style={{backgroundImage: `url(${backgroundImage})`}}> 
-    <button onClick={test}>123</button>
-      <Header CardData={data} filterTask={filterTask} setFilterTask={setFilterTask} setIsFilter={setIsFilter} numberOfSchool={numberOfSchool} numberOfWork={numberOfWork} numberOfHome={numberOfHome} numberOfDone={numberOfDone} numberOfTodo={numberOfTodo} setFilingState={setFilingState} filtingState={filtingState} setFilingState={setFilingState} setBackgroundImage={setBackgroundImage} /> 
+    {/* <button onClick={test}>123</button> */}
+      <Header
+      CardData={data} filterTask={filterTask} setFilterTask={setFilterTask} setIsFilter={setIsFilter}
+      numberOfSchool={numberOfSchool} numberOfWork={numberOfWork} numberOfHome={numberOfHome} numberOfDone={numberOfDone}
+      numberOfTodo={numberOfTodo} setFilingState={setFilingState} filtingState={filtingState} setFilingState={setFilingState}
+      setBackgroundImage={setBackgroundImage} numberOfPast={numberOfPast} numberOfToday={numberOfToday} numberOfFuture={numberOfFuture}
+      /> 
       <Task isFilter={isFilter} CardData={data} filterTask={filterTask} deleteTask={setData} submittingStatue={submittingStatue} setFilterTask={setFilterTask} setStatus={setStatus} /> {/* passing the input value of the new task to the child */}
       <Card add={setData} submittingStatue={submittingStatue} status={status} />
       <Footer />

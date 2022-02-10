@@ -4,11 +4,19 @@ import React, {useState, useEffect} from 'react'
 import HomeImg from './Home.jpg';
 import WorkImg from './Work.jpg';
 import SchoolImg from './School.jpg';
-const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfSchool, numberOfHome, numberOfWork, numberOfDone, numberOfTodo, setFilingState, filtingState, setBackgroundImage}) => {
+const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfSchool,
+                numberOfHome, numberOfWork, numberOfDone, numberOfTodo, setFilingState,
+                filtingState, setBackgroundImage, numberOfPast, numberOfToday, numberOfFuture}) => {
     const [dateState, setDateState] = useState(new Date())
     const [isScheduler, setIsScheduler] = useState(false)
-    const [taskStatus, setTaskStatus] = useState('All')
     const [listName, setListName] = useState("To Do List")
+    const [buttonAll, setButtonAll] = useState(false)
+    const [buttonDone, setButtonDone] = useState(false)
+    const [buttonTodo, setButtonTodo] = useState(false)
+    // const [numOfType, setNumOfType] = useState(CardData.length)
+    
+
+    
 
     useEffect(() => {
         if(filtingState === 'done'){
@@ -17,23 +25,17 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
             setListName("Need to Do task")
         }else if(filtingState === 'all'){
             setListName("To Do List")
-        }/* else if(filtingState === 'school'){
-            setListName("School Task List")
-        }else if(filtingState === 'work'){
-            setListName("Work Task List")
-        }else if(filtingState === 'home'){
-            setListName("Home Task List")
-        } */
+        }
         
     },[filtingState])
     
 
-    var nowDate = new Date().toJSON().slice(0,10).replace(/-/g,'-')
- 
     const handleIsScheduler = () =>{
         setIsScheduler(!isScheduler)
         setFilterTask([])
     }
+    var nowDate = new Date().toJSON().slice(0,10).replace(/-/g,'-')
+ 
 
     function filterYesterday(task){
         if(nowDate > task.dueDate){
@@ -51,7 +53,7 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
         }
     }
 
-    const handleTypeFuture = (type) =>{
+    /* const handleTypeFuture = (type) =>{
         if(type === "School"){
             setFilterTask((CardData.filter(filterFuture)).filter(task => task.type === "School"))
             setIsFilter(true)
@@ -62,9 +64,9 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
             setFilterTask((CardData.filter(filterFuture)).filter(task => task.type === "Home"))
             setIsFilter(true)
         } 
-    }
+    } */
 
-    const handleTypeToday = (type) =>{
+    /* const handleTypeToday = (type) =>{
         if(type === "School"){
             setFilterTask((CardData.filter(filterToday)).filter(task => task.type === "School"))
             setIsFilter(true)
@@ -75,9 +77,9 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
             setFilterTask((CardData.filter(filterToday)).filter(task => task.type === "Home"))
             setIsFilter(true)
         } 
-    }
+    } */
  
-    const handleTypePast = (type) =>{
+   /*  const handleTypePast = (type) =>{
         if(type === "School"){
             setFilterTask((CardData.filter(filterYesterday)).filter(task => task.type === "School"))
             setIsFilter(true)
@@ -88,7 +90,7 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
             setFilterTask((CardData.filter(filterYesterday)).filter(task => task.type === "Home"))
             setIsFilter(true)
         } 
-    }
+    } */
     const handleTime = (time) =>{
         if(time === "past" && filtingState === "all"){
             setFilterTask(CardData.filter(filterYesterday))
@@ -109,25 +111,32 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
         } else if(time === "future" && filtingState === "todo"){
             setFilterTask(CardData.filter((task) => task.status === "TODO").filter(filterFuture))
         } else if(time === "all"){
+            setButtonAll(true)
+            setButtonDone(false)
+            setButtonTodo(false)
             setFilterTask(CardData)
             setFilingState("all")
         }
         setBackgroundImage(null)
     }
-    const handleTaskstatus = () => {
-        if(taskStatus === "All"){
-            handleTime("all")
-            setTaskStatus("DONE")
-        } else if(taskStatus === "DONE"){
+
+    const handleTaskstatus = (status) => {
+         if(status === "done"){
             setFilterTask(CardData.filter((task) => task.status === "DONE"))
             setFilingState("done")
-            setTaskStatus("TODO")
-            setIsFilter(true)
-        }else if(taskStatus === "TODO"){
+            setButtonAll(false)
+            setButtonDone(true)
+            setButtonTodo(false)
+            // setIsFilter(true)
+            // setNumOfType(numberOfTodo)
+        }else if(status === "todo"){
             setFilterTask(CardData.filter((task) => task.status === "TODO"))
             setFilingState("todo")
-            setTaskStatus("All")
-            setIsFilter(true)
+            setButtonAll(false)
+            setButtonDone(false)
+            setButtonTodo(true)
+            // setIsFilter(true)
+            // setNumOfType(CardData.length)
         }
     }
     const handleType = (type) =>{
@@ -164,25 +173,17 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
     return (
         <div className="placeTop card mask-custom outerShape" id='header'>
             <div className="card-body p-3 text-black row">
-                <div className="text-center">
-                {/* <i class="bi bi-calendar-check"></i> */}
-                    {/* <button className="button1 btn list bi bi-calendar3" onClick={handleIsScheduler}>{isScheduler?(<button class="bi bi-card-checklist"></button>):(<button className="bi bi-calendar3"></button>)}</button> */}
-                    <div>
+                <div className="">
                     {isScheduler?(<button  onClick={handleIsScheduler} className="bi bi-list-check button1 btn list fa-customize "></button>):(<button  onClick={handleIsScheduler} className="bi bi-calendar3 button1 btn list fa-customize"></button>)}
-                        <button type="button" className="btn btn-primary position-relative buttonShape sort" onClick={() => handleTaskstatus()} >
-                        {taskStatus?"DONE":"TODO"}<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{taskStatus?numberOfDone:numberOfTodo}</span>
+                    <div className="btn-group btn-group-lg box">
+                        <button type="button" className="btn " style={buttonAll?{backgroundColor:"red"}:{backgroundColor:""}} onClick={() => handleTime("all")} >
+                        ALL <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size">{CardData.length}</span>
                         </button>
-                        <button type="button" className="btn btn-primary position-relative buttonShape sort" onClick={() => handleTime("all")} >
-                        ALL <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{CardData.length}</span>
+                        <button type="button" className="btn " style={buttonDone?{backgroundColor:"red"}:{backgroundColor:""}} onClick={() => handleTaskstatus("done")} >
+                        Done<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size">{numberOfDone}</span>
                         </button>
-                        <button type="button" className="btn btn-primary position-relative buttonShape sort" onClick={() => handleType("School")} >
-                        School <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{numberOfSchool}</span>
-                        </button>
-                        <button type="button" className="btn btn-primary position-relative buttonShape sort" onClick={() => handleType("Work")} >
-                        Work<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{numberOfWork}</span>
-                        </button>
-                        <button type="button" className="btn btn-primary position-relative buttonShape sort" onClick={() => handleType("Home")} >
-                        Home<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{numberOfHome}</span>
+                        <button type="button" className="btn " style={buttonTodo?{backgroundColor:"red"}:{backgroundColor:""}} onClick={() => handleTaskstatus("todo")} >
+                        ToDo<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size">{numberOfTodo}</span>
                         </button>
                     </div>
                 </div>
@@ -200,33 +201,38 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
             <div style={isScheduler?{display: "none"}:{display: "block"}}>
                 {/* <div className="row container button-bar" > */}
                 <div className="row m-3" >
-                    <div className="col-4 d-grid gap-2 test">
-                        <button type="button" className="button1 btn" onClick={(past) => handleTime("past")}>Past</button>
-                       {/*  <div className='sort'>
-                            <button type="button" className="btn btn-primary buttonShape bi bi-book" onClick={() => handleTypePast("School")} ></button>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={() => handleTypePast("Work")} >Work</button>
-                            <button type="button" className="btn btn-primary buttonShape bi bi-house-door" onClick={() => handleTypePast("Home")} >Home</button>
-                        </div> */}
+                    <div className="col-4 d-grid gap-2 ">
+                        <button type="button" className="button1 btn btn-primary position-relative buttonShape sort bi bi-book size" onClick={() => handleType("School")} >
+                        School <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size">{numberOfSchool}</span>
+                        </button>
                     </div>
-                    <div className="col-4 d-grid gap-2 test">
-                        <button type="button" className="button1 btn" onClick={(today) => handleTime("today")}>Today</button>
-                        {/* <div className='sort'>
-                            <button type="button" className="btn btn-primary buttonShape bi bi-book " onClick={() => handleTypeToday("School")} ></button>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={() => handleTypeToday("Work")} >Work</button>
-                            <button type="button" className="btn btn-primary buttonShape bi bi-house-door" onClick={() => handleTypeToday("Home")} >Home</button>
-                        </div> */}
+                    <div className="col-4 d-grid gap-2 ">
+                        <button type="button" className="button1 btn btn-primary position-relative buttonShape sort bi bi-pc-display size" onClick={() => handleType("Work")} >
+                        Work<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size">{numberOfWork}</span>
+                        </button>
                     </div>
-                    <div className="col-4 d-grid gap-2 test">
-                        <button type="button" className="button2 btn" onClick={(future) => handleTime("future")}>Future</button>
-{/*                         <div className=' sort'>
-                            <button type="button" className="btn btn-primary buttonShape bi bi-book" onClick={() => handleTypeFuture("School")} ></button>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={() => handleTypeFuture("Work")} >Work</button>
-                            <button type="button" className="btn btn-primary buttonShape bi bi-house-door" onClick={() => handleTypeFuture("Home")} >Home</button>
-                        </div> */}
+                    <div className="col-4 d-grid gap-2 ">
+                        <button type="button" className="button1 btn btn-primary position-relative buttonShape sort bi-house-door size" onClick={() => handleType("Home")} >
+                        Home<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size">{numberOfHome}</span>
+                        </button>
                     </div>
-                    {/* <div className="col-3 d-grid gap-2">
-                        <button type="button" className="button2 btn" onClick={(all) => handleTime("all")}>All</button>
-                    </div> */}
+                </div>
+                <div className="row m-3" >
+                    <div className="col-4 d-grid gap-2 ">
+                        <button type="button" className="button1 btn btn-primary position-relative buttonShape size" onClick={(past) => handleTime("past")}>
+                        Past<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size">{numberOfPast}</span>
+                        </button>
+                    </div>
+                    <div className="col-4 d-grid gap-2 ">
+                        <button type="button" className="button1 btn btn-primary position-relative buttonShape size" onClick={(today) => handleTime("today")}>
+                        Today<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size">{numberOfToday}</span>
+                        </button>
+                    </div>
+                    <div className="col-4 d-grid gap-2 ">
+                        <button type="button" className="button1 btn btn-primary position-relative buttonShape size" onClick={(future) => handleTime("future")}>
+                        Future<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size">{numberOfFuture}</span>
+                        </button>
+                    </div>
                 </div>
             </div>  
                 <div className="calendar"> 

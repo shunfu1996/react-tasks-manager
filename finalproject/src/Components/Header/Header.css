@@ -1,4 +1,12 @@
+.size{
+    font-size: 20px;
+}
 
+.box{
+    border: 5px solid rgb(44, 221, 221);
+    border-radius: 12px;
+    padding: 5px;
+}
 .placeTop {
     margin: 100px 200px 5px 200px !important;
 }
