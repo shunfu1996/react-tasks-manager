@@ -34,7 +34,6 @@ const Card = ({ add, submittingStatue, status}) => {
     }
     const [BackGroundColor, setBackgroundColor] = useState("")
     
-    
     function addItem(e) {
         const errorMessage = document.querySelector('#error');
         e.preventDefault(); // to prevent the web F5
@@ -81,11 +80,33 @@ const Card = ({ add, submittingStatue, status}) => {
         return data !== null && data !== ''; // the input cannot empty 
     }
 
-    // function changeColor(id) {
-    //     let cardRed = document.getElementById("red");
-        
-
+    // function changeColor() {
+    //     document.getElementById('background').style.background = "red";
+    //     // document.body.style.background = color;
     // }
+
+    // let colors = [
+    //     {
+    //         value:1,
+    //         label:"red"
+    //     },
+    //     {
+    //         value:1,
+    //         label:"blue"
+    //     }
+    // ]
+
+    // const [background, setBackground] = useState(colors.label);
+    // const setBackground = e => {
+    //         setBackground(e.label);
+    //     }
+    
+  
+//     const changeStyle = () => {
+//     console.log("you just clicked");
+  
+//     setStyle("cont2");
+//   };
 
     return(
         <div className="cardShape" style={{backgroundColor: BackGroundColor}} >

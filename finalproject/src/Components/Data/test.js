@@ -1,3 +1,22 @@
+const submitEdits = require ('./dataTest');
+const clickEdit = require('./dataTest');
+const addItem = require('./dataTest');
+const deleteItem = require('./dataTest');
+
+test ('submitEdits function exists', () => {
+    expect(typeof submitEdits).toEqual('function');
+});
+
+test ('clickEdit function exists', () => {
+    expect(typeof clickEdit).toEqual('function');
+});
+
+test ('addItem function exists', () => {
+    expect(typeof addItem).toEqual('function');
+});
+
+
+
 // var assert = chai.assert,
 //     expect = require('../Data/Data');
 // describe('The app', function() {
