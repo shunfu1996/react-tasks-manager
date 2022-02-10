@@ -7,7 +7,7 @@ import SchoolImg from './School.jpg';
 const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfSchool, numberOfHome, numberOfWork, numberOfDone, numberOfTodo, setFilingState, filtingState, setBackgroundImage}) => {
     const [dateState, setDateState] = useState(new Date())
     const [isScheduler, setIsScheduler] = useState(false)
-    const [taskStatus, setTaskStatus] = useState(true)
+    const [taskStatus, setTaskStatus] = useState('All')
     const [listName, setListName] = useState("To Do List")
 
     useEffect(() => {
@@ -115,15 +115,19 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
         setBackgroundImage(null)
     }
     const handleTaskstatus = () => {
-        setTaskStatus(!taskStatus)
-        if(taskStatus){
-        setFilterTask(CardData.filter((task) => task.status === "DONE"))
-        setFilingState("done")
-        setIsFilter(true)
-        }else {
-        setFilterTask(CardData.filter((task) => task.status === "TODO"))
-        setFilingState("todo")
-        setIsFilter(true)
+        if(taskStatus === "All"){
+            handleTime("all")
+            setTaskStatus("DONE")
+        } else if(taskStatus === "DONE"){
+            setFilterTask(CardData.filter((task) => task.status === "DONE"))
+            setFilingState("done")
+            setTaskStatus("TODO")
+            setIsFilter(true)
+        }else if(taskStatus === "TODO"){
+            setFilterTask(CardData.filter((task) => task.status === "TODO"))
+            setFilingState("todo")
+            setTaskStatus("All")
+            setIsFilter(true)
         }
     }
     const handleType = (type) =>{
