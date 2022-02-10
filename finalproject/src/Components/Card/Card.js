@@ -1,6 +1,6 @@
 import React from 'react';
 import './Card.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { v4 } from 'uuid';
 // import './test';
 

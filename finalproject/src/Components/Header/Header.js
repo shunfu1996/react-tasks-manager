@@ -2,7 +2,7 @@ import './Header.css';
 import Calendar from  '../Calendar/Calendar'
 import React, {useState} from 'react'
 
-const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfSchool, numberOfHome, numberOfWork}) => {
+const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfSchool, numberOfHome, numberOfWork, numberOfDone, numberOfTodo, setFilingState, filtingState}) => {
     const [dateState, setDateState] = useState(new Date())
     const [isScheduler, setIsScheduler] = useState(false)
     const [taskStatus, setTaskStatus] = useState(true)
@@ -80,7 +80,8 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
             setFilterTask(CardData.filter(filterFuture))
             setIsFilter(true)
         } else if(time === "all"){
-            setFilterTask(CardData.filter(filterYesterday))
+            setFilterTask(CardData)
+            setFilingState("all")
             setIsFilter(false)
         }
     }
@@ -88,9 +89,11 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
         setTaskStatus(!taskStatus)
         if(taskStatus){
         setFilterTask(CardData.filter((task) => task.status === "DONE"))
+        setFilingState("done")
         setIsFilter(true)
         }else {
         setFilterTask(CardData.filter((task) => task.status === "TODO"))
+        setFilingState("todo")
         setIsFilter(true)
         }
     }
@@ -115,7 +118,9 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
                     {/* <button className="button1 btn list bi bi-calendar3" onClick={handleIsScheduler}>{isScheduler?(<button class="bi bi-card-checklist"></button>):(<button className="bi bi-calendar3"></button>)}</button> */}
                     <div>
                     {isScheduler?(<button  onClick={handleIsScheduler} className="bi bi-list-check button1 btn list fa-customize "></button>):(<button  onClick={handleIsScheduler} className="bi bi-calendar3 button1 btn list fa-customize"></button>)}
-                        <button type="button" className="btn btn-primary buttonShape sort" onClick={() => handleTaskstatus()} >{taskStatus?"DONE":"TODO"}</button>
+                        <button type="button" className="btn btn-primary position-relative buttonShape sort" onClick={() => handleTaskstatus()} >
+                        {taskStatus?"DONE":"TODO"}<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{taskStatus?numberOfDone:numberOfTodo}</span>
+                        </button>
                         <button type="button" className="btn btn-primary position-relative buttonShape sort" onClick={() => handleTime("all")} >
                         ALL <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{CardData.length}</span>
                         </button>
@@ -135,7 +140,7 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
                     </div>
                     {/* <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" alt="Check" width="60" /> */}
                     <div>
-                    <p className="title text-center text-uppercase fw-bold topic">To Do List</p>
+                    <p className="title text-center text-uppercase fw-bold topic">{filtingState === 'done'?"Complete List":"To Do List"}</p>
                     </div>
                     {/* <div className="text-center col-3 pt-5">
                     <button  type="button" className="btn btn-primary buttonShape">ALL</button>
