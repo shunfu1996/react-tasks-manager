@@ -29,6 +29,24 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter}) => {
         }
     }
    
+    const handleYesterday = () =>{
+        setFilterTask(CardData.filter(filterYesterday))
+        console.log(filterTask)
+        setIsFilter(true)
+    }
+    const handleToday = () =>{
+        setFilterTask(CardData.filter(filterToday))
+        setIsFilter(true)
+    }
+    const handleTomorrow = () =>{
+        setFilterTask(CardData.filter(filterTomorrow))
+        setIsFilter(true)
+    }
+    const handleAll = () =>{
+        setFilterTask(CardData)
+        setIsFilter(false)
+    }
+
     const FutureHandleSchool = () =>{
         setFilterTask((CardData.filter(filterTomorrow)).filter(task => task.type === "School"))
         setIsFilter(true)
@@ -67,84 +85,69 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter}) => {
             setIsFilter(true)
         )
     }
-    const handleYesterday = () =>{
-        setFilterTask(CardData.filter(filterYesterday))
-        console.log(filterTask)
-        setIsFilter(true)
-    }
-    const handleToday = () =>{
-        setFilterTask(CardData.filter(filterToday))
-        setIsFilter(true)
-    }
-    const handleTomorrow = () =>{
-        setFilterTask(CardData.filter(filterTomorrow))
-        setIsFilter(true)
-    }
-    const handleAll = () =>{
-        setFilterTask(CardData)
-        setIsFilter(false)
-    }
 
     return (
         <div className="placeTop card mask-custom outerShape" id='header'>
-            <div className="card-body p-3 text-black row">
-                <div className="text-center">
+            <container>
+            <div className="card-body-header text-black row">
+                <div className="header">
                 {/* <i class="bi bi-calendar-check"></i> */}
                     {/* <button className="button1 btn list bi bi-calendar3" onClick={handleIsScheduler}>{isScheduler?(<button class="bi bi-card-checklist"></button>):(<button className="bi bi-calendar3"></button>)}</button> */}
                     <div>
-                    {isScheduler?(<button  onClick={handleIsScheduler} className="bi bi-list-check button1 btn list fa-customize "></button>):(<button  onClick={handleIsScheduler} className="bi bi-calendar3 button1 btn list fa-customize"></button>)}
+                    {isScheduler?(<button onClick={handleIsScheduler} className="bi bi-list-check button1 btn list fa-customize "></button>):(<button  onClick={handleIsScheduler} className="bi bi-calendar3 button1 btn list fa-customize"></button>)}
                         {/* <button type="button" className="btn btn-primary buttonShape sort" onClick={handleAll} >All</button>
                         <button type="button" className="btn btn-primary buttonShape sort" onClick={handleSchool} >School</button>
                         <button type="button" className="btn btn-primary buttonShape sort" onClick={handleWork} >Work</button>
                         <button type="button" className="btn btn-primary buttonShape sort" onClick={handleHome} >Home</button> */}
                     </div>
                 </div>
-                    <div className="text-center">
-                        <img src="https://img.icons8.com/clouds/100/000000/todo-list.png" id="Check" alt="Check" width="120"/>
+                    <div className="text-center image">
+                        <img src="https://img.icons8.com/clouds/100/000000/todo-list.png" id="Check" alt="Check" height={"100px"}/>
                     </div>
                     {/* <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" alt="Check" width="60" /> */}
                     <div>
-                    <p className="title text-center text-uppercase fw-bold topic">To Do List</p>
+                        <p className="title text-center text-uppercase topic">To Do List</p>
                     </div>
                     {/* <div className="text-center col-3 pt-5">
                     <button  type="button" className="btn btn-primary buttonShape">ALL</button>
                 </div> */}
             </div>
-            <div style={isScheduler?{display: "none"}:{display: "block"}}>
+            <div  style={isScheduler?{display: "none"}:{display: "block"}} className="button-list d-flex justify-content-center">
                 {/* <div className="row container button-bar" > */}
-                <div className="row m-3" >
-                    <div className="col-3 d-grid gap-2 test">
-                        <button type="button" className="button1 btn" onClick={handleYesterday}>Past</button>
+                {/* <div className="row m-3" > */}
+                    <div className="d-grid gap-2 test type-1 button1">
+                        <button type="button" className="btn" onClick={handleYesterday}>Past</button>
                         <div className='sort'>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={PastHandleSchool} >School</button>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={PastHandleWork} >Work</button>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={PastHandleHome} >Home</button>
+                            <button type="button" className="btn buttonShape bi bi-book " onClick={PastHandleSchool} ></button>
+                            <button type="button" className="btn buttonShape bi bi-pc-display " onClick={PastHandleWork} ></button>
+                            <button type="button" className="btn buttonShape bi bi-house-door " onClick={PastHandleHome} ></button>
                         </div>
                     </div>
-                    <div className="col-3 d-grid gap-2 test">
-                        <button type="button" className="button1 btn" onClick={handleToday}>Today</button>
+                    <div className="d-grid gap-2 test type-2 button1">
+                        <button type="button" className="btn" onClick={handleToday}>Today</button>
                         <div className='sort'>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={TodayHandleSchool} >School</button>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={TodayHandleWork} >Work</button>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={TodayHandleHome} >Home</button>
+                            <button type="button" className="btn buttonShape bi bi-book" onClick={TodayHandleSchool} ></button>
+                            <button type="button" className="btn buttonShape bi bi-pc-display" onClick={TodayHandleWork} ></button>
+                            <button type="button" className="btn buttonShape bi bi-house-door" onClick={TodayHandleHome} ></button>
                         </div>
                     </div>
-                    <div className="col-3 d-grid gap-2 test">
-                        <button type="button" className="button2 btn" onClick={handleTomorrow}>Future</button>
-                        <div className=' sort'>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={FutureHandleSchool} >School</button>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={FutureHandleWork} >Work</button>
-                            <button type="button" className="btn btn-primary buttonShape " onClick={FutureHandleHome} >Home</button>
+                    <div className=" d-grid gap-2 test type-3 button2">
+                        <button type="button" className="btn" onClick={handleTomorrow}>Future</button>
+                        <div className='sort'>
+                            <button type="button" className="btn buttonShape bi bi-book" onClick={FutureHandleSchool} ></button>
+                            <button type="button" className="btn buttonShape bi bi-pc-display" onClick={FutureHandleWork} ></button>
+                            <button type="button" className="btn buttonShape bi bi-house-door" onClick={FutureHandleHome} ></button>
                         </div>
                     </div>
-                    <div className="col-3 d-grid gap-2">
+                    <div className="d-grid gap-2 test type-4 button2">
                         <button type="button" className="button2 btn" onClick={handleAll}>All</button>
                     </div>
-                </div>
+                {/* </div> */}
             </div>  
                 <div className="calendar"> 
                     <Calendar isScheduler={isScheduler} dateState={dateState} setDateState={setDateState} CardData={CardData} filterTask={filterTask} setFilterTask={setFilterTask}/>
                 </div> 
+            </container>
         </div>
     )
 }

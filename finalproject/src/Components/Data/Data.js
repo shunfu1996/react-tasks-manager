@@ -70,6 +70,8 @@ const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatu
             console.log(handleDescriptionChange)
         }
 
+  
+  
 
    
     async function deleteItem() {  //the button of delete task  function 
@@ -98,7 +100,7 @@ const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatu
     return(
         <div className="card row midShape nopadding place dateShape" >
             <div>
-            <img className="check" id="background" src={check} />
+            <image className="check" id="background" src={check} />
             </div>
             {!editing &&<div className="card-header text-center" id="myList" role="tablist" >Task Name: {name} </div>}
             {editing && <div className="row">
@@ -116,9 +118,12 @@ const Data = ({id, name, description, type, dueDate, deleteTask, submittingStatu
                         {/* <span>Type:</span><input className=" d-flex text-left form-control" type="text" value={editType} onChange={handleTypeChange}/> */}
                         <label>Type Of</label>
                         <div>
-                        <select class="form-select" aria-label="Default select example" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={editType} onChange={handleTypeChange} 
+                        <select class="form-select" aria-label="Default select example" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={editType} onChange={handleTypeChange} >
                             <option>Home</option>
-                            <option>School</option>
+                            <div>
+                                <span class="bi bi-book"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"></svg></span>
+                                <option>School</option>
+                            </div>
                             <option>Work</option>
                         </select>
                         </div>
