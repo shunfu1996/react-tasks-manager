@@ -2,7 +2,6 @@ import React from 'react';
 import './Card.css';
 import { useState } from 'react';
 import { v4 } from 'uuid';
-// import './test';
 
 //create a new card
 const Card = ({ add, submittingStatue, status}) => {
@@ -14,12 +13,10 @@ const Card = ({ add, submittingStatue, status}) => {
     const [description, setDescription] = useState("")
     function descriptionChange(e) {
         setDescription(e.target.value)
-        console.log(e.target.value)
     }
     const [type, setType] = useState("")
     function typeChange(e) {
         setType(e.target.value)
-        console.log(e.target.value)
         if(e.target.value === "School"){
             setBackgroundColor("#FB966E")
         } else if(e.target.value === "Home"){
@@ -47,7 +44,6 @@ const Card = ({ add, submittingStatue, status}) => {
         }  else if(!validInput(type)){
             errorMessage.innerHTML = "Please choose a type!";
             errorMessage.style.display = "block";
-            console.log(type)
         }  else if(!validInput(dueDate)){
             errorMessage.innerHTML = "Please choose a date!";
             errorMessage.style.display = "block";
@@ -81,11 +77,6 @@ const Card = ({ add, submittingStatue, status}) => {
         return data !== null && data !== ''; // the input cannot empty 
     }
 
-    // function changeColor(id) {
-    //     let cardRed = document.getElementById("red");
-        
-
-    // }
 
     return(
         <div className="cardShape" style={{backgroundColor: BackGroundColor}} >

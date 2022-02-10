@@ -11,8 +11,7 @@ const App = () =>{
 
   const [data, setData] = useLocalStorage("data", []);
   const [filterTask, setFilterTask] = useState(data);
-  // const [filterTaskStatus, setFilterTaskStatus] = useState(data);
-  const [filtingState, setFilingState] = useState("all")   //all filter done todo 
+  const [filtingState, setFilingState] = useState("all")   
   const [isFilter, setIsFilter] = useState(false);
   const [status, setStatus] = useState("TODO");
   const [backgroundImage, setBackgroundImage] = useState(null)
@@ -40,7 +39,7 @@ const App = () =>{
     } else if(filtingState === "todo"){
       setNumberOfPast(((data.filter((task) => task.status === "TODO")).filter((task) => nowDate > task.dueDate).length))
     } 
-  },[filtingState, data])
+  },[filtingState, data, nowDate])
   useEffect(() => {
     if(filtingState === "all"){
       setNumberOfToday((data.filter((task) => nowDate === task.dueDate).length))
@@ -49,7 +48,7 @@ const App = () =>{
     } else if(filtingState === "todo"){
       setNumberOfToday(((data.filter((task) => task.status === "TODO")).filter((task) => nowDate === task.dueDate).length))
     }
-  },[filtingState, data])
+  },[filtingState, data, nowDate])
   useEffect(() => {
     if(filtingState === "all"){
       setNumberOfFuture((data.filter((task) => nowDate < task.dueDate).length))
@@ -58,7 +57,7 @@ const App = () =>{
     } else if(filtingState === "todo"){
       setNumberOfFuture(((data.filter((task) => task.status === "TODO")).filter((task) => nowDate < task.dueDate).length))
     }
-  },[filtingState, data])
+  },[filtingState, data, nowDate])
   useEffect(() => {
     setNumberOfDone((data.filter((task) => task.status === "DONE")).length)
   },[data])
@@ -93,18 +92,14 @@ const App = () =>{
     }
   },[filtingState, data])
 
-  // card edit
- /*  function test(){
-    
-  } */
+
 
   return (
     <div className="App background-img" style={{backgroundImage: `url(${backgroundImage})`}}> 
-    {/* <button onClick={test}>123</button> */}
       <Header
       CardData={data} filterTask={filterTask} setFilterTask={setFilterTask} setIsFilter={setIsFilter}
       numberOfSchool={numberOfSchool} numberOfWork={numberOfWork} numberOfHome={numberOfHome} numberOfDone={numberOfDone}
-      numberOfTodo={numberOfTodo} setFilingState={setFilingState} filtingState={filtingState} setFilingState={setFilingState}
+      numberOfTodo={numberOfTodo} setFilingState={setFilingState} filtingState={filtingState} 
       setBackgroundImage={setBackgroundImage} numberOfPast={numberOfPast} numberOfToday={numberOfToday} numberOfFuture={numberOfFuture}
       /> 
       <Task isFilter={isFilter} CardData={data} filterTask={filterTask} deleteTask={setData} submittingStatue={submittingStatue} setFilterTask={setFilterTask} setStatus={setStatus} /> {/* passing the input value of the new task to the child */}
