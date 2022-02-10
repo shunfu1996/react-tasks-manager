@@ -1,8 +1,10 @@
 import './Header.css';
 import Calendar from  '../Calendar/Calendar'
 import React, {useState, useEffect} from 'react'
-
-const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfSchool, numberOfHome, numberOfWork, numberOfDone, numberOfTodo, setFilingState, filtingState}) => {
+import HomeImg from './Home.jpg';
+import WorkImg from './Work.jpg';
+import SchoolImg from './School.jpg';
+const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfSchool, numberOfHome, numberOfWork, numberOfDone, numberOfTodo, setFilingState, filtingState, setBackgroundImage}) => {
     const [dateState, setDateState] = useState(new Date())
     const [isScheduler, setIsScheduler] = useState(false)
     const [taskStatus, setTaskStatus] = useState(true)
@@ -110,6 +112,7 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
             setFilterTask(CardData)
             setFilingState("all")
         }
+        setBackgroundImage(null)
     }
     const handleTaskstatus = () => {
         setTaskStatus(!taskStatus)
@@ -126,31 +129,31 @@ const Header = ({ CardData, setFilterTask, filterTask, setIsFilter, numberOfScho
     const handleType = (type) =>{
         if(type === "School" && filtingState === "done"){
         setFilterTask(CardData.filter((task) => task.status === "DONE").filter((task) => task.type === "School"))
-        // setFilingState("school")
+        setBackgroundImage(SchoolImg)
         } else if(type === "Work" && filtingState === "done"){
         setFilterTask(CardData.filter((task) => task.status === "DONE").filter((task) => task.type === "Work"))
-        // setFilingState("work")
+        setBackgroundImage(WorkImg)
         } else if(type === "Home" && filtingState === "done"){
         setFilterTask(CardData.filter((task) => task.status === "DONE").filter((task) => task.type === "Home"))
-        // setFilingState("home")
+        setBackgroundImage(HomeImg)
         }else if(type === "School" && filtingState === "todo"){
         setFilterTask(CardData.filter((task) => task.status === "TODO").filter((task) => task.type === "School"))
-        // setFilingState("school")
+        setBackgroundImage(SchoolImg)
         } else if(type === "Work" && filtingState === "todo"){
         setFilterTask(CardData.filter((task) => task.status === "TODO").filter((task) => task.type === "Work"))
-        // setFilingState("work")
+        setBackgroundImage(WorkImg)
         } else if(type === "Home" && filtingState === "todo"){
         setFilterTask(CardData.filter((task) => task.status === "TODO").filter((task) => task.type === "Home"))
-        // setFilingState("home")
+        setBackgroundImage(HomeImg)
         }else if(type === "School" && filtingState === "all"){
         setFilterTask(CardData.filter((task) => task.type === "School"))
-        // setFilingState("school")
+        setBackgroundImage(SchoolImg)
         } else if(type === "Work" && filtingState === "all"){
         setFilterTask(CardData.filter((task) => task.type === "Work"))
-        // setFilingState("work")
+        setBackgroundImage(WorkImg)
         } else if(type === "Home" && filtingState === "all"){
         setFilterTask(CardData.filter((task) => task.type === "Home"))
-        // setFilingState("home")
+        setBackgroundImage(HomeImg)
         }
     }
 

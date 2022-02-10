@@ -21,11 +21,11 @@ const Card = ({ add, submittingStatue, status}) => {
         setType(e.target.value)
         console.log(e.target.value)
         if(e.target.value === "School"){
-            setBackgroundColor("red")
+            setBackgroundColor("#FB966E")
         } else if(e.target.value === "Home"){
-            setBackgroundColor("blue")
+            setBackgroundColor("#B5CAA0")
         } else if(e.target.value === "Work"){
-            setBackgroundColor("yellow")
+            setBackgroundColor("#EB7A77")
         }
     }
     const [dueDate, setDueDate] = useState("")
@@ -88,8 +88,8 @@ const Card = ({ add, submittingStatue, status}) => {
     // }
 
     return(
-        <div className="cardShape" id="card" style={{backgroundColor: BackGroundColor}} >
-            <div className="row">
+        <div className="cardShape" style={{backgroundColor: BackGroundColor}} >
+            <div className="row" id="card">
                 <div className="col form">
                     <h2>Edit New Task</h2>
                     <form id="newTaskForm">

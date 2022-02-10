@@ -25,6 +25,7 @@
 .outerShape {
     border-radius: 10px 10px 0 0;
     background-color: #ffffff;
+    opacity: 0.95;
 }
 
 /* button of the SORT and ALL */

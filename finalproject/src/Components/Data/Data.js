@@ -79,13 +79,13 @@ const Data = ({status, BackGroundColor, id, name, description, type, dueDate, de
         const handleTypeChange = (e) => {
             if(e.target.value === "School"){
                 seteditType(e.target.value)
-                seteditBackgroundColor("red")
+                seteditBackgroundColor("#FB966E")
             } else if(e.target.value === "Home"){
                 seteditType(e.target.value)
-                seteditBackgroundColor("blue")
+                seteditBackgroundColor("#B5CAA0")
             } else if(e.target.value === "Work"){
                 seteditType(e.target.value)
-                seteditBackgroundColor("yellow")
+                seteditBackgroundColor("#EB7A77")
             }
         }
         const handleDescriptionChange = (e) => {

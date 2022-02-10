@@ -9,3 +9,9 @@
   background: linear-gradient(to right, #6cc6cd, #eae5c9);
 }
 
+
+.background-img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
