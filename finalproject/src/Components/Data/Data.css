@@ -21,6 +21,7 @@
 .card-header {
     font-weight: bold;
     font-size: 20px;
+    border-radius: 25px 25px 0 0;
     /* border-bottom-width: thin; */
     border: none;
 }
@@ -37,6 +38,7 @@
     width: auto;
     height: 100px;
     opacity: 0.5;
+    display: inline;
     
     
 }
