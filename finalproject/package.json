@@ -42,11 +42,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "test": "jest",
+    "testwatch": "jest --watchAll"
   },
   "eslintConfig": {
     "extends": [
