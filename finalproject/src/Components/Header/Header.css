@@ -15,32 +15,6 @@
     margin: 100px 200px 5px 200px !important;
 }
 
-<<<<<<< HEAD
-/* .header {
-    height: 500px;
-} */
-
-/* .image {
-    height: 100px;
-} */
-
-/* .button-bar {
-    margin-bottom: 10px;
-    margin-left: 5px;
-} */
-
-
-/* .topic {
-    letter-spacing: 10px;
-    padding: 0;
-} */
-
-.card-body-header {
-    height: 280px;
-}
-
-=======
->>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
 .inline {
     align-items: baseline;
 }
@@ -127,17 +101,8 @@
 .past-button {
     background-color: #6cc6cd;
     box-shadow: inset 0 0 0 0 #eae5c9;
-<<<<<<< HEAD
-    transition: ease-out 0.7s;
-    border-radius: 10px;
-    outline: none;
-    /* margin-top: 15px; */
-    width: 190px;
-    /* box-shadow: #eae5c9; */
-=======
     transition: ease-out 2s;
     outline: none;
->>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
 }
 
 .past-button:hover {
@@ -146,19 +111,6 @@
     border-color: rgb(83, 83, 83);
     background-color: #000000;
 }
-<<<<<<< HEAD
-
-.button2 { 
-    background-color: #eae5c9;
-    box-shadow: inset 0 0 0 0 #6cc6cd;
-    transition: ease-out 0.7s;
-    border-radius: 10px;
-    outline: none;
-    /* margin-top: 15px; */
-    width: 190px;
-    /* background: -webkit-linear-gradient(to right, #6cc6cd, #eae5c9);
-    background: linear-gradient(to right, #6cc6cd, #eae5c9);  */
-=======
 .past-button:focus {
     border-color: rgb(83, 83, 83);
     background-color: #000000;
@@ -169,7 +121,6 @@
     box-shadow: inset 0 0 0 0 #eae5c9;
     transition: ease-out 2s;
     outline: none;
->>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
 }
 
 .today-button:hover {
@@ -217,49 +168,10 @@
 }
 
 .sort {
-<<<<<<< HEAD
-    padding-top: 5px;
-    margin: auto;
-}
-
-/* .type-1 {
-    position: absolute;
-    right: 610px;
-    top: 250px;
-}
-
-.type-2 {
-    position: absolute;
-    right: 410px;
-    top: 250px;
-}
-
-.type-3 {
-    position: absolute;
-    right: 210px;
-    top: 250px;
-}
-
-.type-4 {
-    position: absolute;
-    right: 10px;
-    top: 250px;
-} */
-/* .button3 {
-    background-color: #eae5c9;
-}
-
-.button3:hover{
-    background-color: #ffffff;
-    border-color: rgb(83, 83, 83);
-} */
-
-=======
     float: right; 
     margin-right: 15px;
     margin-top: 20px;
 }
->>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
 
 .list {
     /* margin-right: 100px;
@@ -292,18 +204,6 @@
     container .placeTop {
         margin: 100px 70px 0px 70px !important;
     }
-<<<<<<< HEAD
-
-    /* .button-list {
-        width: 100px;
-    } */
-
-    /* .card-body {
-        padding: 0;
-    } */
-    
-=======
->>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
     .title {
         padding: 0;
         font-size: xx-large;

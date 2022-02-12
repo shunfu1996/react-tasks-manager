@@ -40,7 +40,7 @@ function submitEdits(id) {  // edit function map 左之前的 array
         submittingStatue.current = true ;
         add(function(prevData){
             return [
-                {   
+                {
                     id: v4(),
                     name,
                     description,
@@ -49,17 +49,15 @@ function submitEdits(id) {  // edit function map 左之前的 array
                 },
                 ...prevData,
             ];
-        })    
+        })
             setDueDate("");
             setType("");
             setDescription("");
             setName("");
-    }    
+    }
   }
 
 
-  
-
-module.exports = submitEdits, clickEdit, addItem, deleteItem
 
 
+module.exports = submitEdits, clickEdit, addItem

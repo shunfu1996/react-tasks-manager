@@ -76,13 +76,6 @@ const Card = ({ add, submittingStatue, status}) => {
         return data !== null && data !== ''; // the input cannot empty 
     }
 
-<<<<<<< HEAD
-    // function changeColor() {
-    //     document.getElementById('background').style.background = "red";
-    //     // document.body.style.background = color;
-    // }
-=======
->>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
 
     // let colors = [
     //     {
@@ -108,13 +101,8 @@ const Card = ({ add, submittingStatue, status}) => {
 //   };
 
     return(
-<<<<<<< HEAD
-        <div className="cardShape"  id="card">
-            <div className="row">
-=======
         <div className="cardShape" style={{backgroundColor: BackGroundColor}} >
             <div className="row" id="card">
->>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
                 <div className="col form">
                     <h2>Edit New Task</h2>
                     <form id="newTaskForm">

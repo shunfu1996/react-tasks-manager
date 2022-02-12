@@ -42,11 +42,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-<<<<<<< HEAD
-    "test": "jest",
-    "testwatch": "jest --watchAll", 
-=======
->>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json",
     "predeploy": "npm run build",

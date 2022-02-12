@@ -99,11 +99,7 @@ const Data = ({status, BackGroundColor, id, name, description, type, dueDate, de
     return(
         <div className="card row midShape nopadding place dateShape" >
             <div>
-<<<<<<< HEAD
-            <image className="check" id="background" src={check} />
-=======
             {status === "DONE" &&<img className="check" id="background" src={check} alt="mark done" />}
->>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
             </div>
             {!editing &&<div className="card-header text-center" id="myList" role="tablist" style={{backgroundColor: editBackgroundColor}} >Task Name: {name} </div>}
             {editing &&<div className="row">
@@ -117,24 +113,6 @@ const Data = ({status, BackGroundColor, id, name, description, type, dueDate, de
                         <p className="d-flex text-left">Description: {description}</p>
                     </div> }
                     {editing && <div className="tab-pane active" id="home" role="tabpanel" >
-<<<<<<< HEAD
-                        <span>Due Date:</span><input className=" d-flex text-left form-control" type="date" value={editDate} onChange={handleTextChange}/>
-                        {/* <span>Type:</span><input className=" d-flex text-left form-control" type="text" value={editType} onChange={handleTypeChange}/> */}
-                        <label>Type Of</label>
-                        <div>
-                        <select class="form-select" aria-label="Default select example" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={editType} onChange={handleTypeChange} >
-                            <option>Home</option>
-                            <div>
-                                <span class="bi bi-book"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"></svg></span>
-                                <option>School</option>
-                            </div>
-                            <option>Work</option>
-                        </select>
-                        </div>
-                        <span>Description:</span><textarea className=" d-flex text-left form-control" type="text" value={editDescription} onChange={handleDescriptionChange}></textarea>
-                    </div>}
-                    {/* <img className="check" id="background" src={check} /> */}
-=======
                                     <span>Due Date:</span><input className=" d-flex text-left form-control" type="date" value={editDate} onChange={handleTextChange}/>
                                     <label>Type Of</label>
                                     <div>
@@ -146,7 +124,6 @@ const Data = ({status, BackGroundColor, id, name, description, type, dueDate, de
                                     </div>
                                     <span>Description:</span><textarea className=" d-flex text-left form-control" type="text" value={editDescription} onChange={handleDescriptionChange}></textarea>
                                 </div>}
->>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
                     <div className="Button">
                         {editing ? ( <button className="btn edit" onClick={() => submitEdits(id)}>Save</button> ) : ( 
                             <div>
