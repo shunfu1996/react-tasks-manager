@@ -16,9 +16,8 @@ export default class Footer extends React.Component {
     }
     render() {
         return(
-            <footer className="placeButtom ">
-                {/* <footer className="placeButtom fixed-bottom "> */}
-                <div className="addBox py-2">
+            <footer className="">
+                <div className="addBox py-2 placeButtom">
                     <div className="d-grid gap-2 d-md-flex justify-content-center">
                         <button className="btn btn-outline-secondary me-md-2 circle material-icons" id="add" type="button" onClick={this.isDisplay}>+</button>
                     </div>

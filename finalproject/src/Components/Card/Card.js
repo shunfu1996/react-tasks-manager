@@ -2,10 +2,9 @@ import React from 'react';
 import './Card.css';
 import { useState } from 'react';
 import { v4 } from 'uuid';
-// import './test';
 
 //create a new card
-const Card = ({ add, submittingStatue }) => {
+const Card = ({ add, submittingStatue, status}) => {
     // change the input value
     const [name, setName] = useState("")  
     function nameChange(e) {
@@ -18,11 +17,19 @@ const Card = ({ add, submittingStatue }) => {
     const [type, setType] = useState("")
     function typeChange(e) {
         setType(e.target.value)
+        if(e.target.value === "School"){
+            setBackgroundColor("#FB966E")
+        } else if(e.target.value === "Home"){
+            setBackgroundColor("#B5CAA0")
+        } else if(e.target.value === "Work"){
+            setBackgroundColor("#EB7A77")
+        }
     }
     const [dueDate, setDueDate] = useState("")
     function dueDateChange(e) {
         setDueDate(e.target.value)
     }
+    const [BackGroundColor, setBackgroundColor] = useState("")
     
     function addItem(e) {
         const errorMessage = document.querySelector('#error');
@@ -36,7 +43,6 @@ const Card = ({ add, submittingStatue }) => {
         }  else if(!validInput(type)){
             errorMessage.innerHTML = "Please choose a type!";
             errorMessage.style.display = "block";
-            console.log(type)
         }  else if(!validInput(dueDate)){
             errorMessage.innerHTML = "Please choose a date!";
             errorMessage.style.display = "block";
@@ -51,6 +57,8 @@ const Card = ({ add, submittingStatue }) => {
                         description,
                         type,
                         dueDate,
+                        BackGroundColor,
+                        status,
                     },
                     ...prevData,
                 ];
@@ -59,19 +67,22 @@ const Card = ({ add, submittingStatue }) => {
                 setType("");
                 setDescription("");
                 setName("");
+                setBackgroundColor("");
         }    
 
          
     }
-
     function validInput (data) {
         return data !== null && data !== ''; // the input cannot empty 
     }
 
+<<<<<<< HEAD
     // function changeColor() {
     //     document.getElementById('background').style.background = "red";
     //     // document.body.style.background = color;
     // }
+=======
+>>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
 
     // let colors = [
     //     {
@@ -97,12 +108,17 @@ const Card = ({ add, submittingStatue }) => {
 //   };
 
     return(
+<<<<<<< HEAD
         <div className="cardShape"  id="card">
             <div className="row">
+=======
+        <div className="cardShape" style={{backgroundColor: BackGroundColor}} >
+            <div className="row" id="card">
+>>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
                 <div className="col form">
                     <h2>Edit New Task</h2>
                     <form id="newTaskForm">
-                        <label htmlFor="newTaskName">Task Name</label>
+                        <label htmlFor="newTaskName" >Task Name</label>
                         <div className="input-group mb-3">
                             <input type="text" className="form-control" placeholder="Your task" aria-label="Username" aria-describedby="basic-addon1"  id="newTaskName"  value={name} onChange={nameChange} />
                         </div>
@@ -114,15 +130,12 @@ const Card = ({ add, submittingStatue }) => {
                         <div className="row">
                             <div className="form-group col mb-3">
                                 <label htmlFor="newTaskAssigned">Type Of</label>
-
-                                    <select className="form-select" /* aria-label="Default select example" */ aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={type} onChange={typeChange} >
-                                        {/* <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={assignedTo} onChange={assignedToChange} /> */}
+                                    <select className="form-select" aria-describedby="inputGroup-sizing-sm" id="newTaskAssignedTo" value={type} onChange={typeChange} >
                                         <option>Choose a type of task</option>
                                         <option>Home</option>
                                         <option>School</option>
                                         <option>Work</option>
                                     </select>
-
                             </div>
                             <div className="form-group col mb-3">
                                 <label htmlFor="newTaskDueDate">Due Date</label>

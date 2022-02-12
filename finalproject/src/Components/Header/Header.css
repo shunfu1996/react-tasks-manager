@@ -1,8 +1,21 @@
+.size{
+    font-size: 20px;
+    color: rgb(12, 10, 10) ;
+}
+.size-num{
+    font-size: 20px;
+}
 
+.box{
+    border: 5px solid rgb(44, 221, 221);
+    border-radius: 12px;
+    padding: 5px;
+}
 .placeTop {
     margin: 100px 200px 5px 200px !important;
 }
 
+<<<<<<< HEAD
 /* .header {
     height: 500px;
 } */
@@ -26,6 +39,8 @@
     height: 280px;
 }
 
+=======
+>>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
 .inline {
     align-items: baseline;
 }
@@ -37,39 +52,101 @@
 .outerShape {
     border-radius: 10px 10px 0 0;
     background-color: #ffffff;
+    opacity: 0.95;
 }
 
-/* button of the SORT and ALL */
-/* .buttonShape {
-    border-radius:10% 10%;
-} */
-
-.title {
+.now-date{
     font-family: 'Bebas Neue', cursive;
-    font-size: 50px;
+    font-size: 20px;
     color: rgb(83, 83, 83);
     /* position: absolute;
     left: 320px;
     top: 250px; */
 }
 
-.button1 {
+.title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 70px;
+    color: rgb(83, 83, 83);
+}
+
+.school-button {
+    background-color: #FB966E;
+    box-shadow: inset 0 0 0 0 #eae5c9;
+    transition: ease-out 2s;
+    outline: none;
+}
+
+.school-button:hover {
+    box-shadow: inset 300px 0 0 0 #000000;
+    cursor: pointer;
+    border-color: rgb(83, 83, 83);
+    background-color: #000000;
+}
+.school-button:focus {
+    border-color: rgb(83, 83, 83);
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+.home-button {
+    background-color: #B5CAA0;
+    box-shadow: inset 0 0 0 0 #eae5c9;
+    transition: ease-out 2s;
+    outline: none;
+}
+
+.home-button:hover {
+    box-shadow: inset 300px 0 0 0 #000000;
+    cursor: pointer;
+    border-color: rgb(83, 83, 83);
+    background-color: #000000;
+}
+.home-button:focus {
+    border-color: rgb(83, 83, 83);
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+.work-button {
+    background-color: #EB7A77;
+    box-shadow: inset 0 0 0 0 #eae5c9;
+    transition: ease-out 2s;
+    outline: none;
+}
+
+.work-button:hover {
+    box-shadow: inset 300px 0 0 0 #000000;
+    cursor: pointer;
+    border-color: rgb(83, 83, 83);
+    background-color: #000000;
+}
+.work-button:focus {
+    border-color: rgb(83, 83, 83);
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+.past-button {
     background-color: #6cc6cd;
     box-shadow: inset 0 0 0 0 #eae5c9;
+<<<<<<< HEAD
     transition: ease-out 0.7s;
     border-radius: 10px;
     outline: none;
     /* margin-top: 15px; */
     width: 190px;
     /* box-shadow: #eae5c9; */
+=======
+    transition: ease-out 2s;
+    outline: none;
+>>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
 }
 
-.button1:hover {
-    box-shadow: inset 300px 0 0 0 #eae5c9;
+.past-button:hover {
+    box-shadow: inset 300px 0 0 0 #000000;
     cursor: pointer;
     border-color: rgb(83, 83, 83);
-    background-color: #ffffff;
+    background-color: #000000;
 }
+<<<<<<< HEAD
 
 .button2 { 
     background-color: #eae5c9;
@@ -81,13 +158,48 @@
     width: 190px;
     /* background: -webkit-linear-gradient(to right, #6cc6cd, #eae5c9);
     background: linear-gradient(to right, #6cc6cd, #eae5c9);  */
+=======
+.past-button:focus {
+    border-color: rgb(83, 83, 83);
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+.today-button {
+    background-color: #6cc6cd;
+    box-shadow: inset 0 0 0 0 #eae5c9;
+    transition: ease-out 2s;
+    outline: none;
+>>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
 }
 
-.button2:hover{
-    box-shadow: inset 300px 0 0 0 #6cc6cd;
+.today-button:hover {
+    box-shadow: inset 300px 0 0 0 #000000;
     cursor: pointer;
     border-color: rgb(83, 83, 83);
-    background-color: #ffffff;
+    background-color: #000000;
+}
+.today-button:focus {
+    border-color: rgb(83, 83, 83);
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+.future-button {
+    background-color: #6cc6cd;
+    box-shadow: inset 0 0 0 0 #eae5c9;
+    transition: ease-out 2s;
+    outline: none;
+}
+
+.future-button:hover {
+    box-shadow: inset 300px 0 0 0 #000000;
+    cursor: pointer;
+    border-color: rgb(83, 83, 83);
+    background-color: #000000;
+}
+.future-button:focus {
+    border-color: rgb(83, 83, 83);
+    background-color: #000000;
+    color: rgb(255, 255, 255);
 }
 
 /* .sort {
@@ -105,6 +217,7 @@
 }
 
 .sort {
+<<<<<<< HEAD
     padding-top: 5px;
     margin: auto;
 }
@@ -141,6 +254,12 @@
     border-color: rgb(83, 83, 83);
 } */
 
+=======
+    float: right; 
+    margin-right: 15px;
+    margin-top: 20px;
+}
+>>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
 
 .list {
     /* margin-right: 100px;
@@ -151,8 +270,6 @@
     background-color: #6cc6cd;
     color: rgb(83, 83, 83);
     width: 50px;
-    /* border: none; */
-    /* padding: 6px 50px; */
 }
 
 .fa-customize {
@@ -175,6 +292,7 @@
     container .placeTop {
         margin: 100px 70px 0px 70px !important;
     }
+<<<<<<< HEAD
 
     /* .button-list {
         width: 100px;
@@ -184,6 +302,8 @@
         padding: 0;
     } */
     
+=======
+>>>>>>> bfbe4649ea7c35894aa8095faa5d9826d2da56e6
     .title {
         padding: 0;
         font-size: xx-large;

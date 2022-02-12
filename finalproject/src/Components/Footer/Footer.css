@@ -10,13 +10,8 @@
     align-items: baseline;
 }
 
-/* .circle{
-    border-radius: 50px;
-} */
 
 .material-icons {
-    /* padding: 5px; */
-	/* margin: 25px; */
     font-size: 1.5rem;
     border-radius: 50px;
     background-color: #465455c9;
