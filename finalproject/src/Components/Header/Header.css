@@ -1,18 +1,36 @@
+/* all done to do button */
 .size{
     font-size: 20px;
-    color: rgb(12, 10, 10) ;
 }
+/* all done to do button */
 .size-num{
-    font-size: 20px;
+    font-size: 12px;
+}
+/* all done to do button */
+.box{
+    border: .5px solid ;
+    border-radius: 5px;
+    border-color: #262938;
+    margin-top: 20px;
+    height: 45px;
 }
 
-.box{
-    border: 5px solid rgb(44, 221, 221);
-    border-radius: 12px;
-    padding: 5px;
+.btn-group button btn1{
+    margin-right: 10px;
 }
+
+.btn-group button btn{
+    margin: 0;
+}
+
+.btn-group button bt2{
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+
 .placeTop {
-    margin: 100px 200px 5px 200px !important;
+    margin: 100px 200px 5px 200px ;
 }
 
 .inline {
@@ -44,114 +62,112 @@
     color: rgb(83, 83, 83);
 }
 
+
 .school-button {
-    background-color: #FB966E;
-    box-shadow: inset 0 0 0 0 #eae5c9;
-    transition: ease-out 2s;
+    background-color: #3a6b72;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    transition: ease-out .5s;
     outline: none;
+    color: #ffffff;
 }
 
-.school-button:hover {
-    box-shadow: inset 300px 0 0 0 #000000;
-    cursor: pointer;
-    border-color: rgb(83, 83, 83);
-    background-color: #000000;
-}
+.school-button:hover,
 .school-button:focus {
-    border-color: rgb(83, 83, 83);
-    background-color: #000000;
-    color: rgb(255, 255, 255);
-}
-.home-button {
-    background-color: #B5CAA0;
-    box-shadow: inset 0 0 0 0 #eae5c9;
-    transition: ease-out 2s;
-    outline: none;
+    box-shadow: inset 300px 0 0 0 #3a6b72;
+    cursor: pointer;
+    color: #ffffff;
 }
 
-.home-button:hover {
-    box-shadow: inset 300px 0 0 0 #000000;
-    cursor: pointer;
-    border-color: rgb(83, 83, 83);
-    background-color: #000000;
-}
-.home-button:focus {
-    border-color: rgb(83, 83, 83);
-    background-color: #000000;
-    color: rgb(255, 255, 255);
-}
 .work-button {
-    background-color: #EB7A77;
-    box-shadow: inset 0 0 0 0 #eae5c9;
-    transition: ease-out 2s;
+    background-color: #4ea4bb;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    transition: ease-out .5s;
     outline: none;
+    color: #ffffff;
 }
 
-.work-button:hover {
-    box-shadow: inset 300px 0 0 0 #000000;
-    cursor: pointer;
-    border-color: rgb(83, 83, 83);
-    background-color: #000000;
-}
+.work-button:hover,
 .work-button:focus {
+    box-shadow: inset 300px 0 0 0 #4ea4bb;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.home-button {
+    background-color: #99e8f5;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    transition: ease-out .5s;
+    outline: none;
+    color: #ffffff;
+}
+
+.home-button:hover,
+.home-button:focus {
+    box-shadow: inset 300px 0 0 0 #99e8f5;
+    cursor: pointer;
+    color: #ffffff;
+}
+/* .work-button:focus {
     border-color: rgb(83, 83, 83);
     background-color: #000000;
     color: rgb(255, 255, 255);
-}
+} */
+
+
 .past-button {
-    background-color: #6cc6cd;
-    box-shadow: inset 0 0 0 0 #eae5c9;
-    transition: ease-out 2s;
+    border: 1px solid;
+    background-color: #ffffff;
+    border-color: #262938;
+    transition: ease-out 0.5s;
     outline: none;
+    color: rgb(83, 83, 83);
+    
 }
 
-.past-button:hover {
-    box-shadow: inset 300px 0 0 0 #000000;
+.past-button:hover,
+.past-button:focus  {
+    box-shadow: inset 300px 0 0 0 #262938;
     cursor: pointer;
-    border-color: rgb(83, 83, 83);
-    background-color: #000000;
+    color: #ffffff;
 }
-.past-button:focus {
-    border-color: rgb(83, 83, 83);
-    background-color: #000000;
-    color: rgb(255, 255, 255);
-}
+
+
 .today-button {
-    background-color: #6cc6cd;
-    box-shadow: inset 0 0 0 0 #eae5c9;
-    transition: ease-out 2s;
+    border: 1px solid;
+    background-color: #ffffff;
+    border-color: #262938;
+    transition: ease-out 0.5s;
     outline: none;
+    color: rgb(83, 83, 83);
 }
 
-.today-button:hover {
-    box-shadow: inset 300px 0 0 0 #000000;
+.today-button:hover,
+.today-button:focus  {
+    box-shadow: inset 300px 0 0 0 #262938;
     cursor: pointer;
-    border-color: rgb(83, 83, 83);
-    background-color: #000000;
+    color: #ffffff;
 }
-.today-button:focus {
-    border-color: rgb(83, 83, 83);
-    background-color: #000000;
-    color: rgb(255, 255, 255);
-}
+
+
 .future-button {
-    background-color: #6cc6cd;
-    box-shadow: inset 0 0 0 0 #eae5c9;
-    transition: ease-out 2s;
+    border: 1px solid;
+    background-color: #ffffff;
+    border-color: #262938;
+    transition: ease-out 0.5s;
     outline: none;
+    color: rgb(83, 83, 83);
 }
 
-.future-button:hover {
-    box-shadow: inset 300px 0 0 0 #000000;
+.future-button:hover,
+.future-button:focus  {
+    box-shadow: inset 300px 0 0 0 #262938;
     cursor: pointer;
-    border-color: rgb(83, 83, 83);
-    background-color: #000000;
+    color: #ffffff;
 }
-.future-button:focus {
-    border-color: rgb(83, 83, 83);
-    background-color: #000000;
-    color: rgb(255, 255, 255);
-}
+
+/* .future-button:focus {
+   
+} */
 
 /* .sort {
     position: absolute;
@@ -202,7 +218,7 @@
 
 @media only screen and (max-width: 600px) {
     container .placeTop {
-        margin: 100px 70px 0px 70px !important;
+        margin: 100px 70px 0px 70px ;
     }
     .title {
         padding: 0;
@@ -228,7 +244,7 @@
 
 @media only screen and (max-width: 890px) {
     .placeTop {
-        margin: 100px 20px 0px 20px !important;
+        margin: 100px 20px 0px 20px ;
     }
 }
 
@@ -237,6 +253,10 @@
         margin: 0 5px;
         width: 100%;
     }
+
+    /* .placeTop {
+        margin: 100px 200px 5px 200px ;
+    } */
 
     /* .type-1 {
         position: absolute;
@@ -262,3 +282,9 @@
         top: 250px;
     } */
 }
+
+/* @media only screen and (min-width: 2480px) and (max-width: 1249px) {
+    .placeTop {
+        margin: 100px 700px 5px 700px ;
+    }
+} */

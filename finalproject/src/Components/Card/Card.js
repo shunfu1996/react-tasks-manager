@@ -18,11 +18,11 @@ const Card = ({ add, submittingStatue, status}) => {
     function typeChange(e) {
         setType(e.target.value)
         if(e.target.value === "School"){
-            setBackgroundColor("#FB966E")
+            setBackgroundColor("#3a6b72")
         } else if(e.target.value === "Home"){
-            setBackgroundColor("#B5CAA0")
+            setBackgroundColor("#99e8f5")
         } else if(e.target.value === "Work"){
-            setBackgroundColor("#EB7A77")
+            setBackgroundColor("#4ea4bb")
         }
     }
     const [dueDate, setDueDate] = useState("")
