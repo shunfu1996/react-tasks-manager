@@ -23,7 +23,7 @@
     font-size: 20px;
     border-radius: 25px 25px 0 0;
     /* border-bottom-width: thin; */
-    border: none;
+    border-color: none;
 }
 
 .card-header-edit {
@@ -37,7 +37,9 @@
     right: 50px;
     width: auto;
     height: 100px;
-    opacity: 1;
+
+    opacity: 0.5;
+
     display: inline;
     
     
@@ -47,6 +49,7 @@
     border-radius: 25px;
     margin-top: 5px ;
     margin-bottom: 5px;
+    border-color: none;
     /* background: rgba(24, 24, 16, .1); */
 }
 
@@ -76,10 +79,10 @@ button {
     margin: 0 10px 0 0 ;
 }
 
-.edit {
+/* .edit {
     background-color: #6cc6cd;
     color: #ffffff;
-}
+} */
 
 .confirm-box__content {
     display: flex;

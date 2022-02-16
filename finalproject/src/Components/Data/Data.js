@@ -57,19 +57,23 @@ const Data = ({status, BackGroundColor, id, name, description, type, dueDate, de
         const handleTypeChange = (e) => {
             if(e.target.value === "School"){
                 seteditType(e.target.value)
-                seteditBackgroundColor("#FB966E")
+
+                seteditBackgroundColor("#3a6b72")
             } else if(e.target.value === "Home"){
                 seteditType(e.target.value)
-                seteditBackgroundColor("#B5CAA0")
+                seteditBackgroundColor("#99e8f5")
             } else if(e.target.value === "Work"){
                 seteditType(e.target.value)
-                seteditBackgroundColor("#EB7A77")
+                seteditBackgroundColor("#4ea4bb")
+
             }
         }
         const handleDescriptionChange = (e) => {
             seteditDescription(e.target.value)  
         }
 
+  
+  
 
    
     async function deleteItem() {  //the button of delete task  function 
@@ -123,12 +127,14 @@ const Data = ({status, BackGroundColor, id, name, description, type, dueDate, de
                                     <span>Description:</span><textarea className=" d-flex text-left form-control" type="text" value={editDescription} onChange={handleDescriptionChange}></textarea>
                                 </div>}
                     <div className="Button">
-                        {editing ? ( <button className="btn edit" onClick={() => submitEdits(id)}>Save</button> ) : ( 
+                        {editing ? ( <button className="btn edit btn-outline-secondary" onClick={() => submitEdits(id)}>Save</button> ) : ( 
                             <div>
-                                {status === "TODO" &&<button className="btn edit" onClick={clickEdit}>Edit</button>}
-                                {status === "TODO"?<button className=" btn text-white" onClick={() => handleStatus(id)} style={{backgroundColor: "#eae5c9"}}>{status}</button>
-                                :<button className=" btn text-white" onClick={() => handleStatus(id)} style={{backgroundColor: "#6cc6cd"}}>{status}</button> }
-                                <button className="btn btn btn-outline-secondary isDisplay" type="button" onClick={() => deleteItem()}>Delete</button>
+
+                                {status === "TODO" &&<button className="btn edit btn-outline-secondary" onClick={clickEdit}>Edit</button>}
+                                {status === "TODO"?<button className="btn btn-outline-secondary" onClick={() => handleStatus(id)} >{status}</button>
+                                :<button className="btn btn-outline-secondary" onClick={() => handleStatus(id)} >{status}</button> }
+                                <button className="btn btn-outline-secondary isDisplay" type="button" onClick={() => deleteItem()}>Delete</button>
+
                             </div>)}
                     </div>
                 </div>                    

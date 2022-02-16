@@ -12,6 +12,10 @@
     margin: 0px 200px 100px 200px;
 }
 
+/* .clr1{
+    background-color: #6cc6cd;
+} */
+
 .form {
     padding: 50px;
 }
@@ -20,10 +24,20 @@
     display: none;
 }
 
+/* Add task button */
 .button{
+    background: #262938;
+    color: #ffffff;
+}
+
+/* .button{
     background: #6cc6cd;
     background: -webkit-linear-gradient(to right, #6cc6cd, #eae5c9);
     background: linear-gradient(to right, #6cc6cd, #eae5c9);
+} */
+
+.cont {
+    background-color: #6cc6cd;
 }
 
 @media only screen and (max-width: 600px) {
@@ -37,3 +51,9 @@
         margin: 10px 20px 0px 20px ;
     }
 }
+
+/* @media only screen and (max-width: 2400px) {
+    .cardShape {
+        margin: 10px 700px 0px 700px ;
+    }
+} */
