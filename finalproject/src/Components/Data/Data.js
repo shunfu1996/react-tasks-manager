@@ -57,6 +57,7 @@ const Data = ({status, BackGroundColor, id, name, description, type, dueDate, de
         const handleTypeChange = (e) => {
             if(e.target.value === "School"){
                 seteditType(e.target.value)
+
                 seteditBackgroundColor("#3a6b72")
             } else if(e.target.value === "Home"){
                 seteditType(e.target.value)
@@ -64,6 +65,7 @@ const Data = ({status, BackGroundColor, id, name, description, type, dueDate, de
             } else if(e.target.value === "Work"){
                 seteditType(e.target.value)
                 seteditBackgroundColor("#4ea4bb")
+
             }
         }
         const handleDescriptionChange = (e) => {
@@ -127,10 +129,12 @@ const Data = ({status, BackGroundColor, id, name, description, type, dueDate, de
                     <div className="Button">
                         {editing ? ( <button className="btn edit btn-outline-secondary" onClick={() => submitEdits(id)}>Save</button> ) : ( 
                             <div>
+
                                 {status === "TODO" &&<button className="btn edit btn-outline-secondary" onClick={clickEdit}>Edit</button>}
                                 {status === "TODO"?<button className="btn btn-outline-secondary" onClick={() => handleStatus(id)} >{status}</button>
                                 :<button className="btn btn-outline-secondary" onClick={() => handleStatus(id)} >{status}</button> }
                                 <button className="btn btn-outline-secondary isDisplay" type="button" onClick={() => deleteItem()}>Delete</button>
+
                             </div>)}
                     </div>
                 </div>                    

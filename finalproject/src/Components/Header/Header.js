@@ -3,7 +3,9 @@ import Calendar from  '../Calendar/Calendar'
 import React, {useState, useEffect} from 'react'
 const Header = ({ CardData, setFilterTask, filterTask, numberOfSchool,
                 numberOfHome, numberOfWork, numberOfDone, numberOfTodo, setFilingState,
+
                 filtingState, numberOfPast, numberOfToday, numberOfFuture}, props) => {
+
     const [dateState, setDateState] = useState(new Date())
     const [isScheduler, setIsScheduler] = useState(false)
     const [listName, setListName] = useState("To Do List")
@@ -128,6 +130,7 @@ const Header = ({ CardData, setFilterTask, filterTask, numberOfSchool,
             <div className="card-body p-3 text-black row">
                 <div className="">
                     {isScheduler?(<button  onClick={() => handleIsScheduler("ture")} className="bi bi-list-check button1 btn list fa-customize "></button>):(<button  onClick={() =>handleIsScheduler("false")} className="bi bi-calendar3 button1 btn list fa-customize"></button>)}
+
                     <div className="btn-group box">
                         <button type="button" className="btn btn1" style={buttonAll?{backgroundColor:"#6cc6cd"}:{backgroundColor:""}} onClick={() => handleTime("all")} >
                         ALL <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size-num">{CardData.length}</span>
@@ -136,6 +139,7 @@ const Header = ({ CardData, setFilterTask, filterTask, numberOfSchool,
                         Done<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size-num">{numberOfDone}</span>
                         </button>
                         <button type="button" className="btn btn2" style={buttonTodo?{backgroundColor:"#6cc6cd"}:{backgroundColor:""}} onClick={() => handleTaskstatus("todo")} >
+
                         ToDo<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size-num">{numberOfTodo}</span>
                         </button>
                     </div>
@@ -154,6 +158,7 @@ const Header = ({ CardData, setFilterTask, filterTask, numberOfSchool,
                         <button type="button" className="school-button btn btn-primary position-relative buttonShape sort bi bi-book size" onClick={() => handleType("School")} >
                         School <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size-num">{numberOfSchool}</span>
                         </button>
+
                     </div>
                     <div className="col-4 d-grid gap-2 ">
                         <button type="button" className="work-button btn position-relative buttonShape sort bi bi-pc-display size" onClick={() => handleType("Work")} >
@@ -163,6 +168,7 @@ const Header = ({ CardData, setFilterTask, filterTask, numberOfSchool,
                     <div className="col-4 d-grid gap-2 ">
                         <button type="button" className="home-button btn position-relative buttonShape sort bi-house-door size" onClick={() => handleType("Home")} >
                         Home<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary size-num">{numberOfHome}</span>
+
                         </button>
                     </div>
                 </div>

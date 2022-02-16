@@ -1,3 +1,4 @@
+
 /* all done to do button */
 .size{
     font-size: 20px;
@@ -33,6 +34,7 @@
     margin: 100px 200px 5px 200px ;
 }
 
+
 .inline {
     align-items: baseline;
 }
@@ -51,9 +53,11 @@
     font-family: 'Bebas Neue', cursive;
     font-size: 20px;
     color: rgb(83, 83, 83);
+
     /* position: absolute;
     left: 320px;
     top: 250px; */
+
 }
 
 .title {
@@ -61,6 +65,7 @@
     font-size: 70px;
     color: rgb(83, 83, 83);
 }
+
 
 
 .school-button {
@@ -89,6 +94,7 @@
 .work-button:hover,
 .work-button:focus {
     box-shadow: inset 300px 0 0 0 #4ea4bb;
+
     cursor: pointer;
     color: #ffffff;
 }
@@ -110,6 +116,7 @@
 /* .work-button:focus {
     border-color: rgb(83, 83, 83);
     background-color: #000000;
+
     color: rgb(255, 255, 255);
 } */
 
@@ -156,6 +163,7 @@
     transition: ease-out 0.5s;
     outline: none;
     color: rgb(83, 83, 83);
+
 }
 
 .future-button:hover,
@@ -210,6 +218,7 @@
         width: auto;
     }
 
+
     /* .test {
         margin-left: 5px;
         margin-bottom: 10px;
@@ -220,6 +229,7 @@
     container .placeTop {
         margin: 100px 70px 0px 70px ;
     }
+
     .title {
         padding: 0;
         font-size: xx-large;
