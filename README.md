@@ -1,6 +1,7 @@
 # React Tasks Manager
 # Junior Front End Web Developer - Final Project - Task Planner Web App
 
+https://shunfu1996.github.io/react-tasks-manager/
 
 **General Objectives**
 
